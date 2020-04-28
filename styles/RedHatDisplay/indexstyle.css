@@ -1,0 +1,8 @@
+@font-face {
+    font-family: RHD;
+    src: url(RedHatDisplay-Black.ttf);
+}
+
+h1 {
+    font-family: RHD;
+}

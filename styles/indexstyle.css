@@ -1,0 +1,70 @@
+@font-face {
+    font-family: RHDR;
+    src: url(RedHatDisplay/RedHatDisplay-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: RHDM;
+    src: url(RedHatDisplay/RedHatDisplay-Medium.ttf)
+  }
+
+  @font-face {
+    font-family: Roboto;
+    src: url(Roboto/Roboto-Light.ttf);
+  }
+
+p, button {
+  font-family: Roboto;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 1em;
+  font-size: 72px;
+  font-family: RHDR;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 1.5em;
+  font-size: 32px;
+  font-family: RHDM;
+  text-align: center;
+}
+
+h3, p {
+  font-family: RHDM;
+  text-align: center;
+  margin: 1em 4em;
+  font-size: 20px;
+}
+
+div {
+  text-align: center;
+  margin-top: 2em;
+}
+
+div p {
+  margin: .5em;
+}
+
+#btn1 {
+  background: white;
+  color: #5AB9EA;
+  border: 2px solid #5AB9EA;
+  box-sizing: border-box;
+  border-radius: 60px;
+  font-size: 20px;
+  font-family: RHDM;
+  padding: 8px 55px;
+}
+
+#btn2 {
+  color: white;
+  background:#5Ab9EA;
+  border: 2px solid #5Ab9EA;
+  border-radius: 60px;
+  font-size: 20px;
+  font-family: RHDM;
+  padding: 8px 55px;
+}
