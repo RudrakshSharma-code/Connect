@@ -1,6 +1,7 @@
 .container {
     text-align: center;
-    padding: 5%;
+    padding: 10%;
+    border: 1px solid black;
 }
 
 #signupSubmit {
