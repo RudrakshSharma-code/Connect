@@ -1,8 +1,8 @@
 import API, { graphqlOperation } from '@aws-amplify/api'
 import PubSub from '@aws-amplify/pubsub';
-import { createPost } from './graphql/mutations'
-import { listPosts } from './graphql/queries'
-import { onCreatePost } from './graphql/subscriptions'
+import { createPost } from '../graphql/mutations'
+import { listPosts } from '../graphql/queries'
+import { onCreatePost } from '../graphql/subscriptions'
 
 import awsconfig from './aws-exports';
 API.configure(awsconfig);

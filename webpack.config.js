@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: './src/app.js',
+    entry: './src/js/index.js',
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
@@ -24,6 +24,7 @@ module.exports = {
     },
     plugins: [
         new CopyWebpackPlugin(['./src/index.html']),
+        new CopyWebpackPlugin(['./src/css/']),
         new webpack.HotModuleReplacementPlugin()
     ]
 };
