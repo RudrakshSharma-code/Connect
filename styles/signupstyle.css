@@ -1,0 +1,18 @@
+.container {
+    text-align: center;
+    padding: 5%;
+}
+
+#signupSubmit {
+    margin-top: 20%;
+    border-radius: 20px;
+}
+
+.form-group input {
+    border-radius: 10px;
+    background-color: #D9F4FF;
+}
+
+.form-group button {
+    background-color: #5AB9EA;
+}
