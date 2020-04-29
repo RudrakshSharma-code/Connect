@@ -71,7 +71,7 @@
           <h3>First Last</h3>
         </div>
       </div>
-      <div id="location">
+      <form id="location">
         <h3>Set your location</h3>
         <div id="search">
           <div class="input-group mb-4 border p-1">
@@ -101,12 +101,13 @@
               id="signupSubmit"
               type="submit"
               class="btn btn-info btn-block"
+              formaction="home.html"
             >
               Confirm
             </button>
           </div>
         </div>
-      </div>
+      </form>
     </main>
     <script>
       $(document).ready(setMap());

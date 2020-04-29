@@ -27,6 +27,8 @@
     crossorigin="anonymous"
   />
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
     <link rel="stylesheet" type="text/css" href="../css/all.css" />
 
@@ -38,7 +40,7 @@
         <span class="material-icons">arrow_back</span>
       </a>
     </header>
-    <main id="main">
+    <form id="main">
       <h1 id="homeH1">What would you like to do?</h1>
       <div id="volunteer">
         <button class="card">
@@ -56,11 +58,24 @@
             id="signupSubmit"
             type="submit"
             class="btn btn-info btn-block"
+            formaction="index.html"
           >
             Confirm
           </button>
         </div>
       </div>
-    </main>
+    </form>
+    <script>
+      /*
+      $(document).ready(
+        
+        $('.card').click(function(){
+          $(".card").removeClass("active");
+          $(this).addClass("active");
+          $('.active').css("border", "5px solid #5680e9");
+        })
+      );
+      */
+    </script>
   </body>
 </html>
