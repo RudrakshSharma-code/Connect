@@ -60,7 +60,7 @@ h3 {
 }
 
 #location h3 {
-  margin: 30px 30px;
+  margin: 30px 5vw;
 }
 
 #map {
@@ -92,3 +92,4 @@ h3 {
   border-radius: 100px;
   padding: 10px;
 }
+
