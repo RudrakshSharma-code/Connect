@@ -8,6 +8,9 @@
     />
     <title>Profile Setup</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap"
       rel="stylesheet"
@@ -48,9 +51,13 @@
       crossorigin=""
     ></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" type="text/css" href="./styles/profileSetup.css" />
+    <script src="./scripts/mapSetup.js"></script>
   </head>
   <body>
     <header class="header">
@@ -90,32 +97,20 @@
           <div id="mapid"></div>
         </div>
         <div id="confirm">
-            <div class="form-group">
-                <button id="signupSubmit" type="submit" class="btn btn-info btn-block">Confirm</button>
-            </div>
+          <div class="form-group">
+            <button
+              id="signupSubmit"
+              type="submit"
+              class="btn btn-info btn-block"
+            >
+              Confirm
+            </button>
+          </div>
         </div>
       </div>
     </main>
     <script>
-      var mymap = L.map("mapid").setView([51.505, -0.09], 13);
-      L.tileLayer(
-        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
-        {
-          attribution:
-            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-          maxZoom: 18,
-          id: "mapbox/streets-v11",
-          tileSize: 512,
-          zoomOffset: -1,
-          accessToken:
-            "pk.eyJ1Ijoidml0b3JpYXBvc3RhaW1hcnRpbnMiLCJhIjoiY2s5a2llYXM5MDZxaDNvbWt0YWd4NXE5NyJ9.4gJv-_McQLbJg3Gn4vUl7g",
-        }
-      ).addTo(mymap);
-
-      var marker = L.marker([51.5, -0.09]).addTo(mymap);
-      marker.bindPopup("<b>First Last</b><br>Groceries needed   ").openPopup();
-
-      var popup = L.popup();
+    setMap();
     </script>
   </body>
 </html>
