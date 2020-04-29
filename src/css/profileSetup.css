@@ -14,8 +14,7 @@ header * {
 }
 
 header a {
-  position: relative;
-  top: 25%;
+  margin: auto 0;
 }
 
 #main {
