@@ -1,0 +1,37 @@
+body {
+    background-color: #f6fcff;
+    font-family: "Red Hat Display", sans-serif;
+  }
+  
+  header {
+    height: 50px;
+  }
+  
+  header * {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+  }
+  
+  header a {
+    margin: auto 0;
+  }
+  
+  
+#confirm {
+  margin: 40px auto;
+  width: 70vw;
+  font-family: "Roboto", sans-serif;
+}
+
+#confirm button {
+  background-color: #5ab9ea;
+  box-shadow: 0px 2.76726px 2.21381px rgba(90, 185, 234, 0.0196802),
+    0px 6.6501px 5.32008px rgba(90, 185, 234, 0.0282725),
+    0px 12.5216px 10.0172px rgba(90, 185, 234, 0.035),
+    0px 22.3363px 17.869px rgba(90, 185, 234, 0.0417275),
+    0px 41.7776px 33.4221px rgba(90, 185, 234, 0.0503198),
+    0px 100px 80px rgba(90, 185, 234, 0.07);
+  border-radius: 100px;
+  padding: 10px;
+}
