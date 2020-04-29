@@ -4,9 +4,10 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    // entry: './src/js/index.js',
     entry: {
+        // ADD YOUR JS FILE HERE
         aws: './src/js/aws.js',
+        index: './src/js/index.js',
         test: './src/js/test.js',
     },
     output: {
