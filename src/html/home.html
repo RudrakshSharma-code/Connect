@@ -40,42 +40,29 @@
         <span class="material-icons">arrow_back</span>
       </a>
     </header>
-    <form id="main">
+    <main id="main">
       <h1 id="homeH1">What would you like to do?</h1>
       <div id="volunteer">
-        <button class="card">
+        <button class="card" onclick="window.location.href = 'requests.html';">
           <p>Volunteer to help</p>
         </button>
       </div>
       <div id="help">
-        <button class="card">
+        <button class="card"  onclick="window.location.href = 'createPost.html';">
           <p>Ask for help</p>
         </button>
       </div>
-      <div id="confirm">
-        <div class="form-group">
-          <button
-            id="signupSubmit"
-            type="submit"
-            class="btn btn-info btn-block"
-            formaction="index.html"
-          >
-            Confirm
-          </button>
-        </div>
-      </div>
-    </form>
+    </main>
     <script>
-      /*
-      $(document).ready(
+      $(document).ready(function(){
+        $("#volunteer.card").click(function(){
+          $(this).css("color", "red");
+          window.location.href = "index.html";
+          
         
-        $('.card').click(function(){
-          $(".card").removeClass("active");
-          $(this).addClass("active");
-          $('.active').css("border", "5px solid #5680e9");
-        })
-      );
-      */
+      });
+      })
+      
     </script>
   </body>
 </html>
