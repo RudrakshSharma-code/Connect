@@ -1,0 +1,16 @@
+.container {
+    text-align: center;
+    padding: 8%;
+    border: 1px solid black;
+}
+
+.form-group input {
+    border-radius: 10px;
+    background-color: #D9F4FF;
+}
+
+.form-group button {
+    margin-top: 20%;
+    border-radius: 20px;
+    background-color: #5AB9EA;
+}
