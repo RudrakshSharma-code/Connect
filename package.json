@@ -5,7 +5,8 @@
   "dependencies": {
     "@aws-amplify/api": "latest",
     "@aws-amplify/pubsub": "latest",
-    "aws-amplify": "^3.0.9"
+    "aws-amplify": "^3.0.9",
+    "serialize-javascript": "^3.0.0"
   },
   "devDependencies": {
     "webpack": "^4.17.1",
