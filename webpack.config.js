@@ -9,6 +9,8 @@ module.exports = {
         aws: './src/js/aws.js',
         index: './src/js/index.js',
         test: './src/js/test.js',
+        signup: './src/js/signup.js',
+        login: './src/js/login.js',
     },
     output: {
         filename: '[name].js',

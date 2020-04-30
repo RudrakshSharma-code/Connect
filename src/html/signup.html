@@ -12,6 +12,9 @@
         Back
     </header>
 
+</head>
+
+<body>
     <div class="container">
         <div class="row justify-content-center">
             <div class="panel panel-primary">
@@ -28,14 +31,15 @@
                             <input type="text" placeholder="Last name" maxlength="50" class="form-control" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email" maxlength="50" class="form-control" autofocus>
+                            <input id="signUpEmail" type="email" placeholder="Email" maxlength="50" class="form-control"
+                                autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="password" maxlength="25" class="form-control" placeholder="Enter Password"
-                                length="40" autofocus>
+                            <input id="signUpPass" type="password" maxlength="25" class="form-control"
+                                placeholder="Enter Password" length="40" autofocus>
                         </div>
                         <div class="form-group">
-                            <button id="signupSubmit" type="submit" class="btn btn-info btn-block">Sign Up</button>
+                            <button id="signUpSubmit" type="button" class="btn btn-info btn-block">Sign Up</button>
                         </div>
                         <p></p>Already have an account? <a href="login.html">Sign In</a></p>
                     </form>
@@ -44,9 +48,11 @@
         </div>
     </div>
 
-</head>
-
-<body>
+    <div>
+        <input  id="confirmEmail" type="text" placeholder="email">
+        <input  id="confirmCode" type="text" placeholder="code">
+        <button id="confirmButton">Confirm</button>
+    </div>
 
 </body>
 
@@ -61,6 +67,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 </script>
-<script src="scripts/signupscript.js"></script>
+<script src="signup.js"></script>
 
 </html>
