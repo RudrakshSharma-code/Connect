@@ -15,30 +15,30 @@ Amplify.configure(awsconfig);
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-async function createPost(user, title, description) {
+export async function createPost(user, title, description) {
   const post = {"user": user, "title": title, "description": description};
   const answer = await API.graphql(graphqlOperation(mutations.createPost, { "input": post, "condition": null }));
   return answer.data.createPost;
 }
 
-async function updatePost(id, title, description) {
+export async function updatePost(id, title, description) {
   const post = {"id": id, "title": title, "description": description};
   const answer = await API.graphql(graphqlOperation(mutations.updatePost, { "input": post, "condition": null }));
   return answer.data.updatePost;
 }
 
-async function deletePost(id) {
+export async function deletePost(id) {
   const post = {"id": id};
   const answer = await API.graphql(graphqlOperation(mutations.deletePost, {"input": post, "condition": null }));
   return answer.data.deletePost;
 }
 
-async function getPost(id) {
+export async function getPost(id) {
   const answer = await API.graphql(graphqlOperation(queries.getPost, {"id": id}));
   return answer.data.getPost;
 }
 
-async function listPosts(filter) {
+export async function listPosts(filter) {
   // filter is optional
   // example
   // filter = {user: {eq: "userID"}};
@@ -56,7 +56,7 @@ async function listPosts(filter) {
   return posts;
 }
 
-function onCreatePost() {
+export function onCreatePost() {
   const listener = API.graphql(graphqlOperation(subscriptions.onCreatePost))
     .subscribe({next: (postData) => {
       console.log("On create post: ", postData.value.data.onCreatePost);
@@ -64,7 +64,7 @@ function onCreatePost() {
   return listener;
 }
 
-function onUpdatePost() {
+export function onUpdatePost() {
   const listener = API.graphql(graphqlOperation(subscriptions.onUpdatePost))
     .subscribe({next: (postData) => {
       console.log("On update post: ", postData.value.data.onUpdatePost);
@@ -72,7 +72,7 @@ function onUpdatePost() {
   return listener;
 }
 
-function onDeletePost() {
+export function onDeletePost() {
   const listener = API.graphql(graphqlOperation(subscriptions.onDeletePost))
     .subscribe({next: (postData) => {
       console.log("On delete post: ", postData.value.data.onDeletePost);
@@ -80,7 +80,7 @@ function onDeletePost() {
   return listener;
 }
 
-function stopListener(listener) {
+export function stopListener(listener) {
   listener.unsubscribe();
 }
 
@@ -134,7 +134,7 @@ export async function signUp(email, password, phone_number, given_name, family_n
   }
 }
 
-async function resendConfirmationCode(email) {
+export async function resendConfirmationCode(email) {
   try {
       await Auth.resendSignUp(email);
       console.log('code resent succesfully');
@@ -162,7 +162,7 @@ export async function signIn(email, password) {
   }
 }
 
-async function signOut() {
+export async function signOut() {
   try {
     const user = await Auth.signOut();
     console.log({ user });
@@ -171,7 +171,7 @@ async function signOut() {
   }
 }
 
-async function changePassword(oldPassword, newPassword) {
+export async function changePassword(oldPassword, newPassword) {
   Auth.currentAuthenticatedUser()
   .then(user => {
       return Auth.changePassword(user, oldPassword, newPassword);
@@ -180,27 +180,27 @@ async function changePassword(oldPassword, newPassword) {
   .catch(err => console.log(err));
 }
 
-async function forgotPassword(username) {
+export async function forgotPassword(username) {
   Auth.forgotPassword(username)
   .then(data => console.log(data))
   .catch(err => console.log(err));
 }
 
-async function forgotPasswordSubmit(username, code, new_password) {
+export async function forgotPasswordSubmit(username, code, new_password) {
   Auth.forgotPasswordSubmit(username, code, new_password)
     .then(data => console.log(data))
     .catch(err => console.log(err));
 }
 
 
-async function currentAuthenticatedUser() {
+export async function currentAuthenticatedUser() {
   Auth.currentAuthenticatedUser({
     bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
   }).then(user => console.log(user))
   .catch(err => console.log(err));
 }
 
-async function updateUserAttributes(user, given_name, family_name) {
+export async function updateUserAttributes(user, given_name, family_name) {
   await Auth.updateUserAttributes(user, {
     'given_name': given_name,
     'family_name': family_name
