@@ -1,70 +1,77 @@
 @font-face {
-    font-family: RHDR;
-    src: url(RedHatDisplay/RedHatDisplay-Regular.ttf);
-  }
+  font-family: RHDR;
+  src: url(RedHatDisplay/RedHatDisplay-Regular.ttf);
+}
 
-  @font-face {
-    font-family: RHDM;
-    src: url(RedHatDisplay/RedHatDisplay-Medium.ttf)
-  }
+@font-face {
+  font-family: RHDM;
+  src: url(RedHatDisplay/RedHatDisplay-bold.ttf)
+}
 
-  @font-face {
-    font-family: Roboto;
-    src: url(Roboto/Roboto-Light.ttf);
-  }
-
-p, button {
+@font-face {
   font-family: Roboto;
+  src: url(Roboto/Roboto-Light.ttf);
+}
+
+h1, h2, h3, p {
   text-align: center;
 }
 
 h1 {
   margin-top: 1em;
-  font-size: 72px;
-  font-family: RHDR;
-  text-align: center;
+  font-size: 64px;
+  font-family: RHDM;
 }
 
 h2 {
-  margin-top: 1.5em;
-  font-size: 32px;
+  margin-top: 2em;
+  font-size: 30pxpx;
   font-family: RHDM;
-  text-align: center;
+}
+
+p, button {
+  font-family: Roboto;
 }
 
 h3, p {
-  font-family: RHDM;
-  text-align: center;
-  margin: 1em 4em;
-  font-size: 20px;
+  margin: 1.5em 10%;
+  font-size: 16px;
 }
 
-div {
-  text-align: center;
-  margin-top: 2em;
+button {
+  background-color: #5AB9EA;
 }
 
-div p {
-  margin: .5em;
+.form-group {
+  margin: 0em 30%;
 }
 
-#btn1 {
+#login {
   background: white;
-  color: #5AB9EA;
   border: 2px solid #5AB9EA;
-  box-sizing: border-box;
+  color: #5AB9EA;
   border-radius: 60px;
-  font-size: 20px;
-  font-family: RHDM;
-  padding: 8px 55px;
+  margin-bottom: 2em;
 }
 
-#btn2 {
+#signup {
+  background: #5AB9EA;
+  border: 2px solid #5AB9EA;
   color: white;
-  background:#5Ab9EA;
-  border: 2px solid #5Ab9EA;
   border-radius: 60px;
-  font-size: 20px;
-  font-family: RHDM;
-  padding: 8px 55px;
+}
+
+#info {
+  background-color: #5AB9EA;
+  margin: 0;
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+}
+
+#mbtn {
+  color: white;
+  background: #5AB9EA;
 }
