@@ -1,36 +1,24 @@
-import "./aws.js";
-import { Auth } from 'aws-amplify';
+import * as aws from "./aws.js";
 
-const signUpSubmit = document.getElementById('signUpSubmit');
-signUpSubmit.addEventListener('click', signUp);
+let signUpSubmit = document.getElementById("signUpSubmit");
+signUpSubmit.addEventListener("click", signUp);
 
-async function signUp() {
-    try {
-        const user = await Auth.signUp({
-            username: document.getElementById('signUpEmail').value,
-            password: document.getElementById('signUpPass').value,
-            attributes: {
-                //"phone_number": phone_number // "+18882223344"
-                // other custom attributes
-            }
-        });
-        console.log({
-            user
-        });
-    } catch (error) {
-        console.log('error signing up:', error);
-    }
+function signUp() {
+    aws.signUp(
+        document.getElementById("signUpEmail").value,
+        document.getElementById("signUpPass").value,
+        "+18882223344",
+        document.getElementById("signUpFirst").value, 
+        document.getElementById("signUpLast").value, 
+    );
 }
 
-
-const confirmButton = document.getElementById('confirmButton');
-confirmButton.addEventListener('click', confirmSignUp);
-
-async function confirmSignUp() {
-  try {
-    const user = await Auth.confirmSignUp(document.getElementById('confirmEmail').value, document.getElementById('confirmCode').value);
-    console.log({ user });
-  } catch (error) {
-      console.log('error confirming sign up', error);
-  }
+function confirmEmail() {
+    aws.confirmSignUp(
+        document.getElementById("confirmEmail").value, 
+        document.getElementById("confirmCode").value
+    )
 }
+
+let confirmButton = document.getElementById("confirmButton");
+confirmButton.addEventListener("click", confirmEmail);

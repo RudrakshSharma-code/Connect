@@ -1,19 +1,11 @@
-import "./aws.js";
-import { Auth } from 'aws-amplify';
+import * as aws from "./aws.js";
 
-const signInButton = document.getElementById('signInButton');
-signInButton.addEventListener('click', signIn);
-
-async function signIn() {
-  try {
-    const user = await Auth.signIn(
-      document.getElementById('signInEmail').value,
-      document.getElementById('signInPass').value,
-    );
-    console.log({
-      user
-    });
-  } catch (error) {
-    console.log('error signing in', error);
-  }
+function signIn() {
+  aws.signIn(
+      document.getElementById("signInEmail").value, 
+      document.getElementById("signInPass").value,
+  )
+  
 }
+let signInButton = document.getElementById("signInButton");
+signInButton.addEventListener("click", signIn);
