@@ -10,7 +10,10 @@ module.exports = {
         index: './src/js/index.js',
         test: './src/js/test.js',
         signup: './src/js/signup.js',
-        login: './src/js/login.js',
+        login: './src/js/login.js', 
+        requests: './src/js/requests.js', 
+        mapsetup: './src/js/mapSetup.js',
+        createpost: './src/js/createPost.js'
     },
     output: {
         filename: '[name].js',

@@ -35,3 +35,17 @@ body {
   border-radius: 100px;
   padding: 10px;
 }
+
+#search {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+#search > div {
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.fa-search {
+  color: gray;
+}

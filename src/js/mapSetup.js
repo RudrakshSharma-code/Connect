@@ -26,7 +26,7 @@ function works(x, y) {
     marker.on('click', onPopupClick);
   }
 
-  function setMap(){
+ function setMap(){
     if (window.navigator.geolocation) {
         // Geolocation available
         window.navigator.geolocation.getCurrentPosition(
@@ -37,4 +37,6 @@ function works(x, y) {
         );
       }
   }
+
+  $(document).ready(setMap());
   
