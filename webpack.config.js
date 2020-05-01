@@ -11,7 +11,6 @@ module.exports = {
         test: './src/js/test.js',
         signup: './src/js/signup.js',
         login: './src/js/login.js',
-        forgot: './src/js/forgot.js',
     },
     output: {
         filename: '[name].js',
