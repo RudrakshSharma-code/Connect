@@ -167,8 +167,11 @@ export async function signUp(email, password, phone_number, given_name, family_n
     console.log({
       user
     });
-    alert("Please check your e-mail. Enter your email and the sent code below");
-    document.getElementById("thecontainer").style.display = none;
+    var prompter = confirm("Please check your e-mail. Enter your email and the sent code below");
+    if (prompter == true) {
+      document.getElementById("thecontainer").style.display = "none";
+      document.getElementById("confirmDiv").style.display = "block";
+    }
   } catch (error) {
     console.log('error signing up:', error);
   }

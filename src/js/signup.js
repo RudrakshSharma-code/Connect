@@ -1,5 +1,9 @@
 import * as aws from "./aws.js";
 
+window.onload = function () {
+    document.getElementById("confirmDiv").style.display = "none";
+}
+
 let signUpSubmit = document.getElementById("signUpSubmit");
 signUpSubmit.addEventListener("click", signUp);
 
