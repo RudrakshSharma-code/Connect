@@ -194,7 +194,7 @@ export async function confirmSignUp(email, code) {
       user
     });
     alert('Welcome to Connect!');
-    window.location.assign("home.html");
+    window.location.assign("profileSetup.html");
   } catch (error) {
     console.log('error confirming sign up', error);
   }

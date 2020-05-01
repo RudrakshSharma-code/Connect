@@ -15,15 +15,16 @@ function works(x, y) {
     ).addTo(mymap);
 
     var marker = L.marker([x, y]).addTo(mymap);
-    marker
-      .bindPopup("<b>First Last</b><br>Groceries needed   ")
-      .openPopup();
+    // marker
+    //   // .bindPopup("<b>First Last</b><br>Groceries needed   ")
+    //   // .bindPopup("Youre here!")
+    //   .openPopup();
     
-    function onPopupClick() {
-        var data = marker._popup._content;
-        alert("You clicked the map at " + $(data).text());
-    }
-    marker.on('click', onPopupClick);
+    // function onPopupClick() {
+    //     var data = marker._popup._content;
+    //     alert("You clicked the map at " + $(data).text());
+    // }
+    // marker.on('click', onPopupClick);
   }
 
  function setMap(){
@@ -33,7 +34,7 @@ function works(x, y) {
           function (result) {
             works(result.coords.latitude, result.coords.longitude);
           },
-          console.log("error")
+          console.log("")
         );
       }
   }

@@ -1,0 +1,14 @@
+
+form input{
+    width: 90vw;
+    margin: 10px;
+}
+
+#creation{
+    text-align: center;
+}
+
+button{
+    width: 100%;
+    text-align: center;
+}
