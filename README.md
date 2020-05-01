@@ -4,7 +4,7 @@
 * [Contents](#content)
 
 ## General Info
-
+A web app that connects neighbourhood volunteers to their neighbourhood.
 
 ## Technologies
 Technologies that were used for this project:
