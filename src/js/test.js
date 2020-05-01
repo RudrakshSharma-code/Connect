@@ -34,8 +34,3 @@ let signInButton = document.getElementById("signInButton");
 signInButton.addEventListener("click", signIn);
 
 
-export async function forgotPassword(username) {
-    Auth.forgotPassword(username)
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
-  }

@@ -16,7 +16,7 @@
 
 <body>
 
-    <div class="container">
+    <div id="thecontainer" class="container">
         <div class="row justify-content-center">
             <div class="panel panel-primary">
                 <div class="panel-body">
@@ -32,11 +32,60 @@
                             <input id="signInPass" type="password" maxlength="25" class="form-control"
                                 placeholder="Password" length="40">
                         </div>
-                        <p>Forgot Password?</p>
+                        <a href="#" id="forgotten">Forgot Password?</a>
                         <div class="form-group">
                             <button id="signInButton" type="button" class="btn btn-info btn-block">Log In</button>
                         </div>
                         <p></p>Not a member? <a href="signup.html">Sign Up</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="passwordDiv" class="container">
+        <div class="row justify-content-center">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <form method="POST" action="#" role="form">
+                        <div class="form-group">
+                            <h2>Enter your email to receive a new confirmation code</h2>
+                        </div>
+                        <div class="form-group">
+                            <input id="forgotEmail" type="email" placeholder="Email" maxlength="50"
+                                class="form-control">
+                        </div>
+                        <button id="sendCode" type="button" class="btn btn-info btn-block">Send Code</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="recoverDiv" class="container">
+        <div class="row justify-content-center">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <form method="POST" action="#" role="form">
+                        <div class="form-group">
+                            <h2>Enter your email, code & new Password</h2>
+                        </div>
+                        <div class="form-group">
+                            <input id="recoverEmail" type="email" placeholder="Email" maxlength="50"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input id="recoverCode" type="text" maxlength="25" class="form-control" placeholder="Code"
+                                length="40">
+                        </div>
+                        <div class="form-group">
+                            <input id="recoverPass" type="password" maxlength="25" class="form-control"
+                                placeholder="Password" length="40">
+                        </div>
+                        <div class="form-group">
+                            <button id="recoverButton" type="button" class="btn btn-info btn-block">Confirm</button>
+                        </div>
                     </form>
                 </div>
             </div>
