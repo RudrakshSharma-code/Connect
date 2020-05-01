@@ -1,3 +1,29 @@
-body{
+body {
     background-color: #5AB9EA;
+    color: white;
+}
+
+body *{
+    padding: 0;
+    margin: 0;
+}
+
+#confirm button{
+    background-color: white;
+}
+
+figure{
+    height: 100%;
+}
+
+img{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+#confirm{
+    width: 90vw;
 }

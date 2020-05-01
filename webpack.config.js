@@ -35,6 +35,7 @@ module.exports = {
     plugins: [
         new CopyWebpackPlugin(['./src/html/']),
         new CopyWebpackPlugin(['./src/css/']),
+        new CopyWebpackPlugin(['./src/imgs/']),
         new webpack.HotModuleReplacementPlugin()
     ]
 };
