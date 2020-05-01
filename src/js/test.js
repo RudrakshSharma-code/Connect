@@ -5,17 +5,17 @@ signUpButton.addEventListener("click", signUp);
 
 function signUp() {
     aws.signUp(
-        document.getElementById("signUpEmail").value, 
+        document.getElementById("signUpEmail").value,
         document.getElementById("signUpPassword").value,
         "+18882223344",
-        "given_name", 
+        "given_name",
         "family_name"
     );
 }
 
 function confirmEmail() {
     aws.confirmSignUp(
-        document.getElementById("confirmEmail").value, 
+        document.getElementById("confirmEmail").value,
         document.getElementById("confirmCode").value
     )
 }
@@ -25,17 +25,16 @@ confirmButton.addEventListener("click", confirmEmail);
 
 function signIn() {
     aws.signIn(
-        document.getElementById("signInEmail").value, 
+        document.getElementById("signInEmail").value,
         document.getElementById("signInPassword").value,
     )
-    
+
 }
 let signInButton = document.getElementById("signInButton");
 signInButton.addEventListener("click", signIn);
 
-
 export async function forgotPassword(username) {
     Auth.forgotPassword(username)
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
-  }
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
+}

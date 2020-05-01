@@ -5,7 +5,6 @@ function signIn() {
       document.getElementById("signInEmail").value, 
       document.getElementById("signInPass").value,
   )
-  
 }
 let signInButton = document.getElementById("signInButton");
 signInButton.addEventListener("click", signIn);
