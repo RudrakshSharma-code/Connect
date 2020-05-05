@@ -28,11 +28,13 @@ Amplify.configure(awsconfig);
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-export async function createPost(user, title, items) {
+export async function createPost(user, title, items, latitude, longitude) {
   const post = {
     "user": user,
     "title": title,
-    "items": items // array
+    "items": items, // array
+    "latitude": latitude, // string
+    "longitude": longitude // string
   };
   const answer = await API.graphql(graphqlOperation(mutations.createPost, {
     "input": post,
@@ -41,11 +43,13 @@ export async function createPost(user, title, items) {
   return answer.data.createPost;
 }
 
-export async function updatePost(id, title, items) {
+export async function updatePost(id, title, items, latitude, longitude) {
   const post = {
     "id": id,
     "title": title,
-    "items": items // array
+    "items": items, // array
+    "latitude": latitude, // string
+    "longitude": longitude // string
   };
   const answer = await API.graphql(graphqlOperation(mutations.updatePost, {
     "input": post,
@@ -76,7 +80,7 @@ export async function listPosts(filter) {
   // filter is optional
   // example
   // filter by user= {user: {eq: "userID"}};
-  // filter by item = {items: {contains: "itemName"}};listPosts({items: {contains: "vodka"}}):
+  // filter by item = {items: {contains: "itemName"}};
   const limit = 50; // what this limit should be?
   let posts = [];
   let answer;
@@ -138,10 +142,10 @@ export function stopListener(listener) {
 //   onDeletePost();
 
 //   setTimeout(async () => {
-//     let answer = await createPost("user12345", "title12345", ["apple", "bananas"]);
-//     console.log("Create post: ", answer);
+//    let answer = await createPost("user12345", "title12345", ["apple", "bananas"], "48.8566", "2.3522");
+//    console.log("Create post: ", answer);
 
-//     answer = await updatePost(answer.id, "titleUpdated", ["toilet paper", "vodka"]);
+//     answer = await updatePost(answer.id, "titleUpdated", ["toilet paper", "vodka"], "48.9", "2.4");
 //     console.log("Update post: ", answer);
 
 //     answer = await getPost(answer.id);
