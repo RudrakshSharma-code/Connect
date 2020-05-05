@@ -36,6 +36,9 @@ function forgotPassword() {
 let confirmButton = document.getElementById("sendCode");
 confirmButton.addEventListener("click", forgotPassword);
 
+alert('Welcome to Connect!');
+window.location.assign("home.html");
+
 
 function forgotPasswordSubmit() {
   alert('Welcome back to Connect!');

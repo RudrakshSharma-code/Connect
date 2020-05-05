@@ -9,6 +9,8 @@ export declare class Post {
   readonly user: string;
   readonly title: string;
   readonly items: string[];
+  readonly latitude: string;
+  readonly longitude: string;
   constructor(init: ModelInit<Post>);
   static copyOf(source: Post, mutator: (draft: MutableModel<Post>) => MutableModel<Post> | void): Post;
 }

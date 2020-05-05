@@ -19,6 +19,16 @@ function signUp() {
     );
 }
 
+alert('Welcome to Connect!');
+window.location.assign("profileSetup.html");
+
+var prompter = confirm("Please check your e-mail. Enter your email and the sent code below");
+if (prompter == true) {
+  document.getElementById("thecontainer").style.display = "none";
+  document.getElementById("confirmDiv").style.display = "block";
+}
+
+
 function confirmEmail() {
     aws.confirmSignUp(
         document.getElementById("confirmEmail").value,

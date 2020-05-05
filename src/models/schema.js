@@ -30,6 +30,20 @@ export const schema = {
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
+                },
+                "latitude": {
+                    "name": "latitude",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "longitude": {
+                    "name": "longitude",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -44,5 +58,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "b4efc938bfb61bda4d9246d03c40cd4e"
+    "version": "54c6564214f16c6143cfbb6b6ed0d919"
 };
