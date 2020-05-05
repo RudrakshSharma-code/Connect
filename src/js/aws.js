@@ -1,3 +1,11 @@
+
+// type Post @model {
+//   id: ID!
+//   user: String!
+//   title: String!
+//   items: [String!]!
+// }
+
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -20,11 +28,11 @@ Amplify.configure(awsconfig);
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-export async function createPost(user, title, description) {
+export async function createPost(user, title, items) {
   const post = {
     "user": user,
     "title": title,
-    "description": description
+    "items": items // array
   };
   const answer = await API.graphql(graphqlOperation(mutations.createPost, {
     "input": post,
@@ -33,11 +41,11 @@ export async function createPost(user, title, description) {
   return answer.data.createPost;
 }
 
-export async function updatePost(id, title, description) {
+export async function updatePost(id, title, items) {
   const post = {
     "id": id,
     "title": title,
-    "description": description
+    "items": items // array
   };
   const answer = await API.graphql(graphqlOperation(mutations.updatePost, {
     "input": post,
@@ -129,10 +137,10 @@ export function stopListener(listener) {
 //   onDeletePost();
 
 //   setTimeout(async () => {
-//     let answer = await createPost("user12345", "title12345", "description12345");
+//     let answer = await createPost("user12345", "title12345", ["apple", "bananas"]);
 //     console.log("Create post: ", answer);
 
-//     answer = await updatePost(answer.id, "titleUpdated", "descriptionUpdated");
+//     answer = await updatePost(answer.id, "titleUpdated", ["toilet paper", "vodka"]);
 //     console.log("Update post: ", answer);
 
 //     answer = await getPost(answer.id);
@@ -161,12 +169,13 @@ export async function signUp(email, password, phone_number, given_name, family_n
       "attributes": {
         "given_name": given_name,
         "family_name": family_name,
-        "phone_number": phone_number // "+18882223344"
+        "phone_number": phone_number, // "+18882223344"
+        'custom:latitude': "48.8566",
+        'custom:longitude': "2.3522"
       }
     });
-    console.log({
-      user
-    });
+    console.log(user);
+
     var prompter = confirm("Please check your e-mail. Enter your email and the sent code below");
     if (prompter == true) {
       document.getElementById("thecontainer").style.display = "none";
@@ -245,7 +254,6 @@ export async function forgotPasswordSubmit(username, code, new_password) {
     .catch(err => console.log(err));
 }
 
-
 export async function currentAuthenticatedUser() {
   Auth.currentAuthenticatedUser({
       bypassCache: false // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
@@ -257,5 +265,12 @@ export async function updateUserAttributes(user, given_name, family_name) {
   await Auth.updateUserAttributes(user, {
     'given_name': given_name,
     'family_name': family_name
+  });
+}
+
+export async function updateUserCoordinates(user, latitude, longitude) {
+  await Auth.updateUserAttributes(user, {
+    'custom:latitude': latitude,
+    'custom:longitude': longitude
   });
 }
