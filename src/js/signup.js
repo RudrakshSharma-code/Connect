@@ -1,7 +1,9 @@
 import * as aws from "./aws.js";
 
-window.onload = function () {
-    document.getElementById("confirmDiv").style.display = "none";
+
+window.onload = function scripts () {
+document.getElementById("confirmDiv").style.display = "none";
+document.body.style.display = "block";
 }
 
 let signUpSubmit = document.getElementById("signUpSubmit");
@@ -22,7 +24,6 @@ function confirmEmail() {
         document.getElementById("confirmEmail").value,
         document.getElementById("confirmCode").value
     )
-}
-
+}   
 let confirmButton = document.getElementById("confirmButton");
 confirmButton.addEventListener("click", confirmEmail);

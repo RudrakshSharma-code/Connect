@@ -3,6 +3,7 @@ import * as aws from "./aws.js";
 window.onload = function () {
   document.getElementById("passwordDiv").style.display = "none";
   document.getElementById("recoverDiv").style.display = "none";
+  document.body.style.display = "block";
 }
 
 function signIn() {
