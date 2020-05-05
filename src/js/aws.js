@@ -176,11 +176,6 @@ export async function signUp(email, password, phone_number, given_name, family_n
     });
     console.log(user);
 
-    var prompter = confirm("Please check your e-mail. Enter your email and the sent code below");
-    if (prompter == true) {
-      document.getElementById("thecontainer").style.display = "none";
-      document.getElementById("confirmDiv").style.display = "block";
-    }
   } catch (error) {
     console.log('error signing up:', error);
   }
@@ -202,8 +197,6 @@ export async function confirmSignUp(email, code) {
     console.log({
       user
     });
-    alert('Welcome to Connect!');
-    window.location.assign("profileSetup.html");
   } catch (error) {
     console.log('error confirming sign up', error);
   }
@@ -215,8 +208,6 @@ export async function signIn(email, password) {
     console.log({
       user
     });
-    alert('Welcome to Connect!');
-    window.location.assign("home.html");
   } catch (error) {
     console.log('error signing in', error);
   }
