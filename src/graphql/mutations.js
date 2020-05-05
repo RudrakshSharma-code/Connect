@@ -10,7 +10,7 @@ export const createPost = /* GraphQL */ `
       id
       user
       title
-      description
+      items
     }
   }
 `;
@@ -23,7 +23,7 @@ export const updatePost = /* GraphQL */ `
       id
       user
       title
-      description
+      items
     }
   }
 `;
@@ -36,7 +36,7 @@ export const deletePost = /* GraphQL */ `
       id
       user
       title
-      description
+      items
     }
   }
 `;

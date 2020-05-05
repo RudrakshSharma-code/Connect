@@ -26,6 +26,8 @@ function works(x, y) {
     // }
     // marker.on('click', onPopupClick);
   }
+  marker.on('click', onPopupClick);
+
 
  function setMap(){
     if (window.navigator.geolocation) {

@@ -7,7 +7,7 @@ export const onCreatePost = /* GraphQL */ `
       id
       user
       title
-      description
+      items
     }
   }
 `;
@@ -17,7 +17,7 @@ export const onUpdatePost = /* GraphQL */ `
       id
       user
       title
-      description
+      items
     }
   }
 `;
@@ -27,7 +27,7 @@ export const onDeletePost = /* GraphQL */ `
       id
       user
       title
-      description
+      items
     }
   }
 `;
