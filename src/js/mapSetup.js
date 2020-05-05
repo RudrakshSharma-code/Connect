@@ -23,14 +23,17 @@ function works(x, y) {
   marker.on('click', onPopupClick);
 }
 
-function setMap() {
-  if (window.navigator.geolocation) {
-    // Geolocation available
-    window.navigator.geolocation.getCurrentPosition(
-      function (result) {
-        works(result.coords.latitude, result.coords.longitude);
-      },
-      console.log("error")
-    );
+ function setMap(){
+    if (window.navigator.geolocation) {
+        // Geolocation available
+        window.navigator.geolocation.getCurrentPosition(
+          function (result) {
+            works(result.coords.latitude, result.coords.longitude);
+          },
+          console.log("error")
+        );
+      }
   }
-}
+
+  $(document).ready(setMap());
+  
