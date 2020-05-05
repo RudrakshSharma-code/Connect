@@ -25,12 +25,12 @@
   
   h2 {
     margin-top: 2em;
-    font-size: 30pxpx;
+    font-size: 30px;
     font-family: RHDM;
   }
   
   p, button {
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
   }
   
   h3, p {

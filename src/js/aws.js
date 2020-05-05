@@ -254,7 +254,6 @@ export async function forgotPasswordSubmit(username, code, new_password) {
     .catch(err => console.log(err));
 }
 
-
 export async function currentAuthenticatedUser() {
   Auth.currentAuthenticatedUser({
       bypassCache: false // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
