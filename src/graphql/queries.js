@@ -7,7 +7,7 @@ export const getPost = /* GraphQL */ `
       id
       user
       title
-      description
+      items
     }
   }
 `;
@@ -22,7 +22,7 @@ export const listPosts = /* GraphQL */ `
         id
         user
         title
-        description
+        items
       }
       nextToken
     }

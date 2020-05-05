@@ -1,3 +1,11 @@
+
+// type Post @model {
+//   id: ID!
+//   user: String!
+//   title: String!
+//   items: [String!]!
+// }
+
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -20,11 +28,11 @@ Amplify.configure(awsconfig);
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-export async function createPost(user, title, description) {
+export async function createPost(user, title, items) {
   const post = {
     "user": user,
     "title": title,
-    "description": description
+    "items": items // array
   };
   const answer = await API.graphql(graphqlOperation(mutations.createPost, {
     "input": post,
@@ -33,11 +41,11 @@ export async function createPost(user, title, description) {
   return answer.data.createPost;
 }
 
-export async function updatePost(id, title, description) {
+export async function updatePost(id, title, items) {
   const post = {
     "id": id,
     "title": title,
-    "description": description
+    "items": items // array
   };
   const answer = await API.graphql(graphqlOperation(mutations.updatePost, {
     "input": post,
@@ -129,10 +137,10 @@ export function stopListener(listener) {
 //   onDeletePost();
 
 //   setTimeout(async () => {
-//     let answer = await createPost("user12345", "title12345", "description12345");
+//     let answer = await createPost("user12345", "title12345", ["apple", "bananas"]);
 //     console.log("Create post: ", answer);
 
-//     answer = await updatePost(answer.id, "titleUpdated", "descriptionUpdated");
+//     answer = await updatePost(answer.id, "titleUpdated", ["toilet paper", "vodka"]);
 //     console.log("Update post: ", answer);
 
 //     answer = await getPost(answer.id);
