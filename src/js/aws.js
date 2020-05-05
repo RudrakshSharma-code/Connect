@@ -161,12 +161,13 @@ export async function signUp(email, password, phone_number, given_name, family_n
       "attributes": {
         "given_name": given_name,
         "family_name": family_name,
-        "phone_number": phone_number // "+18882223344"
+        "phone_number": phone_number, // "+18882223344"
+        'custom:latitude': "48.8566",
+        'custom:longitude': "2.3522"
       }
     });
-    console.log({
-      user
-    });
+    console.log(user);
+
     var prompter = confirm("Please check your e-mail. Enter your email and the sent code below");
     if (prompter == true) {
       document.getElementById("thecontainer").style.display = "none";
@@ -257,5 +258,12 @@ export async function updateUserAttributes(user, given_name, family_name) {
   await Auth.updateUserAttributes(user, {
     'given_name': given_name,
     'family_name': family_name
+  });
+}
+
+export async function updateUserCoordinates(user, latitude, longitude) {
+  await Auth.updateUserAttributes(user, {
+    'custom:latitude': latitude,
+    'custom:longitude': longitude
   });
 }
