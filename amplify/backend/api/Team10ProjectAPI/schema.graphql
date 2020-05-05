@@ -3,4 +3,6 @@ type Post @model {
   user: String!
   title: String!
   items: [String!]!
+  latitude: String!
+  longitude: String!
 }

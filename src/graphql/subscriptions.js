@@ -8,6 +8,8 @@ export const onCreatePost = /* GraphQL */ `
       user
       title
       items
+      latitude
+      longitude
     }
   }
 `;
@@ -18,6 +20,8 @@ export const onUpdatePost = /* GraphQL */ `
       user
       title
       items
+      latitude
+      longitude
     }
   }
 `;
@@ -28,6 +32,8 @@ export const onDeletePost = /* GraphQL */ `
       user
       title
       items
+      latitude
+      longitude
     }
   }
 `;

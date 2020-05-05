@@ -28,11 +28,13 @@ Amplify.configure(awsconfig);
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-export async function createPost(user, title, items) {
+export async function createPost(user, title, items, latitude, longitude) {
   const post = {
     "user": user,
     "title": title,
-    "items": items // array
+    "items": items, // array
+    "latitude": latitude, // string
+    "longitude": longitude // string
   };
   const answer = await API.graphql(graphqlOperation(mutations.createPost, {
     "input": post,
@@ -41,11 +43,13 @@ export async function createPost(user, title, items) {
   return answer.data.createPost;
 }
 
-export async function updatePost(id, title, items) {
+export async function updatePost(id, title, items, latitude, longitude) {
   const post = {
     "id": id,
     "title": title,
-    "items": items // array
+    "items": items, // array
+    "latitude": latitude, // string
+    "longitude": longitude // string
   };
   const answer = await API.graphql(graphqlOperation(mutations.updatePost, {
     "input": post,
@@ -75,7 +79,8 @@ export async function getPost(id) {
 export async function listPosts(filter) {
   // filter is optional
   // example
-  // filter = {user: {eq: "userID"}};
+  // filter by user= {user: {eq: "userID"}};
+  // filter by item = {items: {contains: "itemName"}};
   const limit = 50; // what this limit should be?
   let posts = [];
   let answer;
@@ -137,10 +142,10 @@ export function stopListener(listener) {
 //   onDeletePost();
 
 //   setTimeout(async () => {
-//     let answer = await createPost("user12345", "title12345", ["apple", "bananas"]);
-//     console.log("Create post: ", answer);
+//    let answer = await createPost("user12345", "title12345", ["apple", "bananas"], "48.8566", "2.3522");
+//    console.log("Create post: ", answer);
 
-//     answer = await updatePost(answer.id, "titleUpdated", ["toilet paper", "vodka"]);
+//     answer = await updatePost(answer.id, "titleUpdated", ["toilet paper", "vodka"], "48.9", "2.4");
 //     console.log("Update post: ", answer);
 
 //     answer = await getPost(answer.id);
@@ -174,24 +179,19 @@ export async function signUp(email, password, phone_number, given_name, family_n
         'custom:longitude': "2.3522"
       }
     });
-    console.log(user);
-
-    var prompter = confirm("Please check your e-mail. Enter your email and the sent code below");
-    if (prompter == true) {
-      document.getElementById("thecontainer").style.display = "none";
-      document.getElementById("confirmDiv").style.display = "block";
-    }
+    
+    return user;
   } catch (error) {
-    console.log('error signing up:', error);
+    return error;
   }
 }
 
 export async function resendConfirmationCode(email) {
   try {
-    await Auth.resendSignUp(email);
-    console.log('code resent succesfully');
+    const answer = await Auth.resendSignUp(email);
+    return answer;
   } catch (error) {
-    console.log('error resending code: ', error);
+    return error;
   }
 }
 
@@ -199,78 +199,82 @@ export async function resendConfirmationCode(email) {
 export async function confirmSignUp(email, code) {
   try {
     const user = await Auth.confirmSignUp(email, code);
-    console.log({
-      user
-    });
-    alert('Welcome to Connect!');
-    window.location.assign("profileSetup.html");
+    return user;
   } catch (error) {
-    console.log('error confirming sign up', error);
+    return error;
   }
 }
 
 export async function signIn(email, password) {
   try {
     const user = await Auth.signIn(email, password);
-    console.log({
-      user
-    });
-    alert('Welcome to Connect!');
-    window.location.assign("home.html");
+    return user;
   } catch (error) {
-    console.log('error signing in', error);
+    return error;
   }
 }
 
 export async function signOut() {
   try {
     const user = await Auth.signOut();
-    console.log({
-      user
-    });
+    return user;
   } catch (error) {
-    console.log('error signing out: ', error);
+    return error;
   }
 }
 
 export async function changePassword(oldPassword, newPassword) {
-  Auth.currentAuthenticatedUser()
-    .then(user => {
-      return Auth.changePassword(user, oldPassword, newPassword);
-    })
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+  try {
+    const user = await Auth.currentAuthenticatedUser();
+    const answer = await Auth.changePassword(user, oldPassword, newPassword);
+    return answer;
+  } catch (error) {
+    return error;
+  }
 }
 
 export async function forgotPassword(username) {
-  Auth.forgotPassword(username)
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+  try {
+    const answer = Auth.forgotPassword(username);
+    return answer;
+  } catch (error) {
+    return error;
+  }
 }
 
 export async function forgotPasswordSubmit(username, code, new_password) {
-  Auth.forgotPasswordSubmit(username, code, new_password)
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+  try {
+    const answer = Auth.forgotPasswordSubmit(username, code, new_password);
+    return answer;
+  } catch (error) {
+    return error;
+  }
 }
 
 export async function currentAuthenticatedUser() {
-  Auth.currentAuthenticatedUser({
-      bypassCache: false // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-    }).then(user => console.log(user))
-    .catch(err => console.log(err));
+  try {
+    const user = Auth.currentAuthenticatedUser({bypassCache: false});
+    return user;
+  } catch (error) {
+    return error;
+  }
 }
 
 export async function updateUserAttributes(user, given_name, family_name) {
-  await Auth.updateUserAttributes(user, {
-    'given_name': given_name,
-    'family_name': family_name
-  });
+  try {
+    const answer = await Auth.updateUserAttributes(user, {'given_name': given_name, 'family_name': family_name});
+    return answer;
+  } catch (error) {
+    return error;
+  }
+  
 }
 
 export async function updateUserCoordinates(user, latitude, longitude) {
-  await Auth.updateUserAttributes(user, {
-    'custom:latitude': latitude,
-    'custom:longitude': longitude
-  });
+  try {
+    const answer = await Auth.updateUserAttributes(user, {'custom:latitude': latitude, 'custom:longitude': longitude});
+    return answer;
+  } catch (error) {
+    return error;
+  }
 }

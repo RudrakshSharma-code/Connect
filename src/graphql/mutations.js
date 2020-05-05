@@ -11,6 +11,8 @@ export const createPost = /* GraphQL */ `
       user
       title
       items
+      latitude
+      longitude
     }
   }
 `;
@@ -24,6 +26,8 @@ export const updatePost = /* GraphQL */ `
       user
       title
       items
+      latitude
+      longitude
     }
   }
 `;
@@ -37,6 +41,8 @@ export const deletePost = /* GraphQL */ `
       user
       title
       items
+      latitude
+      longitude
     }
   }
 `;

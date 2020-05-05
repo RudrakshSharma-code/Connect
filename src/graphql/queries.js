@@ -8,6 +8,8 @@ export const getPost = /* GraphQL */ `
       user
       title
       items
+      latitude
+      longitude
     }
   }
 `;
@@ -23,6 +25,8 @@ export const listPosts = /* GraphQL */ `
         user
         title
         items
+        latitude
+        longitude
       }
       nextToken
     }
