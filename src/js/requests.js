@@ -1,3 +1,4 @@
+
 import { listPosts, createPost } from "./aws.js"
 
 var script = document.createElement('script');
@@ -27,6 +28,8 @@ async function showPosts(){
     }
 }
 
+
+
 function works(x, y) {
     var mymap = L.map("mapid").setView([x, y], 13);
     L.tileLayer(
@@ -48,6 +51,20 @@ function works(x, y) {
       alert("You clicked the map at " + $(data).text());
   }
 
+  async function getShortDesc(){
+    var arr = []
+    var posts = await listPosts();
+    for (let key in posts) {
+      var post = posts[key];
+      var title = post.title;
+      var user = post.user;
+      var mes = "<b>"+user+" </b><br>" + title;
+      arr.push(mes);
+    }
+    console.log(arr);
+    return arr;
+  }
+
   var desc = ["<b>Ana Banana</b><br>Oranges needed", 
               "<b>Vitoria Martins</b><br>Groceries needed   ", 
               "<b>Jeremy </b><br>Need Food   ",
@@ -64,6 +81,8 @@ function works(x, y) {
   //     marker.on('click', onPopupClick);
   //     i++;
   // })
+
+  // var desc = getShortDesc();
 
   for (var i = 0; i < desc.length; i++) {
     var marker = new L.marker([(x + (-0.3)**i), (y - (-0.3)**i)]).addTo(mymap);
@@ -91,6 +110,8 @@ function works(x, y) {
     
   }
 
+
+
  function setMap(){
     if (window.navigator.geolocation) {
         // Geolocation available
@@ -106,8 +127,7 @@ function works(x, y) {
 $(document).ready(function(){
     setMap();
     console.log("asking for map");
+    
 }
 );
 showPosts();
-
-
