@@ -1,3 +1,17 @@
+header {
+    height: 50px;
+}
+
+header * {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+header a {
+    margin: auto 0;
+}
+
 .container {
     text-align: center;
     padding: 8%;
@@ -13,4 +27,8 @@
     margin-top: 20%;
     border-radius: 20px;
     background-color: #5AB9EA;
+}
+
+#error {
+    color: red;
 }

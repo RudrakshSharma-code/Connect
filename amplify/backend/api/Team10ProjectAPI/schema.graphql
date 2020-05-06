@@ -2,5 +2,8 @@ type Post @model {
   id: ID!
   user: String!
   title: String!
-  description: String!
+  items: [String!]!
+  itemsCount: Int!
+  latitude: String!
+  longitude: String!
 }

@@ -7,7 +7,10 @@ export const getPost = /* GraphQL */ `
       id
       user
       title
-      description
+      items
+      itemsCount
+      latitude
+      longitude
     }
   }
 `;
@@ -22,7 +25,10 @@ export const listPosts = /* GraphQL */ `
         id
         user
         title
-        description
+        items
+        itemsCount
+        latitude
+        longitude
       }
       nextToken
     }

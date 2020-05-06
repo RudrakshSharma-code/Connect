@@ -10,7 +10,10 @@ export const createPost = /* GraphQL */ `
       id
       user
       title
-      description
+      items
+      itemsCount
+      latitude
+      longitude
     }
   }
 `;
@@ -23,7 +26,10 @@ export const updatePost = /* GraphQL */ `
       id
       user
       title
-      description
+      items
+      itemsCount
+      latitude
+      longitude
     }
   }
 `;
@@ -36,7 +42,10 @@ export const deletePost = /* GraphQL */ `
       id
       user
       title
-      description
+      items
+      itemsCount
+      latitude
+      longitude
     }
   }
 `;
