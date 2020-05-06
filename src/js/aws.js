@@ -235,7 +235,7 @@ export async function changePassword(oldPassword, newPassword) {
 
 export async function forgotPassword(username) {
   try {
-    const answer = Auth.forgotPassword(username);
+    const answer = await Auth.forgotPassword(username);
     return answer;
   } catch (error) {
     return error;
