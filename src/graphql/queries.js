@@ -8,6 +8,7 @@ export const getPost = /* GraphQL */ `
       user
       title
       items
+      itemsCount
       latitude
       longitude
     }
@@ -25,6 +26,7 @@ export const listPosts = /* GraphQL */ `
         user
         title
         items
+        itemsCount
         latitude
         longitude
       }

@@ -3,6 +3,7 @@ type Post @model {
   user: String!
   title: String!
   items: [String!]!
+  itemsCount: Int!
   latitude: String!
   longitude: String!
 }

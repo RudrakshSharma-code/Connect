@@ -3,13 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>Login</title>
     <link type="text/css" rel="stylesheet" href="loginSignup.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <header>
-        Back
+        <a href="index.html">
+            <span class="material-icons">arrow_back</span>
+        </a>
     </header>
     <link rel="icon" href="../favicon_io/favicon.ico" type="image/gif" sizes="16x16">
 </head>
@@ -40,6 +43,9 @@
                 </div>
             </div>
         </div>
+        <div class="ignore">
+            <p id="error"></p>
+        </div>
     </div>
 
     <div id="passwordDiv" class="container">
@@ -53,13 +59,13 @@
                         <div class="form-group">
                             <input id="forgotEmail" type="email" placeholder="Email" maxlength="50"
                                 class="form-control">
-                        <div class="form-group">
-                        <button id="sendCode" type="button" class="btn btn-info btn-block">Send Code</button>
+                            <div class="form-group">
+                                <button id="sendCode" type="button" class="btn btn-info btn-block">Send Code</button>
+                            </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
-    </div>
     </div>
 
     <div id="recoverDiv" class="container">

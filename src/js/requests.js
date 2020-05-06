@@ -27,6 +27,8 @@ document.getElementsByTagName("head")[0].appendChild(script);
 //   }
 // }
 
+
+
 function works(x, y) {
   var mymap = L.map("mapid").setView([x, y], 13);
   L.tileLayer(
@@ -86,7 +88,18 @@ function setMap() {
   }
 }
 
+// $(document).ready(function(){
+//     setMap();
+//     console.log("asking for map");
+//     getShortDesc();
+// }
+// );
+// // showPosts();
+
+// }
+
 $(document).ready(function () {
   setMap();
 });
+
 // showPosts();

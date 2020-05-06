@@ -6,15 +6,28 @@ window.onload = function () {
   document.body.style.display = "block";
 }
 
-function signIn() {
-  aws.signIn(
+//sign up function
+async function signIn() {
+  let user = await aws.signIn(
     document.getElementById("signInEmail").value,
     document.getElementById("signInPass").value,
   )
+  if (user.username != null) {
+    window.location.assign("home.html");
+  } else {
+    document.getElementById('error').innerHTML = user.message;
+  }
+  console.log(user);
 }
 let signInButton = document.getElementById("signInButton");
 signInButton.addEventListener("click", signIn);
 
+document.getElementById("signInPass").addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    signInButton.click();
+  }
+})
 
 function showPass() {
   document.getElementById("thecontainer").style.display = "none";
@@ -24,10 +37,10 @@ let forgotLink = document.getElementById("forgotten");
 forgotLink.addEventListener("click", showPass);
 
 
-function forgotPassword() {
+async function forgotPassword() {
   document.getElementById("recoverDiv").style.display = "block";
   document.getElementById("passwordDiv").style.display = "none";
-  aws.forgotPassword(
+  let user = await aws.forgotPassword(
       document.getElementById('forgotEmail').value,
     )
     .then(data => console.log(data))
@@ -36,14 +49,11 @@ function forgotPassword() {
 let confirmButton = document.getElementById("sendCode");
 confirmButton.addEventListener("click", forgotPassword);
 
-alert('Welcome to Connect!');
-window.location.assign("home.html");
 
-
-function forgotPasswordSubmit() {
+async function forgotPasswordSubmit() {
   alert('Welcome back to Connect!');
   window.location.assign("home.html");
-  aws.forgotPasswordSubmit(
+  let user = await aws.forgotPasswordSubmit(
       document.getElementById('recoverEmail').value,
       document.getElementById('recoverCode').value,
       document.getElementById('recoverPass').value,

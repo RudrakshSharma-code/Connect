@@ -1,25 +1,12 @@
-
-// type Post @model {
-//   id: ID!
-//   user: String!
-//   title: String!
-//   items: [String!]!
-// }
-
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
-import {
-  API,
-  graphqlOperation
-} from '@aws-amplify/api'
+import {API, graphqlOperation} from '@aws-amplify/api'
 import PubSub from '@aws-amplify/pubsub';
 import * as mutations from '../graphql/mutations'
 import * as queries from '../graphql/queries';
 import * as subscriptions from '../graphql/subscriptions'
-import Amplify, {
-  Auth
-} from 'aws-amplify';
+import Amplify, {Auth} from 'aws-amplify';
 import awsconfig from '../aws-exports';
 API.configure(awsconfig);
 PubSub.configure(awsconfig);
@@ -28,11 +15,12 @@ Amplify.configure(awsconfig);
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-export async function createPost(user, title, items, latitude, longitude) {
+export async function createPost(user, title, items, itemsCount, latitude, longitude) {
   const post = {
     "user": user,
     "title": title,
     "items": items, // array
+    "itemsCount": itemsCount, // int
     "latitude": latitude, // string
     "longitude": longitude // string
   };
@@ -43,11 +31,12 @@ export async function createPost(user, title, items, latitude, longitude) {
   return answer.data.createPost;
 }
 
-export async function updatePost(id, title, items, latitude, longitude) {
+export async function updatePost(id, title, items, itemsCount, latitude, longitude) {
   const post = {
     "id": id,
     "title": title,
     "items": items, // array
+    "itemsCount": itemsCount, // int
     "latitude": latitude, // string
     "longitude": longitude // string
   };
@@ -81,6 +70,7 @@ export async function listPosts(filter) {
   // example
   // filter by user= {user: {eq: "userID"}};
   // filter by item = {items: {contains: "itemName"}};
+  // filter by itemsCount = {itemsCount: {le: "someNumber"}};
   const limit = 50; // what this limit should be?
   let posts = [];
   let answer;
@@ -142,10 +132,10 @@ export function stopListener(listener) {
 //   onDeletePost();
 
 //   setTimeout(async () => {
-//    let answer = await createPost("user12345", "title12345", ["apple", "bananas"], "48.8566", "2.3522");
+//    let answer = await createPost("user12345", "title12345", ["apple", "bananas"], 2, "48.8566", "2.3522");
 //    console.log("Create post: ", answer);
 
-//     answer = await updatePost(answer.id, "titleUpdated", ["toilet paper", "vodka"], "48.9", "2.4");
+//     answer = await updatePost(answer.id, "titleUpdated", ["toilet paper", "vodka"], 2, "48.9", "2.4");
 //     console.log("Update post: ", answer);
 
 //     answer = await getPost(answer.id);
