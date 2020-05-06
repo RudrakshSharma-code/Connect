@@ -1,24 +1,25 @@
 body {
     background-color: #F6FCFF;
-    background-color: grey;
-}
-a  {
-    margin-top: 2em;
 }
 
 h1 {
     margin-top: 1em;
+    margin-left: 0.75em;
 }
 
 #top {
     margin-top: 3em;
     background-color: #EFEDF0;
+    border-radius: 8px 8px 0px 0px;
+    padding: .10em 1em 0.10em;
 }
 
 #main {
     background-color: white;
     width: 90%;
+    height: 100%;
     padding: 0;
+    border-radius: 8px;
 }
 
 #posted {
@@ -26,3 +27,27 @@ h1 {
     font-size: 13px ;
     margin: 0 1em;
 }
+
+img {
+    height: 36px;
+    width: 36px;
+}
+
+#posted {
+    margin: 1em;
+}
+
+h3, h5, #description {
+    margin: 1em .5em 0.5em;
+}
+
+#contact {
+    background: #5AB9EA;
+    border: 2px solid #5AB9EA;
+    color: white;
+    border-radius: 60px;
+    padding: 0.5em 2em;
+    font-size: 18px;
+    text-align: center;
+    margin: 4em;
+  }
