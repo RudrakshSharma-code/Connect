@@ -11,6 +11,7 @@ export const createPost = /* GraphQL */ `
       user
       title
       items
+      itemsCount
       latitude
       longitude
     }
@@ -26,6 +27,7 @@ export const updatePost = /* GraphQL */ `
       user
       title
       items
+      itemsCount
       latitude
       longitude
     }
@@ -41,6 +43,7 @@ export const deletePost = /* GraphQL */ `
       user
       title
       items
+      itemsCount
       latitude
       longitude
     }
