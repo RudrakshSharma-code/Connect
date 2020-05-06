@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Signup</title>
-    <link type="text/css" rel="stylesheet" href="loginSignup.css">
+    <link type="text/css" rel="stylesheet" href="loginSignup.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <header>
-        Back
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <header class="header">
+        <a href="index.html">
+            <span class="material-icons">arrow_back</span>
+        </a>
     </header>
     <link rel="icon" href="../favicon_io/favicon.ico" type="image/gif" sizes="16x16">
 </head>
@@ -36,8 +39,9 @@
                                 autofocus>
                         </div>
                         <div class="form-group">
-                            <input id="signUpPass" type="password" maxlength="25" class="form-control"
-                                placeholder="Enter Password" length="40" autofocus>
+                            <input id="signUpPass" type="password" pattern=".{6, }" required
+                                title="Enter at least 6 characters" class="form-control" placeholder="Enter Password"
+                                length="40" autofocus>
                         </div>
                         <div class="form-group">
                             <button id="signUpSubmit" type="button" class="btn btn-info btn-block">Sign Up</button>
@@ -47,6 +51,9 @@
                 </div>
             </div>
         </div>
+        <div class="ignore">
+            <p id="error"></p>
+        </div>
     </div>
 
     <div id="confirmDiv" class="container">
@@ -54,6 +61,7 @@
             <div class="panel panel-primary">
                 <div class="panel-body">
                     <form method="POST" action="#" role="form">
+                        <p id="error">Check your email for confirmation code and enter.</p>
                         <div class="form-group">
                             <h2>Confirm Email</h2>
                         </div>
