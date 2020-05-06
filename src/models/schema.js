@@ -31,6 +31,13 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
+                "itemsCount": {
+                    "name": "itemsCount",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
                 "latitude": {
                     "name": "latitude",
                     "isArray": false,
@@ -58,5 +65,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "54c6564214f16c6143cfbb6b6ed0d919"
+    "version": "4695796b0100e66dfedb3dd14b9c6048"
 };

@@ -9,6 +9,7 @@ export declare class Post {
   readonly user: string;
   readonly title: string;
   readonly items: string[];
+  readonly itemsCount: number;
   readonly latitude: string;
   readonly longitude: string;
   constructor(init: ModelInit<Post>);
