@@ -25,8 +25,9 @@ function works(x, y) {
     //     alert("You clicked the map at " + $(data).text());
     // }
     // marker.on('click', onPopupClick);
-  }
-  marker.on('click', onPopupClick);
+  
+    marker.on('click', onPopupClick);
+}
 
 
  function setMap(){

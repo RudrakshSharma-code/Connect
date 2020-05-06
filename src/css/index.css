@@ -12,6 +12,10 @@
     font-family: Roboto;
     src: url(Roboto/Roboto-Light.ttf);
   }
+
+  body{
+    background-color: #f6fcff;
+  }
   
   h1, h2, h3, p {
     text-align: center;
