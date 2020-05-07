@@ -26,6 +26,9 @@ var latitude;
 var longitude;
 
 async function setVars() {
+  let pitems;
+  let pitemscount;
+
   let user = await currentAuthenticatedUser({
     bypassCache: true,
   })
@@ -35,6 +38,7 @@ async function setVars() {
 }
 
 async function post() {
+
   let user = await currentAuthenticatedUser({
     bypassCache: true,
   });
@@ -44,12 +48,27 @@ async function post() {
   let last = user.attributes.family_name;
   let uEmail = user.attributes.email;
   let uPhone = user.attributes.phone_number;
-  let ptitle;
-  let pitems;
-  let pitemscount;
-  let latitude;
-  let longitude;
+  let ptitle = $("#title").val();
+  let pitems = [];
+  $("input[name='item']").each(function () {
+    pitems.push($(this).val());
+  });
+    let pitemscount = pitems.length;
+  let ulatitude = user.attributes["custom:latitude"];
+  let ulongitude = user.attributes["custom:longitude"];
+  let post = {
+    userID: uid,
+    firstName: first,
+    lastName: last,
+    email: uEmail,
+    phone: uPhone,
+    title: ptitle,
+    items: pitems,
+    itemsCount: pitemscount,
+    latitude: ulatitude,
+    longitude: ulongitude,
+  };
+  createPost(post);
 }
 
-post();
 $("#submit").on("click", post);

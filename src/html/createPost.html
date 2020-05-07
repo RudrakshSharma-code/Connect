@@ -41,7 +41,10 @@
           <span class="material-icons">arrow_back</span>
         </a>
       </header>
-      <h2 id="name">First Last</h2>
+      <div id="nameCont">
+        <div id="avatar"></div>
+        <h2 id="name">First Last</h2>
+      </div>
       <div id="creation">
         <form action="./confirmation.html" id="post">
           <h3>Title</h3>
@@ -53,7 +56,7 @@
             <div class="col-lg-12">
                 <div id="inputFormRow">
                     <div class="input-group mb-3">
-                        <input type="text" name="title[]" class="item form-control m-input" placeholder="Enter an item or request..." autocomplete="off">
+                        <input type="text" name="item" class="item form-control m-input" placeholder="Enter an item or request..." autocomplete="off">
                         <div class="input-group-append">
                             <button id="removeRow" type="button" >Remove</button>
                         </div>
@@ -80,9 +83,9 @@
             var html = '';
             html += '<div id="inputFormRow">';
             html += '<div class="input-group mb-3">';
-            html += '<input type="text" name="title[]" class="item form-control m-input" placeholder="Enter an item or request..." autocomplete="off">'
+            html += '<input type="text" name="item" class="item form-control m-input" placeholder="Enter an item or request..." autocomplete="off">'
             html += '<div class="input-group-append">';
-            html += '<button id="removeRow" type="button" class="btn btn-danger">Remove</button>';
+            html += '<button id="removeRow" type="button" >Remove</button>';
             html += '</div>';
             html += '</div>';
 
