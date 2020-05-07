@@ -277,3 +277,13 @@ export async function updateUserCoordinates(user, latitude, longitude) {
     return error;
   }
 }
+
+export async function userAttributes(user) {
+  try {
+    const answer = await Auth.userAttributes(user);
+    return answer;
+  } catch (error) {
+    return error;
+  }
+  
+}
