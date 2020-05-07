@@ -1,9 +1,24 @@
-#requests{
-    width: 95vw;
-    margin: 0 auto;
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;900&display=swap');
+#requests {
+  width: 95vw;
+  margin: 0 auto;
 }
-#requests > div{
-    border: 1px solid black;
-    margin: 20px;
-    padding: 10px;
+#requests > div {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+}
+
+h1 {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 39.0625px;
+  line-height: 52px; /* identical to box height */
+  color: #120e21;
+}
+
+body{
+    width: 90vw;
+    margin: 0 auto;
 }
