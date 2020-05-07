@@ -36,8 +36,12 @@ function works(x, y) {
     if (window.navigator.geolocation) {
         // Geolocation available
         window.navigator.geolocation.getCurrentPosition(
-          function (result) {
+          async function (result) {
             works(result.coords.latitude, result.coords.longitude);
+            const user = await aws.currentAuthenticatedUser();
+            const answer = await aws.updateUserCoordinates(user, "" + result.coords.latitude, "" + result.coords.longitude);
+            console.log(answer)
+            console.log(user)
           },
           console.log("")
         );
@@ -54,4 +58,5 @@ function works(x, y) {
       .then(user => document.getElementById("firstLast").innerHTML = user.attributes.given_name + " " + user.attributes.family_name)
       .catch(err => console.log(err));
   }
+
   
