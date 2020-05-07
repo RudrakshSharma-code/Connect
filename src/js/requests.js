@@ -51,8 +51,6 @@ function works(x, y) {
     console.log(this.post)
     var description = this.post.items;
     location.replace("postdetails.html?id=" + this.post.id);
-    
-
   }
 
   async function setMarkers() {
