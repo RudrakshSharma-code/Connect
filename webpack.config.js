@@ -12,10 +12,10 @@ module.exports = {
         signup: './src/js/signup.js',
         login: './src/js/login.js', 
         requests: './src/js/requests.js', 
-        mapsetup: './src/js/mapSetup.js',
-        createpost: './src/js/createPost.js',
+        mapSetup: './src/js/mapSetup.js',
+        createPost: './src/js/createPost.js',
         home: './src/js/home.js',
-        postDetails: './src/js/postdetails.js'
+        postdetails: './src/js/postdetails.js'
     },
     output: {
         filename: '[name].js',
