@@ -124,47 +124,47 @@ export function stopListener(listener) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function testPosts() {
-  onCreatePost();
-  onUpdatePost();
-  onDeletePost();
+// function testPosts() {
+//   onCreatePost();
+//   onUpdatePost();
+//   onDeletePost();
 
-  let post = {
-    userID: "userID",
-    firstName: "firstName",
-    lastName: "lastName",
-    email: "email",
-    phone: "phone",
-    title: "title",
-    items: ["item1", "item2"],
-    itemsCount: 2,
-    latitude: "49.2510",
-    longitude: "-123.0010"
-  };
+//   let post = {
+//     userID: "userID",
+//     firstName: "firstName",
+//     lastName: "lastName",
+//     email: "email",
+//     phone: "phone",
+//     title: "title",
+//     items: ["item1", "item2"],
+//     itemsCount: 2,
+//     latitude: "49.2510",
+//     longitude: "-123.0010"
+//   };
 
-  setTimeout(async () => {
-   let answer = await createPost(post);
-   console.log("Create post: ", answer);
+//   setTimeout(async () => {
+//    let answer = await createPost(post);
+//    console.log("Create post: ", answer);
 
-    post.id = answer.id;
-    post.items = ["item100", "item200"];
+//     post.id = answer.id;
+//     post.items = ["item100", "item200"];
 
-    answer = await updatePost(post);
-    console.log("Update post: ", answer);
+//     answer = await updatePost(post);
+//     console.log("Update post: ", answer);
 
-    answer = await getPost(answer.id);
-    console.log("Get post: ", answer);
+//     answer = await getPost(answer.id);
+//     console.log("Get post: ", answer);
 
-    answer = await deletePost(answer.id);
-    console.log("Delete post: ", answer);
+//     answer = await deletePost(answer.id);
+//     console.log("Delete post: ", answer);
 
-    answer = await listPosts();
-    console.log("List posts: ", answer);
-  }, 1000); // wait 1 second
+//     answer = await listPosts();
+//     console.log("List posts: ", answer);
+//   }, 1000); // wait 1 second
 
-}
+// }
 
-testPosts();
+// testPosts();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
