@@ -5,7 +5,11 @@ export const onCreatePost = /* GraphQL */ `
   subscription OnCreatePost {
     onCreatePost {
       id
-      user
+      userID
+      firstName
+      lastName
+      email
+      phone
       title
       items
       itemsCount
@@ -18,7 +22,11 @@ export const onUpdatePost = /* GraphQL */ `
   subscription OnUpdatePost {
     onUpdatePost {
       id
-      user
+      userID
+      firstName
+      lastName
+      email
+      phone
       title
       items
       itemsCount
@@ -31,7 +39,11 @@ export const onDeletePost = /* GraphQL */ `
   subscription OnDeletePost {
     onDeletePost {
       id
-      user
+      userID
+      firstName
+      lastName
+      email
+      phone
       title
       items
       itemsCount

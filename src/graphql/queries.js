@@ -5,7 +5,11 @@ export const getPost = /* GraphQL */ `
   query GetPost($id: ID!) {
     getPost(id: $id) {
       id
-      user
+      userID
+      firstName
+      lastName
+      email
+      phone
       title
       items
       itemsCount
@@ -23,7 +27,11 @@ export const listPosts = /* GraphQL */ `
     listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        user
+        userID
+        firstName
+        lastName
+        email
+        phone
         title
         items
         itemsCount
