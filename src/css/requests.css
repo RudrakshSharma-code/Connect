@@ -7,3 +7,11 @@
     margin: 20px;
     padding: 10px;
 }
+
+#slider {
+    margin: 3em 7% ;
+}
+
+#confirm button  {
+    margin: 5em 0;
+}

@@ -27,8 +27,6 @@ document.getElementsByTagName("head")[0].appendChild(script);
 //   }
 // }
 
-
-
 function works(x, y) {
   var mymap = L.map("mapid").setView([x, y], 13);
   L.tileLayer(
@@ -51,8 +49,6 @@ function works(x, y) {
     console.log(this.post)
     var description = this.post.items;
     location.replace("postdetails.html?id=" + this.post.id);
-    
-
   }
 
   async function setMarkers() {

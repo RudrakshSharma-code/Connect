@@ -37,8 +37,6 @@ function setVars(){
   console.log(desc);
 }
 
-
-
 function editHtml(){
   $(document).ready(function(){
     $('#name').text(name);
@@ -56,6 +54,5 @@ async function run(){
   setVars();
   editHtml();
 }
-
 
 run();
