@@ -225,7 +225,7 @@ export async function changePassword(oldPassword, newPassword) {
 
 export async function forgotPassword(username) {
   try {
-    const answer = Auth.forgotPassword(username);
+    const answer = await Auth.forgotPassword(username);
     return answer;
   } catch (error) {
     return error;
@@ -243,7 +243,16 @@ export async function forgotPasswordSubmit(username, code, new_password) {
 
 export async function currentAuthenticatedUser() {
   try {
-    const user = Auth.currentAuthenticatedUser({bypassCache: false});
+    const user = await Auth.currentAuthenticatedUser({bypassCache: false});
+    return user;
+  } catch (error) {
+    return error;
+  }
+}
+
+export async function currentSession() {
+  try {
+    const user = await Auth.currentSession()
     return user;
   } catch (error) {
     return error;

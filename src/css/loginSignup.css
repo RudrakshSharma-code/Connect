@@ -32,3 +32,7 @@ header a {
 #error {
     color: red;
 }
+
+#forgotError {
+    color: red;
+}

@@ -13,7 +13,9 @@ module.exports = {
         login: './src/js/login.js', 
         requests: './src/js/requests.js', 
         mapsetup: './src/js/mapSetup.js',
-        createpost: './src/js/createPost.js'
+        createpost: './src/js/createPost.js',
+        home: './src/js/home.js',
+        postDetails: './src/js/postdetails.js'
     },
     output: {
         filename: '[name].js',
