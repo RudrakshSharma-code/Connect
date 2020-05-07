@@ -1,3 +1,5 @@
+import * as aws from "./aws.js";
+
 function works(x, y) {
     var mymap = L.map("mapid").setView([x, y], 13);
     L.tileLayer(
@@ -26,7 +28,7 @@ function works(x, y) {
     // }
     // marker.on('click', onPopupClick);
   
-    marker.on('click', onPopupClick);
+   // marker.on('click', onPopupClick);
 }
 
 
@@ -43,4 +45,13 @@ function works(x, y) {
   }
 
   $(document).ready(setMap());
+  currentAuthenticatedUser();
+
+  async function currentAuthenticatedUser() {
+    let user = await aws.currentAuthenticatedUser({
+        bypassCache: true
+      })
+      .then(user => document.getElementById("firstLast").innerHTML = user.attributes.given_name + " " + user.attributes.family_name)
+      .catch(err => console.log(err));
+  }
   

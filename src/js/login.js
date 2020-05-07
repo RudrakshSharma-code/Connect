@@ -13,6 +13,7 @@ async function signIn() {
     document.getElementById("signInPass").value,
   )
   if (user.username != null) {
+    console.log(user);
     currentSession();
     currentAuthenticatedUser();
     hidePass();
@@ -81,7 +82,7 @@ recoverButton.addEventListener("click", forgotPasswordSubmit);
 //functions to check current user and session
 async function currentAuthenticatedUser() {
   let user = await aws.currentAuthenticatedUser({
-      bypassCache: false
+      bypassCache: true
     })
     .then(user => console.log(user))
     .catch(err => console.log(err));
