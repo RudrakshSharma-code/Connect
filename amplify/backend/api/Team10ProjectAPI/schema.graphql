@@ -1,6 +1,10 @@
 type Post @model {
   id: ID!
-  user: String!
+  userID: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  phone: String!
   title: String!
   items: [String!]!
   itemsCount: Int!

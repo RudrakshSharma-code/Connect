@@ -8,7 +8,11 @@ export const createPost = /* GraphQL */ `
   ) {
     createPost(input: $input, condition: $condition) {
       id
-      user
+      userID
+      firstName
+      lastName
+      email
+      phone
       title
       items
       itemsCount
@@ -24,7 +28,11 @@ export const updatePost = /* GraphQL */ `
   ) {
     updatePost(input: $input, condition: $condition) {
       id
-      user
+      userID
+      firstName
+      lastName
+      email
+      phone
       title
       items
       itemsCount
@@ -40,7 +48,11 @@ export const deletePost = /* GraphQL */ `
   ) {
     deletePost(input: $input, condition: $condition) {
       id
-      user
+      userID
+      firstName
+      lastName
+      email
+      phone
       title
       items
       itemsCount
