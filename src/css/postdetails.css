@@ -14,6 +14,7 @@ h1 {
     padding: .1em 1em 0.10em;
 }
 
+
 #main {
     background-color: white;
     width: 90%;
@@ -32,7 +33,6 @@ img {
     height: 36px;
     width: 36px;
     margin-top: .0.5em;
-    display: block;
 }
 
 #posted {
@@ -53,3 +53,8 @@ h3, h5, #description {
     text-align: center;
     margin: 4em;
   }
+
+.material-icons {
+    color: black;
+    margin: 0.5em 0.7em;
+}
