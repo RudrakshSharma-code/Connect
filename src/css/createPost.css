@@ -4,7 +4,9 @@ form{
     margin: 0 auto;
 }
 
-
+#logout {
+  float: right;
+}
 
 form input, .item{
     width: 90vw;

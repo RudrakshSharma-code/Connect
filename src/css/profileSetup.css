@@ -18,6 +18,10 @@ header a {
   margin: auto 0;
 }
 
+#logout {
+  float: right;
+}
+
 #main {
   display: flex;
   flex-direction: column;

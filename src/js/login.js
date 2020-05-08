@@ -12,12 +12,12 @@ async function signIn() {
     document.getElementById("signInEmail").value,
     document.getElementById("signInPass").value,
   )
-  if (user.username != null) {
+  if (user.username) {
     console.log(user);
     currentSession();
     currentAuthenticatedUser();
     hidePass();
-    document.getElementById('heady').innerHTML = "Welcome back, " + user.attributes.given_name + "! Redirecting...";
+    redirect();
   } else {
     document.getElementById('error').innerHTML = user.message;
   }
@@ -50,7 +50,21 @@ function hidePass() {
   }
   document.getElementById("forgotten").style.display = 'none';
   document.getElementById("notmember").style.display = 'none';
-  setTimeout(function(){ window.location.assign("home.html"); }, 3000);
+}
+
+async function redirect() {
+  const user = await aws.currentAuthenticatedUser();
+  if (user.attributes['custom:latitude'] == '48.8566' && user.attributes['custom:longitude'] == '2.3522') {
+    document.getElementById('heady').innerHTML = "Welcome, " + user.attributes.given_name + "! Redirecting...";
+    setTimeout(function () {
+      window.location.assign("profileSetup.html");
+    }, 3000);
+  } else {
+    document.getElementById('heady').innerHTML = "Welcome back, " + user.attributes.given_name + "! Redirecting...";
+    setTimeout(function () {
+      window.location.assign("home.html");
+    }, 3000);
+  }
 }
 
 //forgot password function

@@ -33,6 +33,10 @@ header a {
     background-color: #5AB9EA;
 }
 
+#prompt {
+    color: grey;
+}
+
 #error {
     color: red;
 }
