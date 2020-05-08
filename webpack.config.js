@@ -15,7 +15,8 @@ module.exports = {
         mapSetup: './src/js/mapSetup.js',
         createPost: './src/js/createPost.js',
         home: './src/js/home.js',
-        postdetails: './src/js/postdetails.js'
+        postdetails: './src/js/postdetails.js', 
+        profile: './src/js/profile.js'
     },
     output: {
         filename: '[name].js',
