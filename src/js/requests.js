@@ -1,4 +1,4 @@
-import { listPosts, createPost } from "./aws.js";
+import { listPosts, createPost, currentAuthenticatedUser } from "./aws.js";
 
 var script = document.createElement("script");
 script.src = "https://code.jquery.com/jquery-3.4.1.min.js";
@@ -45,7 +45,6 @@ function works(x, y) {
 
   function onPopupClick() {
     var data = this._popup._content;
-    alert("You clicked the map at " + $(data).text());
     console.log(this.post)
     var description = this.post.items;
     location.replace("postdetails.html?id=" + this.post.id);
@@ -75,13 +74,14 @@ function works(x, y) {
   }).addTo(mymap);
 }
 
-function setMap() {
-  if (window.navigator.geolocation) {
-    // Geolocation available
-    window.navigator.geolocation.getCurrentPosition(function (result) {
-      works(result.coords.latitude, result.coords.longitude);
-    }, console.log(""));
-  }
+async function setMap() {
+  let user = await currentAuthenticatedUser({
+    bypassCache: true,
+  });
+  console.log(user);
+  var ulatitude = user.attributes["custom:latitude"];
+  var ulongitude = user.attributes["custom:longitude"];
+  works(ulatitude, ulongitude);
 }
 
 // $(document).ready(function(){
@@ -99,3 +99,21 @@ $(document).ready(function () {
 });
 
 // showPosts();
+
+async function signOut() {
+  const user = await aws.currentAuthenticatedUser();
+  if (user.attributes) {
+    let check = confirm("Are you sure you want to log out?");
+    if (check == true) {
+      const user = await aws.currentAuthenticatedUser();
+      user.signOut();
+      setTimeout(function () {
+        window.location.assign("index.html");
+      }, 1000);
+    } else {};
+  } else {};
+}
+
+window.onload = function nullFix() {
+  document.getElementById("logout").addEventListener("click", signOut);
+}

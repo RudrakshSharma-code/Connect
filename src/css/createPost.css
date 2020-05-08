@@ -4,11 +4,16 @@ form{
     margin: 0 auto;
 }
 
+#logout {
+  float: right;
+}
 
+form input{
+  line-height: 50px;
+}
 
 form input, .item{
     width: 90vw;
-    line-height: 50px;
     background: #DAF4FF;
     mix-blend-mode: normal;
     backdrop-filter: blur(40px);
@@ -17,7 +22,7 @@ form input, .item{
 }
 
 ::placeholder{
-    padding: 10px;
+    padding: 0 10px;
 }
 
 #creation{

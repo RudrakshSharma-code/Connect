@@ -5,6 +5,7 @@ var post;
 var name;
 var title;
 var desc;
+var phonen;
 
 function getUrlVars() {
   var vars = {};
@@ -36,6 +37,7 @@ function setVars(){
    title = post.title;
   desc = setDesc(post.items);
   console.log(desc);
+  phonen = post.phone;
 }
 
 function editHtml(){
@@ -56,4 +58,7 @@ async function run(){
   editHtml();
 }
 
+$("#contact").on("click", function(){
+  alert("Phone number: " + phonen);
+})
 run();

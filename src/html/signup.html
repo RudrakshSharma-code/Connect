@@ -39,9 +39,10 @@
                                 autofocus>
                         </div>
                         <div class="form-group">
-                            <input id="signUpPass" type="password" pattern=".{6, }" required
-                                title="Enter at least 6 characters" class="form-control" placeholder="Enter Password"
-                                length="40" autofocus>
+                            <input id="signUpPass" type="password" pattern=".{8, }" required
+                                title="Password Must Contain 8 Characters " class="form-control" placeholder="Enter Password"
+                                length="40" autofocus><span id="prompt" style="display: none;">Must be at least 8 characters</span>
+
                         </div>
                         <div class="form-group">
                             <button id="signUpSubmit" type="button" class="btn btn-info btn-block">Sign Up</button>

@@ -62,6 +62,10 @@ h1 {
   text-align: center;
 }
 
+.text p{
+  color: white;
+}
+
 #main {
   display: flex;
   flex-direction: column;
