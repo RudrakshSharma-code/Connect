@@ -3,6 +3,10 @@
   src: url(Roboto/Roboto-Light.ttf);
 }
 
+body{
+  padding-bottom: 50px;
+}
+
 h1 {
   text-align: center;
 }

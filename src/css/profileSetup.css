@@ -1,6 +1,7 @@
 body {
   background-color: #f6fcff;
   font-family: "Red Hat Display", sans-serif;
+  height: 100vh;
 }
 
 header {
@@ -21,6 +22,7 @@ header a {
   display: flex;
   flex-direction: column;
 }
+
 
 h3 {
   font-weight: bold;
@@ -90,4 +92,52 @@ h3 {
     0px 100px 80px rgba(90, 185, 234, 0.07);
   border-radius: 100px;
   padding: 10px;
+}
+
+@media only screen and (min-width: 600px) { 
+
+  #mapid{
+    height: 40vh;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #main{
+    text-align: center;
+  }
+  #location{
+    
+    width: 900px;
+    height: auto;
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    overflow:auto;
+  }
+
+  #search {
+    overflow:auto;
+    width: 600px;
+    text-align: center;
+  }
+
+  #map, #mapid{
+    overflow:auto;
+      width: 600px;
+      text-align: center;
+  }
+
+   #location > *{
+    overflow:auto;
+     padding: 0;
+    width: 600px;
+    text-align: center;
+  }
+
+  #location h3{
+    width: 600px;
+    margin: 30px auto;
+    text-align: left;
+  }
 }
