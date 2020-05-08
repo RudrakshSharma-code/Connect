@@ -1,4 +1,4 @@
-import { listPosts, createPost } from "./aws.js";
+import { listPosts, createPost, currentAuthenticatedUser } from "./aws.js";
 
 var script = document.createElement("script");
 script.src = "https://code.jquery.com/jquery-3.4.1.min.js";
@@ -77,13 +77,14 @@ function works(x, y) {
   }).addTo(mymap);
 }
 
-function setMap() {
-  if (window.navigator.geolocation) {
-    // Geolocation available
-    window.navigator.geolocation.getCurrentPosition(function (result) {
-      works(result.coords.latitude, result.coords.longitude);
-    }, console.log(""));
-  }
+async function setMap() {
+  let user = await currentAuthenticatedUser({
+    bypassCache: true,
+  });
+  console.log(user);
+  var ulatitude = user.attributes["custom:latitude"];
+  var ulongitude = user.attributes["custom:longitude"];
+  works(ulatitude, ulongitude);
 }
 
 // $(document).ready(function(){
