@@ -1,3 +1,8 @@
+body {
+    background-color: #f6fcff;
+    font-family: "Red Hat Display", sans-serif;
+}
+
 header {
     height: 50px;
 }
@@ -15,7 +20,6 @@ header a {
 .container {
     text-align: center;
     padding: 8%;
-    border: 1px solid black;
 }
 
 .form-group input {

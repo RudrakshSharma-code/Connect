@@ -14,10 +14,11 @@ async function signUp() {
         document.getElementById("signUpFirst").value,
         document.getElementById("signUpLast").value,
     );
-    if (user.user != null) {
+    if (user.user) {
         console.log("Great success!")
         document.getElementById("thecontainer").style.display = "none";
         document.getElementById("confirmDiv").style.display = "block";
+        setTimeout(function(){ window.location.assign("login.html"); }, 5000);
     } else {
         document.getElementById('error').innerHTML = user.message;
     }
@@ -34,19 +35,3 @@ document.getElementById("signUpPass").addEventListener("keyup", function (event)
         signUpSubmit.click();
     }
 })
-
-
-async function confirmSignUp() {
-    let user = await aws.confirmSignUp(
-        document.getElementById("confirmEmail").value,
-        document.getElementById("confirmCode").value
-    )
-    if ('SUCCESS') {
-        window.location.assign("profileSetup.html");
-
-    } else {
-        document.getElementById('error').innerHTML = user.message;
-    }
-}
-let confirmButton = document.getElementById("confirmButton");
-confirmButton.addEventListener("click", confirmSignUp);

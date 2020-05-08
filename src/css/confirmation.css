@@ -1,9 +1,9 @@
 body {
+  text-align: center;
   background-color: #5ab9ea;
   color: white;
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 
 body * {
@@ -77,4 +77,18 @@ h1 {
   text-align: center;
   color: #faf9fe;
   padding: 5px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+
+@media only screen and (min-width: 992px) {
+  #fig{
+    width: 500px;
+    margin: 0 auto;
+  }
+  #confirm button{
+    width: 400px;
+    text-align: center;
+  }
 }

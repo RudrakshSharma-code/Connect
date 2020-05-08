@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <link
@@ -15,45 +15,94 @@
     />
 
     <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-    crossorigin="anonymous"
-  />
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="all.css" />
-    <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
+    <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16" />
     <link rel="stylesheet" type="text/css" href="createPost.css" />
-    
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <a href="home.html">
-          <span class="material-icons">arrow_back</span>
-        </a>
-      </header>
-      <h1>Create a post:</h1>
+      <a href="home.html">
+        <span class="material-icons">arrow_back</span>
+      </a>
+    </header>
+    <main id="main">
+      <div id="nameCont">
+        <div id="avatar"></div>
+        <h2 id="name">First Last</h2>
+      </div>
       <div id="creation">
         <form action="./confirmation.html" id="post">
-          <input id="user" placeholder="Enter your username..." type="text"  name="user" value="" required >
-        </br>
-          <input id="title" placeholder="Enter the title..." type="text" name="title" required>
-      </br>
-          <input id="description" placeholder="Enter the description..." type="text" name="description" required>
-          <div id="confirm">
-            <button id=submit type="submit" value="Submit" >Submit</button>
+          <h3>Title</h3>
+          <input id="title" placeholder="Enter a title..." />
+          <div>
+            <h3>Items</h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="inputFormRow">
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    name="item"
+                    class="item form-control m-input"
+                    placeholder="Enter an item or request..."
+                    autocomplete="off"
+                  />
+                  <div class="input-group-append">
+                    <button id="removeRow" type="button">Remove</button>
+                  </div>
+                </div>
+              </div>
+
+              <div id="newRow"></div>
+              <button id="addRow" type="button" class="btn btn-info">
+                Add Row
+              </button>
+
+              <div id="confirm">
+                <button id="submit" type="submit" value="Submit">Submit</button>
+              </div>
+            </div>
           </div>
         </form>
       </div>
-      <script src="createPost.js"></script>
-</body>
+    </main>
+
+    <script src="createPost.js"></script>
+    <script type="text/javascript">
+      // add row
+      $("#addRow").click(function () {
+        var html = "";
+        html += '<div id="inputFormRow">';
+        html += '<div class="input-group mb-3">';
+        html +=
+          '<input type="text" name="item" class="item form-control m-input" placeholder="Enter an item or request..." autocomplete="off">';
+        html += '<div class="input-group-append">';
+        html += '<button id="removeRow" type="button" >Remove</button>';
+        html += "</div>";
+        html += "</div>";
+
+        $("#newRow").append(html);
+      });
+
+      // remove row
+      $(document).on("click", "#removeRow", function () {
+        $(this).closest("#inputFormRow").remove();
+      });
+    </script>
+  </body>
 </html>

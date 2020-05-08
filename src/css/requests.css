@@ -1,7 +1,28 @@
-#requests{
-    width: 95vw;
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;900&display=swap');
+#requests {
+  width: 95vw;
+  margin: 0 auto;
+}
+#requests > div {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+}
+
+h1 {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 39.0625px;
+  line-height: 52px; /* identical to box height */
+  color: #120e21;
+}
+
+body{
+    width: 90vw;
     margin: 0 auto;
 }
+
 #requests > div{
     border: 1px solid black;
     margin: 20px;
@@ -9,9 +30,42 @@
 }
 
 #slider {
+<<<<<<< HEAD
     margin: 3em 7% ;
 }
 
 #confirm button  {
     margin: 5em 0;
+=======
+    margin: 5% 7%;
+}
+
+#map, #mapid{
+  height: 40vh;
+}
+
+@media only screen and (min-width: 600px) {
+body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+  #map, #mapid{
+    height: 50vh;
+    width: 500px
+  }
+  #main, #search, #confirm, #slider{
+    margin: 0 auto;
+    width: 500px;
+  }
+  #slider{
+    margin: 10px auto 30px;
+  }
+  #confirm{
+    margin: 50px auto;
+  }
+
+
+  
+>>>>>>> aee087da8bc730611da869198d5ff67f252ca4ed
 }
