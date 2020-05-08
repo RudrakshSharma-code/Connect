@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
     font-family: RHDR;
     src: url(RedHatDisplay/RedHatDisplay-Regular.ttf);
   }
@@ -11,7 +11,9 @@
   @font-face {
     font-family: Roboto;
     src: url(Roboto/Roboto-Light.ttf);
-  }
+  } */
+
+  @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;900&display=swap');
 
   body {
     background-color: #F6FCFF;
@@ -24,13 +26,13 @@
   h1 {
     margin-top: 1em;
     font-size: 64px;
-    font-family: RHDM;
+    font-family: Red hat display;
   }
   
   h2 {
     margin-top: 2em;
     font-size: 30px;
-    font-family: RHDM;
+    font-family: Red hat display;
   }
   
   p, button {
