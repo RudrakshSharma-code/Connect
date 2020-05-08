@@ -38,7 +38,6 @@ async function setVars() {
 }
 
 async function post() {
-
   let user = await currentAuthenticatedUser({
     bypassCache: true,
   });
@@ -71,4 +70,16 @@ async function post() {
   createPost(post);
 }
 
+async function setHtml(){
+  let user = await currentAuthenticatedUser({
+    bypassCache: true,
+  });
+  console.log(user);
+  let first = user.attributes.given_name;
+  let last = user.attributes.family_name;
+  let name = "" + first + " " + last;
+  $("#name").text(name);
+}
+
+setHtml();
 $("#submit").on("click", post);
