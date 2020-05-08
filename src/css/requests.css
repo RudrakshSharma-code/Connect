@@ -30,6 +30,13 @@ body{
 }
 
 #slider {
+<<<<<<< HEAD
+    margin: 3em 7% ;
+}
+
+#confirm button  {
+    margin: 5em 0;
+=======
     margin: 5% 7%;
 }
 
@@ -60,4 +67,5 @@ body{
 
 
   
+>>>>>>> aee087da8bc730611da869198d5ff67f252ca4ed
 }
