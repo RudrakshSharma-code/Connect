@@ -34,7 +34,7 @@ export async function createPost(post) {
     "input": post,
     "condition": null
   }));
-  return answer.data.createPost;
+  return answer.data.createPost; 
 }
 
 export async function updatePost(post) {

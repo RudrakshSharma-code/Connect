@@ -67,7 +67,8 @@ async function post() {
     latitude: ulatitude,
     longitude: ulongitude,
   };
-  createPost(post);
+  await createPost(post);
+  location.replace("confirmation.html");
 }
 
 async function setHtml(){
