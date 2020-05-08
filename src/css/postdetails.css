@@ -32,6 +32,9 @@ h1 {
     padding: .1em 1em 0.10em;
 }
 
+#logout {
+    float: right;
+  }
 
 #main {
     background-color: white;

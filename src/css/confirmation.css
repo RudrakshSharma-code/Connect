@@ -32,6 +32,11 @@ img {
   width: 90vw;
 }
 
+#logout {
+  float: right;
+  color: white;
+}
+
 #bravo {
   text-align: center;
   flex-grow: 2;
