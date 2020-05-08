@@ -47,7 +47,6 @@ function works(x, y) {
 
   function onPopupClick() {
     var data = this._popup._content;
-    alert("You clicked the map at " + $(data).text());
     console.log(this.post)
     var description = this.post.items;
     location.replace("postdetails.html?id=" + this.post.id);
