@@ -1,3 +1,17 @@
+// type Post @model {
+//   id: ID!
+//   userID: String!
+//   firstName: String!
+//   lastName: String!
+//   email: String!
+//   phone: String!
+//   title: String!
+//   items: [String!]!
+//   itemsCount: Int!
+//   latitude: String!
+//   longitude: String!
+// }
+
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -15,15 +29,7 @@ Amplify.configure(awsconfig);
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-export async function createPost(user, title, items, itemsCount, latitude, longitude) {
-  const post = {
-    "user": user,
-    "title": title,
-    "items": items, // array
-    "itemsCount": itemsCount, // int
-    "latitude": latitude, // string
-    "longitude": longitude // string
-  };
+export async function createPost(post) {
   const answer = await API.graphql(graphqlOperation(mutations.createPost, {
     "input": post,
     "condition": null
@@ -31,15 +37,7 @@ export async function createPost(user, title, items, itemsCount, latitude, longi
   return answer.data.createPost;
 }
 
-export async function updatePost(id, title, items, itemsCount, latitude, longitude) {
-  const post = {
-    "id": id,
-    "title": title,
-    "items": items, // array
-    "itemsCount": itemsCount, // int
-    "latitude": latitude, // string
-    "longitude": longitude // string
-  };
+export async function updatePost(post) {
   const answer = await API.graphql(graphqlOperation(mutations.updatePost, {
     "input": post,
     "condition": null
@@ -131,11 +129,27 @@ export function stopListener(listener) {
 //   onUpdatePost();
 //   onDeletePost();
 
+//   let post = {
+//     userID: "userID",
+//     firstName: "firstName",
+//     lastName: "lastName",
+//     email: "email",
+//     phone: "phone",
+//     title: "title",
+//     items: ["item1", "item2"],
+//     itemsCount: 2,
+//     latitude: "49.2510",
+//     longitude: "-123.0010"
+//   };
+
 //   setTimeout(async () => {
-//    let answer = await createPost("user12345", "title12345", ["apple", "bananas"], 2, "48.8566", "2.3522");
+//    let answer = await createPost(post);
 //    console.log("Create post: ", answer);
 
-//     answer = await updatePost(answer.id, "titleUpdated", ["toilet paper", "vodka"], 2, "48.9", "2.4");
+//     post.id = answer.id;
+//     post.items = ["item100", "item200"];
+
+//     answer = await updatePost(post);
 //     console.log("Update post: ", answer);
 
 //     answer = await getPost(answer.id);

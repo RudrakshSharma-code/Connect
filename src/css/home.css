@@ -17,7 +17,7 @@
   width: 90vw;
   border-radius: 10px;
   margin: 10px auto;
-  height: 25vh;
+  height: 30vh;
   font-family: Red Hat Display;
   font-style: normal;
   font-weight: bold;
@@ -46,4 +46,25 @@
 
 .card p {
     margin: auto 0;
+}
+
+@media only screen and (min-width: 992px) {
+  #main{
+    display: grid;
+    grid-template: auto 1fr / 1fr 1fr;
+    gap: 0;
+  }
+
+  #homeH1{
+    text-align: center;
+    grid-column: 1 / span 2;
+  }
+
+  .card{
+    width: 45vw;
+    height: 60vh;
+  }
+
+
+
 }

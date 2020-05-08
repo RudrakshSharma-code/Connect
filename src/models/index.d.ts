@@ -6,7 +6,11 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 export declare class Post {
   readonly id: string;
-  readonly user: string;
+  readonly userID: string;
+  readonly firstName: string;
+  readonly lastName: string;
+  readonly email: string;
+  readonly phone: string;
   readonly title: string;
   readonly items: string[];
   readonly itemsCount: number;

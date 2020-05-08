@@ -48,11 +48,9 @@ function works(x, y) {
   function onPopupClick() {
     var data = this._popup._content;
     alert("You clicked the map at " + $(data).text());
+    console.log(this.post)
     var description = this.post.items;
-    var a = confirm("Description: " + description);
-    if (a) {
-      alert("phone number: 123 456 7890");
-    }
+    location.replace("postdetails.html?id=" + this.post.id);
   }
 
   async function setMarkers() {

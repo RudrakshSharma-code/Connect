@@ -22,3 +22,42 @@ body{
     width: 90vw;
     margin: 0 auto;
 }
+
+#requests > div{
+    border: 1px solid black;
+    margin: 20px;
+    padding: 10px;
+}
+
+#slider {
+    margin: 5% 7%;
+}
+
+#map, #mapid{
+  height: 40vh;
+}
+
+@media only screen and (min-width: 600px) {
+body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+  #map, #mapid{
+    height: 50vh;
+    width: 500px
+  }
+  #main, #search, #confirm, #slider{
+    margin: 0 auto;
+    width: 500px;
+  }
+  #slider{
+    margin: 10px auto 30px;
+  }
+  #confirm{
+    margin: 50px auto;
+  }
+
+
+  
+}
