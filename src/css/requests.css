@@ -45,11 +45,11 @@ body{
 }
   #map, #mapid{
     height: 50vh;
-    width: 500px
+    width: 600px
   }
   #main, #search, #confirm, #slider{
     margin: 0 auto;
-    width: 500px;
+    width: 600px;
   }
   #slider{
     margin: 10px auto 30px;
