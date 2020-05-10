@@ -1,6 +1,6 @@
 {
 	"api": {
-		"Team10ProjectAPI": {
+		"team10project": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
@@ -18,7 +18,7 @@
 		}
 	},
 	"auth": {
-		"team10project16464e5d": {
+		"team10project2b2de274": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [],
