@@ -10,7 +10,7 @@ async function signUp() {
     let user = await aws.signUp(
         document.getElementById("signUpEmail").value,
         document.getElementById("signUpPass").value,
-        "+18882223344",
+        "+1" + document.getElementById("signUpPhone").value,
         document.getElementById("signUpFirst").value,
         document.getElementById("signUpLast").value,
     );
