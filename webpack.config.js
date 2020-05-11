@@ -16,7 +16,8 @@ module.exports = {
         createPost: './src/js/createPost.js',
         home: './src/js/home.js',
         postdetails: './src/js/postdetails.js', 
-        profile: './src/js/profile.js'
+        profile: './src/js/profile.js',
+        aboutUs: './src/js/aboutUs.js'
     },
     output: {
         filename: '[name].js',

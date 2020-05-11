@@ -1,7 +1,8 @@
-import { listPosts, currentAuthenticatedUser } from "./aws";
+import * as aws from "./aws.js";
+const user = aws.getUser();
 
 async function changeHtml(){
-    let user = await currentAuthenticatedUser({
+    let user = await aws.currentAuthenticatedUser({
         bypassCache: true,
       });
       console.log(user);

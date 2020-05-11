@@ -1,4 +1,5 @@
 import * as aws from "./aws.js";
+const user = aws.getUser();
 
 function works(x, y) {
     var mymap = L.map("mapid").setView([x, y], 13);

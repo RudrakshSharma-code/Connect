@@ -1,4 +1,5 @@
 import * as aws from "./aws.js";
+const user = aws.getUser();
 
 window.onload = function scripts() {
     document.getElementById("confirmDiv").style.display = "none";

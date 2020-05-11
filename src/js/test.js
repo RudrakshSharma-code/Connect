@@ -1,4 +1,5 @@
 import * as aws from "./aws.js";
+const user = aws.getUser();
 
 let signUpButton = document.getElementById("signUpButton");
 signUpButton.addEventListener("click", signUp);
