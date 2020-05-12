@@ -44,3 +44,21 @@ header a {
 #forgotError {
     color: red;
 }
+
+.passDiv{
+    position: relative;
+} 
+
+.passDiv #show { 
+position: absolute; 
+top: 45%; 
+right: 10px; 
+z-index: 1; 
+color: grey; 
+cursor: pointer; 
+margin-top: -10px; 
+} 
+
+#show:hover
+{color: black;
+} 

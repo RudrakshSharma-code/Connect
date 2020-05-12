@@ -1,4 +1,5 @@
-import { listPosts, createPost, currentAuthenticatedUser } from "./aws.js";
+import * as aws from "./aws.js";
+const user = aws.getUser();
 
 var mymap = mymap = L.map("mapid");
 var markers = [];

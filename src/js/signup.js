@@ -1,15 +1,19 @@
 import * as aws from "./aws.js";
+const user = aws.getUser();
+let signUpPass = document.getElementById("signUpPass")
+
 
 window.onload = function scripts() {
     document.getElementById("confirmDiv").style.display = "none";
     document.body.style.display = "block";
-    document.getElementById("prompt").style.display="none";
+    document.getElementById("prompt").style.display = "none";
+    document.getElementById("show").style.display = "none";
 }
 
 async function signUp() {
     let user = await aws.signUp(
         document.getElementById("signUpEmail").value,
-        document.getElementById("signUpPass").value,
+        signUpPass.value,
         "+1" + document.getElementById("signUpPhone").value,
         document.getElementById("signUpFirst").value,
         document.getElementById("signUpLast").value,
@@ -30,19 +34,32 @@ async function signUp() {
 let signUpSubmit = document.getElementById("signUpSubmit");
 signUpSubmit.addEventListener("click", signUp);
 
-document.getElementById("signUpPass").addEventListener("keyup", function (event) {
+signUpPass.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         signUpSubmit.click();
     }
 })
 
-document.getElementById("signUpPass").addEventListener("mouseover", function (event) {
-    document.getElementById("prompt").style.display="inline";
-    document.getElementById("signUpSubmit").style.marginTop = "10%";
+signUpPass.addEventListener("mouseover", function (event) {
+    document.getElementById("prompt").style.display = "inline";
+    document.getElementById("show").style.display = "inline";
+    document.getElementById("signUpSubmit").style.marginTop = "0%";
+    document.getElementById("show").style.top = "20%";
 })
 
-document.getElementById("signUpPass").addEventListener("mouseleave", function (event) {
-    document.getElementById("prompt").style.display="none";
+signUpPass.addEventListener("mouseleave", function (event) {
+    document.getElementById("prompt").style.display = "none";
     document.getElementById("signUpSubmit").style.marginTop = "20%";
+    document.getElementById("show").style.top = "45%";
 })
+
+document.getElementById("show").addEventListener("click", function (event) {
+    if (signUpPass.type === "password") {
+        signUpPass.type = "text";
+        document.getElementById("show").innerHTML = "hide";
+    } else {
+        signUpPass.type = "password";
+        document.getElementById("show").innerHTML = "show";
+    }
+});
