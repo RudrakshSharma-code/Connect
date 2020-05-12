@@ -14,6 +14,12 @@ async function changeHtml(){
       $("#number").text(user.attributes.phone_number)
 }
 
+function setButton(){
+  $("#posts").on("click", function(){
+    location.replace("previousposts.html");
+  })
+}
+
 $(document).ready(function(){
   changeHtml();
 })
