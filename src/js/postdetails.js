@@ -34,7 +34,7 @@ function setDesc(items){
 
 function setVars(){
   console.log("post: ", post)
-  name = '' + post.firstName + " " + post.lastName;
+  name = '' + post.userFirstName + " " + post.userLastName;
    title = post.title;
   desc = setDesc(post.items);
   console.log(desc);
