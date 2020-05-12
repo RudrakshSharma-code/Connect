@@ -5,16 +5,21 @@ export const getPost = /* GraphQL */ `
   query GetPost($id: ID!) {
     getPost(id: $id) {
       id
-      userID
-      firstName
-      lastName
-      email
-      phone
       title
       items
       itemsCount
       latitude
       longitude
+      userID
+      userFirstName
+      userLastName
+      userEmail
+      userPhone
+      volunteerID
+      volunteerFirstName
+      volunteerLastName
+      volunteerEmail
+      volunteerPhone
     }
   }
 `;
@@ -27,16 +32,21 @@ export const listPosts = /* GraphQL */ `
     listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        userID
-        firstName
-        lastName
-        email
-        phone
         title
         items
         itemsCount
         latitude
         longitude
+        userID
+        userFirstName
+        userLastName
+        userEmail
+        userPhone
+        volunteerID
+        volunteerFirstName
+        volunteerLastName
+        volunteerEmail
+        volunteerPhone
       }
       nextToken
     }

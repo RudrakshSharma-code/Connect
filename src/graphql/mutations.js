@@ -8,16 +8,21 @@ export const createPost = /* GraphQL */ `
   ) {
     createPost(input: $input, condition: $condition) {
       id
-      userID
-      firstName
-      lastName
-      email
-      phone
       title
       items
       itemsCount
       latitude
       longitude
+      userID
+      userFirstName
+      userLastName
+      userEmail
+      userPhone
+      volunteerID
+      volunteerFirstName
+      volunteerLastName
+      volunteerEmail
+      volunteerPhone
     }
   }
 `;
@@ -28,16 +33,21 @@ export const updatePost = /* GraphQL */ `
   ) {
     updatePost(input: $input, condition: $condition) {
       id
-      userID
-      firstName
-      lastName
-      email
-      phone
       title
       items
       itemsCount
       latitude
       longitude
+      userID
+      userFirstName
+      userLastName
+      userEmail
+      userPhone
+      volunteerID
+      volunteerFirstName
+      volunteerLastName
+      volunteerEmail
+      volunteerPhone
     }
   }
 `;
@@ -48,16 +58,21 @@ export const deletePost = /* GraphQL */ `
   ) {
     deletePost(input: $input, condition: $condition) {
       id
-      userID
-      firstName
-      lastName
-      email
-      phone
       title
       items
       itemsCount
       latitude
       longitude
+      userID
+      userFirstName
+      userLastName
+      userEmail
+      userPhone
+      volunteerID
+      volunteerFirstName
+      volunteerLastName
+      volunteerEmail
+      volunteerPhone
     }
   }
 `;
