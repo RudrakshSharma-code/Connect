@@ -1,34 +1,10 @@
 import { listPosts, createPost, currentAuthenticatedUser } from "./aws.js";
 
-var script = document.createElement("script");
-script.src = "https://code.jquery.com/jquery-3.4.1.min.js";
-script.type = "text/javascript";
-document.getElementsByTagName("head")[0].appendChild(script);
+var mymap = mymap = L.map("mapid");
+var markers = [];
 
-// async function showPosts() {
-//   var posts = await listPosts();
-//   for (let key in posts) {
-//     var post = posts[key];
-//     console.log(post);
-//     var title = "<bold>TITLE: " + post.title + "</br>";
-//     var user = " USER: " + post.user + "</br>";
-//     var div = "<div id =" + key + ">" + title + user + "</div>";
-//     var description = "";
-//     for(let item in post.items){
-//       description += item + " "
-//     }
-//     $("#requests").append(div);
-//     $("#" + key).click(function () {
-//       var a = confirm("Description: " + description);
-//       if (a) {
-//         alert("phone number: 123 456 7890");
-//       }
-//     });
-//   }
-// }
-
-function works(x, y) {
-  var mymap = L.map("mapid").setView([x, y], 13);
+function buildMap(x, y){
+  mymap.setView([x, y], 13);
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
     {
@@ -42,30 +18,32 @@ function works(x, y) {
         "pk.eyJ1Ijoidml0b3JpYXBvc3RhaW1hcnRpbnMiLCJhIjoiY2s5a2llYXM5MDZxaDNvbWt0YWd4NXE5NyJ9.4gJv-_McQLbJg3Gn4vUl7g",
     }
   ).addTo(mymap);
+}
 
-  function onPopupClick() {
-    var data = this._popup._content;
-    console.log(this.post)
-    var description = this.post.items;
-    location.replace("postdetails.html?id=" + this.post.id);
+function onPopupClick() {
+  var data = this._popup._content;
+  console.log(this.post);
+  var description = this.post.items;
+  location.replace("postdetails.html?id=" + this.post.id);
+}
+
+async function setMarkers(posts) {
+  for (let key in posts) {
+    var post = posts[key];
+    var title = post.title;
+    var user = post.user;
+    var mes = "<b>" + user + " </b><br>" + title;
+    var marker = new L.marker([post.latitude, post.longitude]).addTo(mymap);
+    console.log("adding");
+    markers.push(marker);
+    marker.bindPopup(mes);
+    marker.on("click", onPopupClick);
+    marker.post = post;
+    console.log(marker);
   }
+}
 
-  async function setMarkers() {
-    var posts = await listPosts();
-    for (let key in posts) {
-      var post = posts[key];
-      var title = post.title;
-      var user = post.user;
-      var mes = "<b>" + user + " </b><br>" + title;
-      var marker = new L.marker([post.latitude, post.longitude]).addTo(mymap);
-      marker.bindPopup(mes);
-      marker.on("click", onPopupClick);
-      marker.post = post;
-      console.log(marker);
-    }
-  }
-  console.log(setMarkers());
-
+function addCircle(x, y){
   var circle = L.circle([x, y], {
     color: "red",
     fillColor: "#f03",
@@ -74,31 +52,81 @@ function works(x, y) {
   }).addTo(mymap);
 }
 
-async function setMap() {
+function works(x, y, posts) {
+  buildMap(x, y);
+  setMarkers(posts);
+  addCircle(x, y);
+  
+}
+
+async function setMap(posts) {
   let user = await currentAuthenticatedUser({
     bypassCache: true,
   });
   console.log(user);
   var ulatitude = user.attributes["custom:latitude"];
   var ulongitude = user.attributes["custom:longitude"];
-  works(ulatitude, ulongitude);
+  works(ulatitude, ulongitude, posts);
 }
 
-// $(document).ready(function(){
-//     setMap();
-//     console.log("asking for map");
-//     getShortDesc();
-// }
-// );
-// // showPosts();
+async function start() {
+  var posts = await listPosts();
+  setMap(posts);
+  removeMars();
+  
+}
 
-// }
+function setSlider() {
+  var slider = document.getElementById("slider1");
+  var output = document.getElementById("output");
+  output.innerHTML = slider.value;
 
-$(document).ready(function () {
-  setMap();
-});
+  slider.oninput = function () {
+    var value = this.value;
+    output.innerHTML = value;
+    sliderFilter(this.value);
+  };
+}
 
-// showPosts();
+async function sliderFilter(max) {
+  let itemsCount = { itemsCount: { le: max } };
+  let posts = await listPosts(itemsCount);
+  updateMap(posts);
+}
+
+function removeMars(){
+    for(let i = 0; i < markers.length; i++){
+      //mymap.removeLayer(markers[i]);
+      markers[i].remove();
+      //never ever modify the array that you are looping though that
+    }
+    markers = [];
+}
+
+
+async function updateMap(posts) {
+  removeMars();
+    // var posts = await listPosts();
+  for (let key in posts) {
+    console.log(posts);
+    var post = posts[key];
+    var title = post.title;
+    var user = post.user;
+    var mes = "<b>" + user + " </b><br>" + title;
+    var marker = new L.marker([post.latitude, post.longitude]).addTo(mymap);
+    marker.bindPopup(mes);
+    marker.on("click", function(){
+        console.log(this.post);
+        alert(this.post);
+        var description = this.post.items;
+        location.replace("postdetails.html?id=" + this.post.id);
+    });
+    
+    marker.post = post;
+    markers.push(marker);
+  }
+  
+}
 
 async function signOut() {
   const user = await aws.currentAuthenticatedUser();
@@ -110,10 +138,17 @@ async function signOut() {
       setTimeout(function () {
         window.location.assign("index.html");
       }, 1000);
-    } else {};
-  } else {};
+    } else {
+    }
+  } else {
+  }
 }
+
+$(document).ready(function () {
+  start();
+  setSlider();
+});
 
 window.onload = function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
-}
+};
