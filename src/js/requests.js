@@ -85,16 +85,25 @@ function setSlider() {
   var output = document.getElementById("output");
   output.innerHTML = slider.value;
 
+  var value = slider.value;
+
   slider.oninput = function () {
-    var value = this.value;
+    value = Number(this.value);
     output.innerHTML = value;
-    sliderFilter(this.value);
+    sliderFilter(this.value)
   };
+  return value;
 }
 
 async function sliderFilter(max) {
-  let itemsCount = { itemsCount: { le: max } };
-  let posts = await listPosts(itemsCount);
+  let keys = "" + ($("#searchBar").val());
+  let posts;
+  max = Number(max)
+  if(keys == ""){
+    posts = await listPosts(  {  itemsCount: {le: max}  }  );
+  } else{
+    posts = await listPosts(  {  items:{contains:keys}, itemsCount: {le: max}  }  );
+  }
   updateMap(posts);
 }
 
@@ -110,7 +119,6 @@ function removeMars(){
 
 async function updateMap(posts) {
   removeMars();
-    // var posts = await listPosts();
   for (let key in posts) {
     console.log(posts);
     var post = posts[key];
@@ -159,14 +167,25 @@ window.onload = function nullFix() {
 };
 
 function setSearch(){
+  var value = "";
   $("#button-addon3").on("click", function(){
-    let value = $("#searchBar").val();
-    searchFilter(value);
+    value = $("#searchBar").val();
+    if(value == undefined){
+      value = "";
+    }
+    searchFilter(value)
   })
+  return value;
 }
 
 async function searchFilter(item){
-  let items = {items: {contains: item}};
-  let posts = await listPosts(items);
-  updateMap(posts);
+  let posts;
+  let max = setSlider();
+  if(item == "" || item == null){
+    posts = await listPosts(  {  itemsCount: {le: max}  }  )
+  } else{
+    console.log(item, max)
+    posts = await listPosts(  {  items:{contains:item}, itemsCount: {le: max}  }  )
+  }
+  updateMap(posts);  
 }
