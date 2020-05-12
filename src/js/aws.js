@@ -1,15 +1,22 @@
 // type Post @model {
 //   id: ID!
-//   userID: String!
-//   firstName: String!
-//   lastName: String!
-//   email: String!
-//   phone: String!
 //   title: String!
 //   items: [String!]!
 //   itemsCount: Int!
 //   latitude: String!
 //   longitude: String!
+
+//   userID: String!
+//   userFirstName: String!
+//   userLastName: String!
+//   userEmail: String!
+//   userPhone: String!
+
+//   volunteerID: String
+//   volunteerFirstName: String
+//   volunteerLastName: String
+//   volunteerEmail: String
+//   volunteerPhone: String
 // }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -130,17 +137,24 @@ export function stopListener(listener) {
 //   onDeletePost();
 
 //   let post = {
-//     userID: "userID",
-//     firstName: "firstName",
-//     lastName: "lastName",
-//     email: "email",
-//     phone: "phone",
 //     title: "title",
-//     items: ["item1", "item2"],
+//     items: ["toilet paper", "vodka"],
 //     itemsCount: 2,
 //     latitude: "49.2510",
-//     longitude: "-123.0010"
-//   };
+//     longitude: "-123.0010",
+  
+//     userID: "userID",
+//     userFirstName: "userFirstName",
+//     userLastName: "userLastName",
+//     userEmail: "userEmail",
+//     userPhone: "userPhone",
+  
+//     volunteerID: null,
+//     volunteerFirstName: null,
+//     volunteerLastName: null,
+//     volunteerEmail: null,
+//     volunteerPhone: null,
+//   }
 
 //   setTimeout(async () => {
 //    let answer = await createPost(post);
