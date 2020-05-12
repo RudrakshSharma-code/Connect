@@ -16,7 +16,10 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
 
   <link rel="stylesheet" type="text/css" href="all.css" />
   <link rel="stylesheet" type="text/css" href="profileSetup.css" />
@@ -66,7 +69,7 @@
 
   <div id="slider">
     <b><label for="slider">Maximum Number of items: <span id="output"></span></label></b>
-    <input type="range" class="custom-range" id="slider1" min="1" max="10" value="1" data-toggle="tooltip" title="">
+    <input type="range" class="custom-range" id="slider1" min="1" max="10" value="10" data-toggle="tooltip" title="">
   </div>
 
   <div id="map">
@@ -92,13 +95,7 @@
     //     ticks_snap_bounds: 30
     // });
 
-    var slider = document.getElementById("slider1");
-    var output = document.getElementById("output");
-    output.innerHTML = slider.value;
-
-    slider.oninput = function () {
-      output.innerHTML = this.value;
-    }
+    
   </script>
 
 </body>
