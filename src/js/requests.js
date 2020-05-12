@@ -147,8 +147,22 @@ async function signOut() {
 $(document).ready(function () {
   start();
   setSlider();
+  setSearch();
 });
 
 window.onload = function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
 };
+
+function setSearch(){
+  $("#button-addon3").on("click", function(){
+    let value = $("#searchBar").val();
+    searchFilter(value);
+  })
+}
+
+async function searchFilter(item){
+  let items = {items: {contains: item}};
+  let posts = await listPosts(items);
+  updateMap(posts);
+}
