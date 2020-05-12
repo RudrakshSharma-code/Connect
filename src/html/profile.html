@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-    crossorigin="anonymous"
-  />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-    crossorigin="anonymous"
-  />
+    href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+  <link rel="stylesheet" type="text/css" href="all.css" />
+  <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
+  <link rel="stylesheet" type="text/css" href="profileSetup.css">
+  <link rel="stylesheet" type="text/css" href="profile.css">
 
-    <link rel="stylesheet" type="text/css" href="all.css" />
-    <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
-    <link rel="stylesheet" type="text/css" href="profileSetup.css" />
-    
+  <!--Map-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin="" />
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+
 </head>
+
 <body>
-    <header class="header">
-        <a href="home.html">
-          <span class="material-icons">arrow_back</span>
-        </a>
-      </header>
-        <main id="main">
-            <div id="profile">
-              <div id="avatar"></div>
-              <div id="name">
-                <h3 id="firstLast">First Last</h3>
-              </div>
-            </div>
-          </div>
-          <div id="posts">
-          </div>
-        </main>
-      </body>
-      
-      </html>
+  <header class="header">
+    <a id="home" href="home.html">
+      <span class="material-icons">arrow_back</span>
+    </a href="index.html">
+    <!--Logout-->
+    <a id="logout" href="index.html">
+      <span class="material-icons">exit_to_app</span>
+    </a>
+  </header>
+  <main id="main">
+    <div id="profile">
+      <div id="avatar"></div>
+      <div id="name">
+        <h3 id="firstLast">First Last</h3>
+      </div>
+      <div id="info">
+        <div id="phone">
+          <h3>Phone Number</h3>
+          <h5 id="number">123-456-7890</h5>
+        </div>
+
+        <h3 id="location">Location</h3>
+        <div id="map">
+          <div id="mapid"></div>
+        </div><br>
+
+        <div id="post">
+          <h3>Previous Posts</h3>
+          <button id="posts">See Previous Posts</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="posts">
+    </div>
+  </main>
 </body>
-<script src="profile.js">
-</script>
+
+</html>
+</body>
+<script src="profile.js"></script>
 </html>

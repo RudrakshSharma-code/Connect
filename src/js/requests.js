@@ -1,34 +1,14 @@
-import { listPosts, createPost, currentAuthenticatedUser } from "./aws.js";
+import { listPosts, getUser, currentAuthenticatedUser } from "./aws";
 
-var script = document.createElement("script");
-script.src = "https://code.jquery.com/jquery-3.4.1.min.js";
-script.type = "text/javascript";
-document.getElementsByTagName("head")[0].appendChild(script);
+let user = getUser();
 
-// async function showPosts() {
-//   var posts = await listPosts();
-//   for (let key in posts) {
-//     var post = posts[key];
-//     console.log(post);
-//     var title = "<bold>TITLE: " + post.title + "</br>";
-//     var user = " USER: " + post.user + "</br>";
-//     var div = "<div id =" + key + ">" + title + user + "</div>";
-//     var description = "";
-//     for(let item in post.items){
-//       description += item + " "
-//     }
-//     $("#requests").append(div);
-//     $("#" + key).click(function () {
-//       var a = confirm("Description: " + description);
-//       if (a) {
-//         alert("phone number: 123 456 7890");
-//       }
-//     });
-//   }
-// }
+// MAP SETUP
 
-function works(x, y) {
-  var mymap = L.map("mapid").setView([x, y], 13);
+var mymap = (mymap = L.map("mapid"));
+var markers = [];
+
+function buildMap(x, y) {
+  mymap.setView([x, y], 13);
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
     {
@@ -42,30 +22,32 @@ function works(x, y) {
         "pk.eyJ1Ijoidml0b3JpYXBvc3RhaW1hcnRpbnMiLCJhIjoiY2s5a2llYXM5MDZxaDNvbWt0YWd4NXE5NyJ9.4gJv-_McQLbJg3Gn4vUl7g",
     }
   ).addTo(mymap);
+}
 
-  function onPopupClick() {
-    var data = this._popup._content;
-    console.log(this.post)
-    var description = this.post.items;
-    location.replace("postdetails.html?id=" + this.post.id);
+function onPopupClick() {
+  var data = this._popup._content;
+  console.log(this.post);
+  var description = this.post.items;
+  location.replace("postdetails.html?id=" + this.post.id);
+}
+
+async function setMarkers(posts) {
+  for (let key in posts) {
+    var post = posts[key];
+    var title = post.title;
+    var user = post.user;
+    var mes = "<b>" + user + " </b><br>" + title;
+    var marker = new L.marker([post.latitude, post.longitude]).addTo(mymap);
+    console.log("adding");
+    markers.push(marker);
+    marker.bindPopup(mes);
+    marker.on("click", onPopupClick);
+    marker.post = post;
+    console.log(marker);
   }
+}
 
-  async function setMarkers() {
-    var posts = await listPosts();
-    for (let key in posts) {
-      var post = posts[key];
-      var title = post.title;
-      var user = post.user;
-      var mes = "<b>" + user + " </b><br>" + title;
-      var marker = new L.marker([post.latitude, post.longitude]).addTo(mymap);
-      marker.bindPopup(mes);
-      marker.on("click", onPopupClick);
-      marker.post = post;
-      console.log(marker);
-    }
-  }
-  console.log(setMarkers());
-
+function addCircle(x, y) {
   var circle = L.circle([x, y], {
     color: "red",
     fillColor: "#f03",
@@ -74,46 +56,121 @@ function works(x, y) {
   }).addTo(mymap);
 }
 
-async function setMap() {
+function works(x, y, posts) {
+  buildMap(x, y);
+  setMarkers(posts);
+  addCircle(x, y);
+}
+
+async function setMap(posts) {
   let user = await currentAuthenticatedUser({
     bypassCache: true,
   });
   console.log(user);
   var ulatitude = user.attributes["custom:latitude"];
   var ulongitude = user.attributes["custom:longitude"];
-  works(ulatitude, ulongitude);
+  works(ulatitude, ulongitude, posts);
 }
 
-// $(document).ready(function(){
-//     setMap();
-//     console.log("asking for map");
-//     getShortDesc();
-// }
-// );
-// // showPosts();
+async function start() {
+  var posts = await listPosts();
+  setMap(posts);
+}
 
-// }
+//FILTERS
 
-$(document).ready(function () {
-  setMap();
-});
+function removeMars() {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].remove();
+  }
+  markers = [];
+}
 
-// showPosts();
+async function updateMap(posts) {
+  removeMars();
+  for (let key in posts) {
+    var post = posts[key];
+    var title = post.title;
+    var user = post.user;
+    var mes = "<b>" + user + " </b><br>" + title;
+    var marker = new L.marker([post.latitude, post.longitude]).addTo(mymap);
+    marker.bindPopup(mes);
+    marker.on("click", function () {
+      alert(this.post);
+      location.replace("postdetails.html?id=" + this.post.id);
+    });
+    marker.post = post;
+    markers.push(marker);
+  }
+}
+
+function setSlider() {
+  var slider = document.getElementById("slider1");
+  var output = document.getElementById("output");
+  output.innerHTML = slider.value;
+  var value = Number(slider.value);
+
+  slider.oninput = function () {
+    value = Number(this.value);
+    output.innerHTML = value;
+    sliderFilter(value);
+  };
+  return Number(value);
+}
+
+async function sliderFilter(max) {
+  let keys = "" + $("#searchBar").val().trim();
+  let posts =
+    keys == ""
+      ? await listPosts({ itemsCount: { le: max } })
+      : await listPosts({ items: { contains: keys }, itemsCount: { le: max } });
+  updateMap(posts);
+}
+
+function setSearch() {
+  var value = "";
+  $("#button-addon3").on("click", function () {
+    value = $("#searchBar").val().trim();
+    searchFilter(value);
+  });
+  return value;
+}
+
+async function searchFilter(item) {
+  let max = setSlider();
+  let posts =
+    item == "" || item == null
+      ? await listPosts({ itemsCount: { le: max } })
+      : await listPosts({ items: { contains: item }, itemsCount: { le: max } });
+  updateMap(posts);
+}
+
+//AUTH
 
 async function signOut() {
-  const user = await aws.currentAuthenticatedUser();
+  const user = await currentAuthenticatedUser();
   if (user.attributes) {
     let check = confirm("Are you sure you want to log out?");
     if (check == true) {
-      const user = await aws.currentAuthenticatedUser();
+      const user = await currentAuthenticatedUser();
       user.signOut();
       setTimeout(function () {
         window.location.assign("index.html");
       }, 1000);
-    } else {};
-  } else {};
+    } else {
+    }
+  } else {
+  }
 }
 
 window.onload = function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
-}
+};
+
+//CALLS
+
+$(document).ready(function () {
+  start();
+  setSlider();
+  setSearch();
+});

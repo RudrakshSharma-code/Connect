@@ -5,16 +5,21 @@ export const onCreatePost = /* GraphQL */ `
   subscription OnCreatePost {
     onCreatePost {
       id
-      userID
-      firstName
-      lastName
-      email
-      phone
       title
       items
       itemsCount
       latitude
       longitude
+      userID
+      userFirstName
+      userLastName
+      userEmail
+      userPhone
+      volunteerID
+      volunteerFirstName
+      volunteerLastName
+      volunteerEmail
+      volunteerPhone
     }
   }
 `;
@@ -22,16 +27,21 @@ export const onUpdatePost = /* GraphQL */ `
   subscription OnUpdatePost {
     onUpdatePost {
       id
-      userID
-      firstName
-      lastName
-      email
-      phone
       title
       items
       itemsCount
       latitude
       longitude
+      userID
+      userFirstName
+      userLastName
+      userEmail
+      userPhone
+      volunteerID
+      volunteerFirstName
+      volunteerLastName
+      volunteerEmail
+      volunteerPhone
     }
   }
 `;
@@ -39,16 +49,21 @@ export const onDeletePost = /* GraphQL */ `
   subscription OnDeletePost {
     onDeletePost {
       id
-      userID
-      firstName
-      lastName
-      email
-      phone
       title
       items
       itemsCount
       latitude
       longitude
+      userID
+      userFirstName
+      userLastName
+      userEmail
+      userPhone
+      volunteerID
+      volunteerFirstName
+      volunteerLastName
+      volunteerEmail
+      volunteerPhone
     }
   }
 `;

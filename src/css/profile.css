@@ -1,0 +1,22 @@
+#posts {
+    border: none;
+    background-color: #DAF4FF;
+    font-weight: 500;
+    width: 90%;
+    text-align: center;
+}
+
+#phone, #location, #post {
+    margin: 1em 5%;
+}
+
+#account, #logout {
+    float: right;
+}
+
+#home {
+    float: left;
+}
+main {
+    margin-top: 1em;
+}
