@@ -291,3 +291,25 @@ export async function updateUserCoordinates(user, latitude, longitude) {
     return error;
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export async function getUser() {
+  const user = await currentAuthenticatedUser();
+  const path = window.location.pathname;
+  const allowed = ["/", "/index.html", "/login.html", "/signup.html", "/aboutUs.html"]
+
+  console.log("path:", path);
+
+  if (user !== "not authenticated" && allowed.includes(path)) {
+    window.location.replace('/home.html');
+  }
+
+  if (user === "not authenticated" && !allowed.includes(path)) {
+    window.location.replace('/login.html');
+  }
+  
+  return user;
+}

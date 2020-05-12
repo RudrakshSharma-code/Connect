@@ -1,4 +1,5 @@
-import { getPost } from "./aws";
+import * as aws from "./aws.js";
+const user = aws.getUser();
 
 var id;
 var post;
@@ -50,7 +51,7 @@ function editHtml(){
 
 async function run(){
   id = getUrlVars().id;
-  post = await getPost(id);
+  post = await aws.getPost(id);
   console.log(post.items)
   console.log(typeof(post.items))
   console.log(post.items.length)

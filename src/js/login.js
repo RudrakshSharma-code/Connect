@@ -1,4 +1,5 @@
 import * as aws from "./aws.js";
+const user = aws.getUser();
 
 window.onload = function () {
   document.getElementById("passwordDiv").style.display = "none";

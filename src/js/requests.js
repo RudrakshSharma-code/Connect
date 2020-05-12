@@ -1,4 +1,5 @@
-import { listPosts, createPost, currentAuthenticatedUser } from "./aws.js";
+import * as aws from "./aws.js";
+const user = aws.getUser();
 
 var script = document.createElement("script");
 script.src = "https://code.jquery.com/jquery-3.4.1.min.js";
@@ -6,7 +7,7 @@ script.type = "text/javascript";
 document.getElementsByTagName("head")[0].appendChild(script);
 
 // async function showPosts() {
-//   var posts = await listPosts();
+//   var posts = await aws.listPosts();
 //   for (let key in posts) {
 //     var post = posts[key];
 //     console.log(post);
@@ -51,7 +52,7 @@ function works(x, y) {
   }
 
   async function setMarkers() {
-    var posts = await listPosts();
+    var posts = await aws.listPosts();
     for (let key in posts) {
       var post = posts[key];
       var title = post.title;
@@ -75,7 +76,7 @@ function works(x, y) {
 }
 
 async function setMap() {
-  let user = await currentAuthenticatedUser({
+  let user = await aws.currentAuthenticatedUser({
     bypassCache: true,
   });
   console.log(user);

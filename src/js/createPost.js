@@ -1,4 +1,5 @@
-import { createPost, currentAuthenticatedUser } from "./aws";
+import * as aws from "./aws.js";
+const user = aws.getUser();
 
 // type Post @model {
 //   id: ID!
@@ -14,7 +15,7 @@ import { createPost, currentAuthenticatedUser } from "./aws";
 //   longitude: String!
 // }
 
-var user;
+// var user;
 var first;
 var last;
 var uEmail;
@@ -29,7 +30,7 @@ async function setVars() {
   let pitems;
   let pitemscount;
 
-  let user = await currentAuthenticatedUser({
+  let user = await aws.currentAuthenticatedUser({
     bypassCache: true,
   })
     .then((user) => console.log((user = user.attributes.sub)))
@@ -38,7 +39,7 @@ async function setVars() {
 }
 
 async function post() {
-  let user = await currentAuthenticatedUser({
+  let user = await aws.currentAuthenticatedUser({
     bypassCache: true,
   });
   console.log(user);
@@ -67,12 +68,12 @@ async function post() {
     latitude: ulatitude,
     longitude: ulongitude,
   };
-  await createPost(post);
+  await aws.createPost(post);
   location.replace("confirmation.html");
 }
 
 async function setHtml(){
-  let user = await currentAuthenticatedUser({
+  let user = await aws.currentAuthenticatedUser({
     bypassCache: true,
   });
   console.log(user);

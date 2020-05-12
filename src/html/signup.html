@@ -35,14 +35,21 @@
                                 class="form-control" autofocus>
                         </div>
                         <div class="form-group">
+                            <input id="signUpPhone" type="tel" placeholder="000-000-0000" maxlength="10"
+                                class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required autofocus>
+                        </div>
+                        <div class="form-group">
                             <input id="signUpEmail" type="email" placeholder="Email" maxlength="50" class="form-control"
                                 autofocus>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group passDiv">
                             <input id="signUpPass" type="password" pattern=".{8, }" required
-                                title="Password Must Contain 8 Characters " class="form-control" placeholder="Enter Password"
-                                length="40" autofocus><span id="prompt" style="display: none;">Must be at least 8 characters</span>
-
+                                title="Password Must Contain 8 Characters " class="form-control"
+                                placeholder="Password" length="40" autofocus>
+                            <span id="show">show</span>
+                            <span id="prompt">Must be at least
+                                8 characters</br>
+                                Click "show" to see password</span>
                         </div>
                         <div class="form-group">
                             <button id="signUpSubmit" type="button" class="btn btn-info btn-block">Sign Up</button>
@@ -61,10 +68,10 @@
         <div class="row justify-content-center">
             <div class="panel panel-primary">
                 <div class="panel-body">
-                        <div class="form-group">
-                            <h2>Click on the confirmation link sent to your email and then</h2>
-                            <h2><a href="login.html">Sign In</a></h2>
-                        </div>
+                    <div class="form-group">
+                        <h2>Click on the confirmation link sent to your email and then</h2>
+                        <h2><a href="login.html">Sign In</a></h2>
+                    </div>
                 </div>
             </div>
         </div>
