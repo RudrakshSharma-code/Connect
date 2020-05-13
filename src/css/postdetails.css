@@ -89,3 +89,15 @@ h3, h5, #description {
 p{
     margin: 1em;
 }
+
+#deletediv{
+    text-align: center;
+}
+
+#delete{
+        border: none;
+        background-color: #DAF4FF;
+        font-weight: 500;
+        width: 90%;
+        margin: 0 auto;
+}
