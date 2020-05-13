@@ -17,7 +17,8 @@ module.exports = {
         home: './src/js/home.js',
         postdetails: './src/js/postdetails.js', 
         profile: './src/js/profile.js',
-        aboutUs: './src/js/aboutUs.js'
+        aboutUs: './src/js/aboutUs.js', 
+        profile: './src/js/profile.js'
     },
     output: {
         filename: '[name].js',

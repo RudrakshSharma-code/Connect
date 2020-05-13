@@ -1,30 +1,28 @@
 import * as aws from "./aws.js";
+
 const user = aws.getUser();
 
 // type Post @model {
-//   id: ID!
-//   userID: String!
-//   firstName: String!
-//   lastName: String!
-//   email: String!
-//   phone: String!
-//   title: String!
-//   items: [String!]!
-//   itemsCount: Int!
-//   latitude: String!
-//   longitude: String!
+  // id: ID!
+  // title: String!
+  // items: [String!]!
+  // itemsCount: Int!
+  // latitude: String!
+  // longitude: String!
+
+  // userID: String!
+  // userFirstName: String!
+  // userLastName: String!
+  // userEmail: String!
+  // userPhone: String!
+
+  // volunteerID: String
+  // volunteerFirstName: String
+  // volunteerLastName: String
+  // volunteerEmail: String
+  // volunteerPhone: String
 // }
 
-// var user;
-var first;
-var last;
-var uEmail;
-var uPhone;
-var ptitle;
-var pitems;
-var pitemscount;
-var latitude;
-var longitude;
 
 async function setVars() {
   let pitems;
@@ -57,16 +55,17 @@ async function post() {
   let ulatitude = user.attributes["custom:latitude"];
   let ulongitude = user.attributes["custom:longitude"];
   let post = {
-    userID: uid,
-    firstName: first,
-    lastName: last,
-    email: uEmail,
-    phone: uPhone,
     title: ptitle,
     items: pitems,
     itemsCount: pitemscount,
     latitude: ulatitude,
     longitude: ulongitude,
+  
+    userID: uid,
+    userFirstName: first,
+    userLastName: last,
+    userEmail: uEmail,
+    userPhone: uPhone
   };
   await aws.createPost(post);
   location.replace("confirmation.html");

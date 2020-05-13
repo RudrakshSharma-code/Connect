@@ -11,6 +11,10 @@ async function changeHtml(){
       let name = user.attributes.given_name + " ";
       name += user.attributes.family_name;
       $("#firstLast").text(name);
+      $("#number").text(user.attributes.phone_number)
 }
 
-changeHtml();
+$(document).ready(function(){
+  changeHtml();
+})
+

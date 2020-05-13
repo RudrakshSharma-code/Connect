@@ -78,6 +78,10 @@ async function signOut() {
   } else {};
 }
 
+$('#contact').on('click', function() {
+  location.replace("info.html?id=" + this.post.id);
+})
+
 window.onload = function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
 }
