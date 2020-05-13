@@ -26,32 +26,40 @@
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin=""></script>
 
-    <link rel="stylesheet" type="text/css" href="all.css">
-    <link rel="stylesheet" type="text/css" href="profileSetup.css" />
-    <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
-    <!-- <script src="mapSetup.js"></script> -->
-  </head>
-  <body>
-    <header class="header">
-      <a id="logout" href="#">
-        <span class="material-icons">exit_to_app</span>
-      </a>
-    </header>
-    <main id="main">
-      <div id="profile">
-        <div id="avatar"></div>
-        <div id="name">
-          <h3 id="firstLast">First Last</h3>
-        </div>
-        <div id="phone">
-          <h3>Phone Number</h3>
-          <h5 id="number">123-456-7890</h5>
-        </div>
-        <div id="mail">
-          <h3>Email</h3>
-          <h5 id="email">anonymous@nothing.com</h5>
-        </div>
+  <script src="https://unpkg.com/esri-leaflet"></script>
+  <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
+
+  <link rel="stylesheet" type="text/css" href="all.css">
+  <link rel="stylesheet" type="text/css" href="profileSetup.css" />
+  <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
+  <!-- <script src="mapSetup.js"></script> -->
+</head>
+
+<body>
+  <header class="header">
+    <a id="logout" href="#">
+      <span class="material-icons">exit_to_app</span>
+    </a>
+  </header>
+  <main id="main">
+    <div id="profile">
+      <div id="avatar"></div>
+      <div id="name">
+        <h3 id="firstLast">First Last</h3>
       </div>
+      <div id="phone">
+        <h3>Phone Number</h3>
+        <h5 id="number">123-456-7890</h5>
+      </div>
+      <div id="mail">
+        <h3>Email</h3>
+        <h5 id="email">anonymous@nothing.com</h5>
+      </div>
+      <div id="addresses">
+        <h3>Address</h3>
+        <h5 id="address"></h5>
+      </div>
+    </div>
     </div>
     <form id="location">
       <h3>Set your location</h3>
@@ -79,9 +87,7 @@
     </form>
   </main>
   <script src="mapSetup.js"></script>
+
 </body>
 
-</html>
-  
-  </body>
 </html>
