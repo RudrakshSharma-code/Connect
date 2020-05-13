@@ -5,6 +5,28 @@ body {
     margin: 0 auto;
 }
 
+
+header {
+    height: 50px;
+  }
+  
+  header * {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+  }
+  
+  header a {
+    margin: auto 0;
+  }
+  .header a{
+    padding: 0;
+  }
+  
+  #goprof{
+    float: right;
+  }
+
 h1 {
     margin-top: .5em;
     font-family: Red Hat Display;

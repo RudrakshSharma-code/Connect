@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;900&display=swap');
 #requests {
-  width: 95vw;
   margin: 0 auto;
 }
 #requests > div {
@@ -19,24 +18,18 @@ h1 {
 }
 
 body{
-    width: 90vw;
     margin: 0 auto;
 }
+
 
 #requests > div{
     border: 1px solid black;
     margin: 20px;
     padding: 10px;
+    
 }
 
 #slider {
-<<<<<<< HEAD
-    margin: 3em 7% ;
-}
-
-#confirm button  {
-    margin: 5em 0;
-=======
     margin: 5% 7%;
 }
 
@@ -67,5 +60,4 @@ body{
 
 
   
->>>>>>> aee087da8bc730611da869198d5ff67f252ca4ed
 }

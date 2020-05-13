@@ -24,7 +24,13 @@ body {
   header a {
     margin: auto 0;
   }
+  .header a{
+    padding: 0;
+  }
   
+  #goprof{
+    float: right;
+  }
 #confirm {
   margin: 40px auto;
   width: 70vw;

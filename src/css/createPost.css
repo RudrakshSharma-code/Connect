@@ -12,6 +12,14 @@ form{
   float: right;
 }
 
+.header a{
+  padding: 0;
+}
+
+#goprof{
+  float: right;
+}
+
 form input{
   line-height: 50px;
 }
