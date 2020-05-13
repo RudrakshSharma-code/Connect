@@ -1,4 +1,8 @@
 
+body{
+  height: 100vh;
+}
+
 form{
     width: 90vw;
     margin: 0 auto;
