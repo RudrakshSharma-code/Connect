@@ -9,6 +9,7 @@ const user = aws.getUser();
   // itemsCount: Int!
   // latitude: String!
   // longitude: String!
+  // time: String!
 
   // userID: String!
   // userFirstName: String!
@@ -60,6 +61,7 @@ async function post() {
     itemsCount: pitemscount,
     latitude: ulatitude,
     longitude: ulongitude,
+    time: "someTime",
   
     userID: uid,
     userFirstName: first,

@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    /* display: none; */
+    display: none;
     background-color: #f6fcff;
     font-family: "Red Hat Display", sans-serif;
   }
