@@ -12,6 +12,7 @@ async function changeHtml(){
       name += user.attributes.family_name;
       $("#firstLast").text(name);
       $("#number").text(user.attributes.phone_number)
+      $("#email").text(user.attributes.email)
 }
 
 function setButton(){

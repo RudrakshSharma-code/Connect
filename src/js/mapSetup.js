@@ -49,15 +49,19 @@ function works(x, y) {
       }
   }
 
-  $(document).ready(setMap());
-  currentAuthenticatedUser();
+  $(document).ready(function(){
+    setMap();
+    currentAuthenticatedUser();
+    nullFix();
+  })  
 
   async function currentAuthenticatedUser() {
     let user = await aws.currentAuthenticatedUser({
         bypassCache: true
       })
-      .then(user => document.getElementById("firstLast").innerHTML = user.attributes.given_name + " " + user.attributes.family_name)
-      .catch(err => console.log(err));
+      document.getElementById("firstLast").innerHTML = user.attributes.given_name + " " + user.attributes.family_name
+      document.getElementById("number").innerHTML = user.attributes.phone_number
+      document.getElementById("email").innerHTML = user.attributes.email
   }
 
   async function signOut() {
@@ -74,8 +78,8 @@ function works(x, y) {
     } else {};
   }
   
-  window.onload = function nullFix() {
-    document.getElementById("logout").addEventListener("click", signOut);
-  }
+function nullFix() {
+  document.getElementById("logout").addEventListener("click", signOut);
+}
 
   

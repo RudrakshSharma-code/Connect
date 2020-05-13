@@ -7,7 +7,7 @@ window.onload = function () {
   document.body.style.display = "block";
 }
 
-//sign up function
+//sign in function
 async function signIn() {
   let user = await aws.signIn(
     document.getElementById("signInEmail").value,
@@ -46,7 +46,7 @@ forgotLink.addEventListener("click", showPass);
 function hidePass() {
   let x = document.getElementsByClassName("form-group");
   let i;
-  for (i = 0; i <x.length; i ++) {
+  for (i = 0; i < x.length; i++) {
     x[i].style.display = 'none';
   }
   document.getElementById("forgotten").style.display = 'none';
