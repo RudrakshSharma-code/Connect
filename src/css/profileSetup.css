@@ -2,11 +2,25 @@ body {
   background-color: #f6fcff;
   font-family: "Red Hat Display", sans-serif;
   height: 100vh;
+  margin: 0 auto;
+  clear: both;
 }
 
 header {
   height: 50px;
 }
+
+#main{
+  margin: 0 auto;
+  clear: both;
+  padding: 0 5vw;
+}
+
+#main > *{
+  width: 90vw;
+  margin: o auto;
+}
+
 
 header * {
   text-decoration: none;
