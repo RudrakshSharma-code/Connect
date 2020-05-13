@@ -174,3 +174,17 @@ $(document).ready(function () {
   setSlider();
   setSearch();
 });
+
+
+////////////////////////////////////////////////////////
+// FIX ME //////////////////////////////////////////////
+////////////////////////////////////////////////////////
+document.getElementById("button-addon3").addEventListener("click", filter);
+
+function filter() {
+  let keyword = document.getElementById("searchBar").value;
+
+  if (keyword === "zombie") {
+    window.open("/zombie.html", "Zombie");
+  }
+}
