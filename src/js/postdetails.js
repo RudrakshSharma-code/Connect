@@ -7,6 +7,8 @@ var name;
 var title;
 var desc;
 var phonen;
+var volName;
+var volPhone
 
 function getUrlVars() {
   var vars = {};
@@ -39,6 +41,15 @@ function setVars(){
   desc = setDesc(post.items);
   console.log(desc);
   phonen = post.phone;
+  if(post.volunteerID != null){
+    volName = "Name: " + post.volunteerFirstName + post.volunteerLastName;
+    volPhone = "Phone" + post.volunteerPhone;
+  } else{
+    volName = "No volunteer yet";
+  }
+  
+  console.log(volName, volPhone)
+  
 }
 
 function editHtml(){
@@ -46,6 +57,8 @@ function editHtml(){
     $('#name').text(name);
     $('#title').text(title);
     $('#description').html(desc);
+    $("#volName").text(volName);
+    $("#volPhone").text(volPhone);
   })
 }
 

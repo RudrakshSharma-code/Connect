@@ -22,5 +22,6 @@ function setButton(){
 
 $(document).ready(function(){
   changeHtml();
+  setButton();
 })
 
