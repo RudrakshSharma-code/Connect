@@ -1,0 +1,2 @@
+import {createPost} from "./aws";
+

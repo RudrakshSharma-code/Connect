@@ -7,6 +7,8 @@ var name;
 var title;
 var desc;
 var phonen;
+var volName;
+var volPhone
 
 function getUrlVars() {
   var vars = {};
@@ -34,11 +36,20 @@ function setDesc(items){
 
 function setVars(){
   console.log("post: ", post)
-  name = '' + post.firstName + " " + post.lastName;
+  name = '' + post.userFirstName + " " + post.userLastName;
    title = post.title;
   desc = setDesc(post.items);
   console.log(desc);
   phonen = post.phone;
+  if(post.volunteerID != null){
+    volName = "Name: " + post.volunteerFirstName + post.volunteerLastName;
+    volPhone = "Phone" + post.volunteerPhone;
+  } else{
+    volName = "No volunteer yet";
+  }
+  
+  console.log(volName, volPhone)
+  
 }
 
 function editHtml(){
@@ -46,6 +57,8 @@ function editHtml(){
     $('#name').text(name);
     $('#title').text(title);
     $('#description').html(desc);
+    $("#volName").text(volName);
+    $("#volPhone").text(volPhone);
   })
 }
 
@@ -59,8 +72,19 @@ async function run(){
   editHtml();
 }
 
-$("#contact").on("click", function(){
+$("#contact").on("click", async function(){
   alert("Phone number: " + phonen);
+  let volunteer = await user;
+
+  post.volunteerID = volunteer.attributes.sub;
+  post.volunteerFirstName = volunteer.attributes.given_name;
+  post.volunteerLastName = volunteer.attributes.family_name;
+  post.volunteerEmail = volunteer.attributes.email;
+  post.volunteerPhone = volunteer.attributes.phone_number;
+
+  aws.updatePost(post);
+  console.log("here");
+  
 })
 run();
 
