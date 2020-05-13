@@ -8,7 +8,8 @@ var title;
 var desc;
 var phonen;
 var volName;
-var volPhone
+var volPhone; 
+var date;
 
 function getUrlVars() {
   var vars = {};
@@ -47,7 +48,7 @@ function setVars(){
   } else{
     volName = "No volunteer yet";
   }
-  
+  date = post.time;
   console.log(volName, volPhone)
   
 }
@@ -59,6 +60,7 @@ function editHtml(){
     $('#description').html(desc);
     $("#volName").text(volName);
     $("#volPhone").text(volPhone);
+    $("#posted").text("Posted on " + date);
   })
 }
 

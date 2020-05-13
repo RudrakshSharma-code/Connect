@@ -41,8 +41,10 @@ function setHtml() {
     })
     let status =  (post.volunteerID == null) ?
                   "pending" :
-                  "complete"
+                  "complete";
+    let date = post.time;
     $("#post_" + post.id + " .status").text(status);
+    $("#post_" + post.id + " .posted").text("Posted on " + date);
   });
 }
 
