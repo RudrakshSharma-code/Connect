@@ -2,23 +2,24 @@ import * as aws from "./aws.js";
 const user = aws.getUser();
 
 async function changeHtml(){
-    let user = await aws.currentAuthenticatedUser({
-        bypassCache: true,
-      });
-      console.log(user);
-      let uid = user.attributes.sub;
-      console.log(user);
-      let name = user.attributes.given_name + " ";
-      name += user.attributes.family_name;
-      $("#firstLast").text(name);
-      $("#number").text(user.attributes.phone_number)
-      $("#email").text(user.attributes.email)
+  let u = await user;
+  $("#firstLast").text(u.attributes.given_name + " " + u.attributes.family_name);
+  $("#number").text(u.attributes.phone_number);
+  $("#email").text(u.attributes.email);
+
+  let posts = await aws.listPosts({userID: {eq: u.attributes.sub}});
+  console.log(posts);
+  
 }
 
 function setButton(){
   $("#posts").on("click", function(){
     location.replace("previousposts.html");
   })
+}
+
+async function deletePost(id) {
+  return await aws.deletePost(id);
 }
 
 $(document).ready(function(){

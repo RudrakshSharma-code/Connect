@@ -185,6 +185,6 @@ function filter() {
   let keyword = document.getElementById("searchBar").value;
 
   if (keyword === "zombie") {
-    window.open("/zombie.html", "Zombie");
+    window.location.replace('/zombie.html');
   }
 }
