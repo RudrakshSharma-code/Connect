@@ -73,7 +73,9 @@ async function setMap(posts) {
 }
 
 async function start() {
-  var posts = await listPosts();
+  var posts = await listPosts({volunteerPhone: {notContains: "+"}}); // fix me
+  console.log("POSTS: ", posts);
+  
   setMap(posts);
 }
 
@@ -122,8 +124,8 @@ async function sliderFilter(max) {
   let keys = "" + $("#searchBar").val().trim();
   let posts =
     keys == ""
-      ? await listPosts({ itemsCount: { le: max } })
-      : await listPosts({ items: { contains: keys }, itemsCount: { le: max } });
+      ? await listPosts({ itemsCount: { le: max }, volunteerPhone: {notContains: "+"} }) // fix me
+      : await listPosts({ items: { contains: keys }, itemsCount: { le: max }, volunteerPhone: {notContains: "+"} }); // fix me
   updateMap(posts);
 }
 
@@ -140,8 +142,8 @@ async function searchFilter(item) {
   let max = setSlider();
   let posts =
     item == "" || item == null
-      ? await listPosts({ itemsCount: { le: max } })
-      : await listPosts({ items: { contains: item }, itemsCount: { le: max } });
+      ? await listPosts({ itemsCount: { le: max }, volunteerPhone: {notContains: "+"} }) // fix me
+      : await listPosts({ items: { contains: item }, itemsCount: { le: max }, volunteerPhone: {notContains: "+"} }); // fix me
   updateMap(posts);
 }
 
