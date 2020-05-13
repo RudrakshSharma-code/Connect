@@ -73,7 +73,7 @@ export async function getPost(id) {
 export async function listPosts(filter) {
   // filter is optional
   // example
-  // filter by user= {user: {eq: "userID"}};
+  // filter by user= {userID: {eq: "userID"}};
   // filter by item = {items: {contains: "itemName"}};
   // filter by itemsCount = {itemsCount: {le: "someNumber"}};
   const limit = 50; // what this limit should be?
@@ -325,5 +325,6 @@ export async function getUser() {
     window.location.replace('/login.html');
   }
   
+  // document.body.onload = () => { document.body.style.display = "block"; }
   return user;
 }
