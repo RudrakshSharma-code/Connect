@@ -59,8 +59,19 @@ async function run(){
   editHtml();
 }
 
-$("#contact").on("click", function(){
+$("#contact").on("click", async function(){
   alert("Phone number: " + phonen);
+  let volunteer = await user;
+
+  post.volunteerID = volunteer.attributes.sub;
+  post.volunteerFirstName = volunteer.attributes.given_name;
+  post.volunteerLastName = volunteer.attributes.family_name;
+  post.volunteerEmail = volunteer.attributes.email;
+  post.volunteerPhone = volunteer.attributes.phone_number;
+
+  aws.updatePost(post);
+  console.log("here");
+  
 })
 run();
 
