@@ -2,13 +2,10 @@ import * as aws from "./aws.js";
 const user = aws.getUser();
 let signUpPass = document.getElementById("signUpPass")
 
-
-window.onload = function scripts() {
-    document.getElementById("confirmDiv").style.display = "none";
-    document.body.style.display = "block";
-    document.getElementById("prompt").style.display = "none";
-    document.getElementById("show").style.display = "none";
-}
+document.getElementById("confirmDiv").style.display = "none";
+document.body.style.display = "block";
+document.getElementById("prompt").style.display = "none";
+document.getElementById("show").style.display = "none";
 
 async function signUp() {
     let user = await aws.signUp(

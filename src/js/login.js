@@ -1,11 +1,9 @@
 import * as aws from "./aws.js";
 const user = aws.getUser();
 
-window.onload = function () {
-  document.getElementById("passwordDiv").style.display = "none";
-  document.getElementById("recoverDiv").style.display = "none";
-  document.body.style.display = "block";
-}
+document.getElementById("passwordDiv").style.display = "none";
+document.getElementById("recoverDiv").style.display = "none";
+document.body.style.display = "block"
 
 //sign in function
 async function signIn() {
