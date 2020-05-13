@@ -163,7 +163,7 @@ async function signOut() {
   }
 }
 
-window.onload = function nullFix() {
+function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
 };
 
@@ -173,6 +173,7 @@ $(document).ready(function () {
   start();
   setSlider();
   setSearch();
+  nullFix();
 });
 
 

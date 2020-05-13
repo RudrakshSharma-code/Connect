@@ -89,4 +89,24 @@ function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
 }
 
+document.getElementById("button-addon3").addEventListener("click", function () {
+  L.esri.Geocoding.geocode().text(document.getElementById("locsearch").value).run(async function (err, results, response) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    const user = await aws.currentAuthenticatedUser();
+    const answer = await aws.updateUserCoordinates(user, "" + results.results[0].latlng.lat, "" + results.results[0].latlng.lng);
+
+    L.esri.Geocoding.reverseGeocode()
+    .latlng([results.results[0].latlng.lat, results.results[0].latlng.lng])
+    .run(function (error, result, response) {
+      console.log(error);
+      });
+    console.log(results);
+    console.log(response);
+    console.log(user);
+  });
+})
+
   
