@@ -2,6 +2,7 @@ import * as aws from "./aws.js";
 const user = aws.getUser();
 
 $(document).ready(function () {
+  nullFix();
   currentAuthenticatedUser()
   $("#volunteer.card").click(function () {
     $(this).css("color", "red");
@@ -31,6 +32,6 @@ async function signOut() {
   } else {};
 }
 
-window.onload = function nullFix() {
+function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
 }

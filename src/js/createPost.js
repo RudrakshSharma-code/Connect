@@ -101,7 +101,11 @@ async function signOut() {
   } else {};
 }
 
-window.onload = function nullFix() {
+$(document).ready(function(){
+  nullFix();
+})
+
+function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
 }
 
