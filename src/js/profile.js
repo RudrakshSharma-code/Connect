@@ -1,6 +1,10 @@
 import * as aws from "./aws.js";
 const user = aws.getUser();
 
+let firstInput = document.getElementById("firstInput");
+let lastInput = document.getElementById("lastInput");
+let submitName = document.getElementById("submitName");
+
 //map set-up
 async function works(x, y) {
   const user = await aws.currentAuthenticatedUser();
@@ -30,6 +34,7 @@ async function setMap() {
   works(ulatitude, ulongitude);
 }
 
+//start
 $(document).ready(function () {
   changeHtml();
   setButton();
@@ -37,6 +42,7 @@ $(document).ready(function () {
   nullFix();
   coding();
   editName();
+  binding();
 })
 
 //address reverse coding
@@ -73,29 +79,41 @@ function setButton(){
 
 
 //DELETE
-
 async function deletePost(id) {
   return await aws.deletePost(id);
 }
 
 //edit functions
-
-function editName () {
-document.getElementById("submit").addEventListener("click", async function () {
-  const user = await aws.currentAuthenticatedUser();
-  const answer = await aws.updateUserAttributes(user,  document.getElementById("first").value,  document.getElementById("last").value);
-  $("#firstLast").text(user.attributes.given_name + " " + user.attributes.family_name);
-  console.log(user);
-})
+function editName() {
+  document.getElementById("submitName").addEventListener("click", async function () {
+    const user = await aws.currentAuthenticatedUser();
+    const answer = await aws.updateUserAttributes(
+      user, 
+      document.getElementById("firstInput").value, 
+      document.getElementById("lastInput").value);
+    $("#firstLast").text(user.attributes.given_name + " " + user.attributes.family_name);
+    console.log(user);
+    window.location.reload();
+  })
 }
+
+//reveal button
+function binding() {
+document.getElementById("edit1").addEventListener("click", function () {
+  document.getElementById("firstInput").style.display="inline";
+  document.getElementById("lastInput").style.display="inline";
+  document.getElementById("submitName").style.display="inline";
+});
+}
+
 
 //sign out
 async function signOut() {
-  const user = await currentAuthenticatedUser();
+  const user = await aws.currentAuthenticatedUser();
   if (user.attributes) {
     let check = confirm("Are you sure you want to log out?");
     if (check == true) {
-      const user = await currentAuthenticatedUser();
+      const user = await aws.currentAuthenticatedUser();
       user.signOut();
       setTimeout(function () {
         window.location.assign("index.html");
