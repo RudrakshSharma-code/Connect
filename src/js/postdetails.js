@@ -103,7 +103,8 @@ async function signOut() {
 }
 
 $('#contact').on('click', function() {
-  location.replace("info.html?id=" + this.post.id);
+  location.replace("postdetails.html?id=" + this.post);
+  //location.replace("info.html?id=");
 })
 
 window.onload = function nullFix() {
