@@ -2,8 +2,9 @@
     border: none;
     background-color: #DAF4FF;
     font-weight: 500;
-    width: 90%;
+    width: 100%;
     text-align: center;
+    margin: 20px auto;
 }
 
 #phone, #location, #post, #mail {
@@ -23,7 +24,7 @@
     width: 100%;
 }
 
-#main button {
+.save{
     display: none;
 }
 
