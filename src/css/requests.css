@@ -9,6 +9,11 @@
   padding: 10px;
 }
 
+
+
+
+
+
 h1 {
   font-family: "Red Hat Display";
   font-style: normal;
@@ -51,6 +56,32 @@ body{
 #main{
   width: 90vw;
   margin: 0 auto;
+}
+
+
+header {
+  height: 50px;
+}
+
+header * {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+
+header a {
+  margin: auto 0;
+}
+.header a{
+  padding: 0;
+}
+
+header #goprof{
+  float: center;
+}
+
+#logout {
+  float: right;
 }
 
 @media only screen and (min-width: 600px) {
