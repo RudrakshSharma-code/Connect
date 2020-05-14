@@ -57,22 +57,23 @@
       <div id="name">
         <span id="edit1" class="material-icons">edit</span>
         <h3 id="firstLast">First Last</h3>
-        <input id="firstInput" type="text"></input>
-        <input id="lastInput" type="text"></input>
+        <input id="firstInput" placeholder="First Name" type="text"></input>
+        <input id="lastInput" placeholder="Last Name" type="text"></input>
         <button id="submitName" class="save">Save</button>
       </div>
       <div id="info">
         <div id="phone">
           <h3>Phone Number</h3>
           <span id="edit2" class="material-icons">edit</span>
-          <input id="phoneInput" type="tel"></input>
+          <input id="phoneInput" type="tel" placeholder="0000000000" maxlength="10"
+            pattern="[0-9]{3}[0-9]{3}[0-9]{4}"></input>
           <button id="submitTel" class="save">Save</button>
           <h5 id="number">123-456-7890</h5>
         </div>
         <div id="mail">
           <h3>Email</h3>
           <span id="edit3" class="material-icons">edit</span>
-          <input id="mailInput" type="email"></input>
+          <input id="mailInput" placeholder="Email" type="email"></input>
           <button id="submitMail" class="save">Save</button>
           <h5 id="email">anonymous@nothing.com</h5>
         </div>
