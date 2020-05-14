@@ -126,7 +126,7 @@ function editEmail() {
     const answer = await aws.updateUserEmail(
       user,
       document.getElementById("mailInput").value);
-    $("#number").text(user.attributes.phone_number);
+    $("#number").text(user.attributes.email);
     document.getElementById("submitMail").click();
     document.getElementById("mailInput").style.display = "none";
     document.getElementById("submitMail").style.display = "none";
