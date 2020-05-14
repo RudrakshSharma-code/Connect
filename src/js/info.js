@@ -21,13 +21,13 @@ function getUrlVars() {
 function setVars() {
     console.log("post: ", post)
     name = '' + post.userFirstName + " " + post.userLastName;
-    phonen = post.phone;
+    phonen ='' + post.userPhone;
 }
 
 function editHtml() {
     $(document).ready(function () {
         $('#firstLast').text(name);
-        $("#phone").text(phone);
+        $("#phone").text(phonen);
     })
 }
 
@@ -37,3 +37,5 @@ async function run() {
     setVars();
     editHtml();
 }
+
+run();

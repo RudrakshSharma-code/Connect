@@ -106,8 +106,6 @@ async function signOut() {
 
 $('#contact').on('click', function() {
   location.replace("info.html?id=" + post.id);
-  //location.replace("info.html?id=");
-  window.alert("hi");
 })
 
 window.onload = function nullFix() {
