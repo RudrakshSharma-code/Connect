@@ -88,6 +88,16 @@ $("#contact").on("click", async function(){
   console.log("here");
   
 })
+
+$("#delete").on("click", async function(){
+  await aws.deletePost(post.id).then(function(){
+    alert("Post deleted");
+    window.location.replace("previousposts.html");
+  })
+  // 
+  // 
+})
+
 run();
 
 async function signOut() {
