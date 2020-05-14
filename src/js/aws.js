@@ -297,9 +297,9 @@ export async function updateUserAttributes(user, given_name, family_name) {
   
 }
 
-export async function updateUserCoordinates(user, latitude, longitude) {
+export async function updateUserCoordinates(user, latitude, longitude, address) {
   try {
-    const answer = await Auth.updateUserAttributes(user, {'custom:latitude': latitude, 'custom:longitude': longitude});
+    const answer = await Auth.updateUserAttributes(user, {'custom:latitude': latitude, 'custom:longitude': longitude, "address": address});
     return answer;
   } catch (error) {
     return error;

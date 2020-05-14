@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;900&display=swap');
+
 #requests {
   margin: 0 auto;
 }
@@ -7,6 +8,11 @@
   margin: 20px;
   padding: 10px;
 }
+
+
+
+
+
 
 h1 {
   font-family: "Red Hat Display";
@@ -37,6 +43,47 @@ body{
   height: 40vh;
 }
 
+#homeH1{
+  margin: 0 auto;
+  width: 100%;
+}
+
+ #search, #confirm, #slider{
+  margin: 0 auto;
+  width: 100%px;
+}
+
+#main{
+  width: 90vw;
+  margin: 0 auto;
+}
+
+
+header {
+  height: 50px;
+}
+
+header * {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+
+header a {
+  margin: auto 0;
+}
+.header a{
+  padding: 0;
+}
+
+header #goprof{
+  float: center;
+}
+
+#logout {
+  float: right;
+}
+
 @media only screen and (min-width: 600px) {
 body{
   width: 100%;
@@ -45,11 +92,11 @@ body{
 }
   #map, #mapid{
     height: 50vh;
-    width: 600px
+    width: 500px;
   }
   #main, #search, #confirm, #slider{
     margin: 0 auto;
-    width: 600px;
+    width: 500px
   }
   #slider{
     margin: 10px auto 30px;
@@ -61,3 +108,4 @@ body{
 
   
 }
+

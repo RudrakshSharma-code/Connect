@@ -66,6 +66,7 @@
             <h1>Game Over</h1>
             <h3 id="score"></h3>
             <button onclick="startGame()">Restart</button>
+            <button onclick="exit()">Exit</button>
     </div>
 
     <div id="play" class="container">
@@ -117,6 +118,10 @@
         time.then = Date.now();
         addZombie();
         nextFrame();
+    }
+
+    function exit() {
+        window.location.replace('/requests.html');
     }
 
     function nextFrame() {

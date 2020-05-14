@@ -121,7 +121,7 @@ function setSlider() {
 }
 
 async function sliderFilter(max) {
-  let keys = "" + $("#searchBar").val().trim();
+  let keys = "" + $("#searchBar").val().trim().toLowerCase();
   let posts =
     keys == ""
       ? await listPosts({ itemsCount: { le: max }, volunteerPhone: {notContains: "+"} }) // fix me
@@ -132,7 +132,7 @@ async function sliderFilter(max) {
 function setSearch() {
   var value = "";
   $("#button-addon3").on("click", function () {
-    value = $("#searchBar").val().trim();
+    value = $("#searchBar").val().trim().toLowerCase();
     searchFilter(value);
   });
   return value;
