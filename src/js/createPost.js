@@ -59,7 +59,7 @@ async function post() {
   let ptitle = $("#title").val();
   let pitems = [];
   $("input[name='item']").each(function () {
-    pitems.push($(this).val());
+    pitems.push($(this).val().trim().toLowerCase());
   });
     let pitemscount = pitems.length;
   let ulatitude = user.attributes["custom:latitude"];
