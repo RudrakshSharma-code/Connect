@@ -7,7 +7,7 @@
 }
 
 #phone, #location, #post, #mail {
-    margin: 1em 5%;
+    margin-bottom: 1em 5%;
 }
 
 #account, #logout {
@@ -17,6 +17,62 @@
 #home {
     float: left;
 }
-main {
-    margin-top: 1em;
+
+#main {
+    position: relative;
+    width: 100%;
+}
+
+#main button {
+    display: none;
+}
+
+#main input {
+    display: none;
+}
+
+
+#edit1, #edit2, #edit3, #edit4 {
+    float: right;
+    position: absolute;
+    margin-left: 10rem;
+}
+
+#edit1 {
+    right: 37rem;
+}
+
+#edit2 {
+    right: 38rem;
+    top: 14.5rem;
+}
+
+#edit3 {
+    right: 40rem;
+    top: 20.5rem;
+}
+#edit4 {
+    right: 27rem;
+}
+
+.material-icons{
+    cursor: pointer; 
+}
+
+@media screen and (max-width: 650px) {
+    #edit1, #edit2, #edit3, #edit4 {
+        float: right;
+        position: absolute;
+        right: 10rem;
+        margin-left: 10rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #edit1, #edit2, #edit3, #edit4 {
+        float: right;
+        position: absolute;
+        right: 2rem;
+        margin-left: 10rem;
+    }
 }

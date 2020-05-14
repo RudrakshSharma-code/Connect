@@ -2,6 +2,11 @@ import * as aws from "./aws.js";
 
 const user = aws.getUser();
 
+
+2
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
 // type Post @model {
   // id: ID!
   // title: String!
@@ -35,9 +40,13 @@ async function setVars() {
     .then((user) => console.log((user = user.attributes.sub)))
     .catch((err) => console.log("error: ", err));
   return user;
+
+  
+
 }
 
 async function post() {
+
   let user = await aws.currentAuthenticatedUser({
     bypassCache: true,
   });
@@ -61,7 +70,7 @@ async function post() {
     itemsCount: pitemscount,
     latitude: ulatitude,
     longitude: ulongitude,
-    time: "someTime",
+    time: date,
   
     userID: uid,
     userFirstName: first,
@@ -101,7 +110,11 @@ async function signOut() {
   } else {};
 }
 
-window.onload = function nullFix() {
+$(document).ready(function(){
+  nullFix();
+})
+
+function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
 }
 

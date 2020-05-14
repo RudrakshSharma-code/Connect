@@ -25,13 +25,14 @@ function createCard(id) {
       <span class="title">Title</span>
        <span class="status">status</span>
     </div>
-    <p class="posted">Posted 3 hours ago</p>
+    <span class="posted">Posted 3 hours ago</span>
     </div>`;
     $("main").append(card);
 }
 
 function setHtml() {
   posts.forEach(function (post) {
+    console.log(post);
     createCard(post.id);
     let card = $("#post_" + post.id + " .title");
     $("#post_" + post.id + " .title").text(post.title);
@@ -40,8 +41,10 @@ function setHtml() {
     })
     let status =  (post.volunteerID == null) ?
                   "pending" :
-                  "complete"
+                  "complete";
+    let date = post.time;
     $("#post_" + post.id + " .status").text(status);
+    $("#post_" + post.id + " .posted").text("Posted on " + date);
   });
 }
 

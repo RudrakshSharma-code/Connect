@@ -32,16 +32,19 @@
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin=""></script>
 
+  <script src="https://unpkg.com/esri-leaflet"></script>
+  <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
 
   <script src="profile.js"></script>
-  <script src="mapSetup.js"></script>
 
 </head>
 
 <body>
   <header class="header">
     <a id="home" href="home.html">
-      <span class="material-icons">arrow_back</span>
+      <span class="material-icons">
+        home
+      </span>
     </a href="index.html">
     <!--Logout-->
     <a id="logout" href="#">
@@ -52,34 +55,48 @@
     <div id="profile">
       <div id="avatar"></div>
       <div id="name">
+        <span id="edit1" class="material-icons">edit</span>
         <h3 id="firstLast">First Last</h3>
+        <input id="firstInput" type="text"></input>
+        <input id="lastInput" type="text"></input>
+        <button id="submitName">Save</button>
       </div>
       <div id="info">
         <div id="phone">
           <h3>Phone Number</h3>
+          <span id="edit2" class="material-icons">edit</span>
+          <input id="phoneInput" type="tel"></input>
+          <button id="submitTel">Save</button>
           <h5 id="number">123-456-7890</h5>
         </div>
         <div id="mail">
           <h3>Email</h3>
+          <span id="edit3" class="material-icons">edit</span>
+          <input id="mailInput" type="email"></input>
+          <button id="submitMail">Save</button>
           <h5 id="email">anonymous@nothing.com</h5>
         </div>
+        <div id="addresses">
+          <h3>Address</h3>
+          <span id="edit4" class="material-icons">edit</span>
+          <h5 id="address"></h5>
 
-        <h3 id="location">Location</h3>
-        <div id="map">
-          <div id="mapid"></div>
-        </div><br>
+          <div id="map">
+            <div id="mapid"></div>
+          </div><br>
 
-        <div id="post">
-          <h3>Previous Posts</h3>
-          <button id="posts">See Previous Posts</button>
+          <div id="post">
+            <h3>Previous Posts</h3>
+            <button id="posts">See Previous Posts</button>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <div id="posts">
     </div>
   </main>
-  
+  </div>
+
 </body>
 
 </html>

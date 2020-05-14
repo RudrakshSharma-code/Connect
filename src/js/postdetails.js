@@ -8,7 +8,8 @@ var title;
 var desc;
 var phonen;
 var volName;
-var volPhone
+var volPhone; 
+var date;
 
 function getUrlVars() {
   var vars = {};
@@ -47,7 +48,7 @@ function setVars(){
   } else{
     volName = "No volunteer yet";
   }
-  
+  date = post.time;
   console.log(volName, volPhone)
   
 }
@@ -59,6 +60,7 @@ function editHtml(){
     $('#description').html(desc);
     $("#volName").text(volName);
     $("#volPhone").text(volPhone);
+    $("#posted").text("Posted on " + date);
   })
 }
 
@@ -103,10 +105,17 @@ async function signOut() {
 }
 
 $('#contact').on('click', function() {
-  location.replace("postdetails.html?id=" + this.post);
+  location.replace("info.html?id=" + post.id);
   //location.replace("info.html?id=");
+  window.alert("hi");
 })
 
 window.onload = function nullFix() {
+$(document).ready(function(){
+  nullFix();
+})}
+
+function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
 }
+

@@ -1,10 +1,22 @@
 
+body{
+  height: 100vh;
+}
+
 form{
     width: 90vw;
     margin: 0 auto;
 }
 
 #logout {
+  float: right;
+}
+
+.header a{
+  padding: 0;
+}
+
+#goprof{
   float: right;
 }
 

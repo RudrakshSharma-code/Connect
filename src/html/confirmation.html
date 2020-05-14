@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmation</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <link
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet"
@@ -28,6 +30,11 @@
     <header class="header">
         <a id="logout" href="#">
             <span class="material-icons">exit_to_app</span>
+        </a>
+        <a id="goprof" href="profile.html">
+            <span class="material-icons">
+                account_circle
+                </span>
         </a>
     </header>
     <div id="bravo">
@@ -57,7 +64,12 @@
             } else {};
         }
 
-        window.onload = function nullFix() {
+        
+        $(document).ready(function(){
+        nullFix();
+        })
+        
+        function nullFix() {
             document.getElementById("logout").addEventListener("click", signOut);
         }
     </script>
