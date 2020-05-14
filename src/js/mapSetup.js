@@ -89,7 +89,7 @@ document.getElementById("button-addon3").addEventListener("click", function () {
         console.log(results);
         document.getElementById("address").innerHTML = results.results[0].properties.Match_addr;
         const user = await aws.currentAuthenticatedUser();
-        const answer = await aws.updateUserCoordinates(user, "" + results.results[0].latlng.lat, "" + results.results[0].latlng.lng);
+        const answer = await aws.updateUserCoordinates(user, "" + results.results[0].latlng.lat, "" + results.results[0].latlng.lng, "some address");
       });
     console.log(results);
     console.log(user);
