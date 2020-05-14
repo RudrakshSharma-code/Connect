@@ -126,7 +126,7 @@ function editEmail() {
     const answer = await aws.updateUserEmail(
       user,
       document.getElementById("mailInput").value);
-    $("#number").text(user.attributes.email);
+    $("#email").text(user.attributes.email);
     document.getElementById("submitMail").click();
     document.getElementById("mailInput").style.display = "none";
     document.getElementById("submitMail").style.display = "none";
@@ -160,8 +160,8 @@ function twoBinding() {
 
 function threeBinding() {
   document.getElementById("edit3").addEventListener("click", function () {
-    let phoneInput = document.getElementById("mailInput");
-    let submitTel = document.getElementById("submitMail");
+    let mailInput = document.getElementById("mailInput");
+    let submitMail = document.getElementById("submitMail");
     if (mailInput.style.display = "none") {
       mailInput.style.display = "inline";
       submitMail.style.display = "inline";
