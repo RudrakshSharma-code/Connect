@@ -123,7 +123,6 @@ h3 {
     text-align: center;
   }
   #location{
-    
     width: 900px;
     height: auto;
     display: table;
@@ -156,6 +155,10 @@ h3 {
     width: 600px;
     margin: 30px auto;
     text-align: left;
+  }
+
+  #posts{
+    width: 600px;
   }
 }
 
