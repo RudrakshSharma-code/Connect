@@ -46,7 +46,8 @@ $(document).ready(function () {
   editEmail();
   oneBinding();
   twoBinding();
-  threeBinding();
+  // threeBinding();
+  fourBinding();
 })
 
 //address reverse coding
@@ -167,6 +168,12 @@ function threeBinding() {
       submitMail.style.display = "inline";
     }
   });
+}
+
+function fourBinding(){
+  document.getElementById("edit4").addEventListener("click", function () {
+    window.location.replace("profileSetup.html");
+  })
 }
 
 
