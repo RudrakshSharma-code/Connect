@@ -297,9 +297,27 @@ export async function updateUserAttributes(user, given_name, family_name) {
   
 }
 
-export async function updateUserCoordinates(user, latitude, longitude, address) {
+export async function updateUserPhone(user, phone_number) {
   try {
-    const answer = await Auth.updateUserAttributes(user, {'custom:latitude': latitude, 'custom:longitude': longitude, "address": address});
+    const answer = await Auth.updateUserAttributes(user, {'phone_number': phone_number});
+    return answer;
+  } catch (error) {
+    return error;
+  }
+}
+
+export async function updateUserEmail(user, email) {
+  try {
+    const answer = await Auth.updateUserAttributes(user, {"username": email});
+    return answer;
+  } catch (error) {
+    return error;
+  }
+}
+
+export async function updateUserCoordinates(user, latitude, longitude) {
+  try {
+    const answer = await Auth.updateUserAttributes(user, {'custom:latitude': latitude, 'custom:longitude': longitude});
     return answer;
   } catch (error) {
     return error;

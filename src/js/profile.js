@@ -42,7 +42,11 @@ $(document).ready(function () {
   nullFix();
   coding();
   editName();
-  binding();
+  editPhone();
+  editEmail();
+  oneBinding();
+  twoBinding();
+  threeBinding();
 })
 
 //address reverse coding
@@ -51,28 +55,32 @@ async function coding() {
   console.log(user.attributes["custom:latitude"])
   console.log(user.attributes["custom:longitude"])
   L.esri.Geocoding.reverseGeocode()
-  .latlng([user.attributes["custom:latitude"], user.attributes["custom:longitude"]])
-  .run(function (error, result, response) {
-    console.log(error);
-    console.log(result);
-    document.getElementById("address").innerHTML = result.address.Match_addr;
-  });
+    .latlng([user.attributes["custom:latitude"], user.attributes["custom:longitude"]])
+    .run(function (error, result, response) {
+      console.log(error);
+      console.log(result);
+      document.getElementById("address").innerHTML = result.address.Match_addr;
+    });
 }
 
 //retrieve user info
-async function changeHtml(){
+async function changeHtml() {
   let u = await user;
   $("#firstLast").text(u.attributes.given_name + " " + u.attributes.family_name);
   $("#number").text(u.attributes.phone_number);
   $("#email").text(u.attributes.email);
 
-  let posts = await aws.listPosts({userID: {eq: u.attributes.sub}});
+  let posts = await aws.listPosts({
+    userID: {
+      eq: u.attributes.sub
+    }
+  });
   console.log(posts);
-  
+
 }
 
-function setButton(){
-  $("#posts").on("click", function(){
+function setButton() {
+  $("#posts").on("click", function () {
     location.replace("previousposts.html");
   })
 }
@@ -88,22 +96,77 @@ function editName() {
   document.getElementById("submitName").addEventListener("click", async function () {
     const user = await aws.currentAuthenticatedUser();
     const answer = await aws.updateUserAttributes(
-      user, 
-      document.getElementById("firstInput").value, 
+      user,
+      document.getElementById("firstInput").value,
       document.getElementById("lastInput").value);
     $("#firstLast").text(user.attributes.given_name + " " + user.attributes.family_name);
-    console.log(user);
-    window.location.reload();
+    document.getElementById("submitName").click();
+    document.getElementById("firstInput").style.display = "none";
+    document.getElementById("lastInput").style.display = "none";
+    document.getElementById("submitName").style.display = "none";
   })
 }
 
-//reveal button
-function binding() {
-document.getElementById("edit1").addEventListener("click", function () {
-  document.getElementById("firstInput").style.display="inline";
-  document.getElementById("lastInput").style.display="inline";
-  document.getElementById("submitName").style.display="inline";
-});
+function editPhone() {
+  document.getElementById("submitTel").addEventListener("click", async function () {
+    const user = await aws.currentAuthenticatedUser();
+    const answer = await aws.updateUserPhone(
+      user,
+      "+1" + document.getElementById("phoneInput").value);
+    $("#number").text(user.attributes.phone_number);
+    document.getElementById("submitTel").click();
+    document.getElementById("phoneInput").style.display = "none";
+    document.getElementById("submitTel").style.display = "none";
+  })
+}
+
+function editEmail() {
+  document.getElementById("submitMail").addEventListener("click", async function () {
+    const user = await aws.currentAuthenticatedUser();
+    const answer = await aws.updateUserEmail(
+      user,
+      document.getElementById("mailInput").value);
+    $("#number").text(user.attributes.phone_number);
+    document.getElementById("submitMail").click();
+    document.getElementById("mailInput").style.display = "none";
+    document.getElementById("submitMail").style.display = "none";
+  })
+}
+
+//reveal inputs and buttons
+function oneBinding() {
+  document.getElementById("edit1").addEventListener("click", function () {
+    let firstInput = document.getElementById("firstInput");
+    let lastInput = document.getElementById("lastInput");
+    let submitName = document.getElementById("submitName");
+    if (firstInput.style.display = "none") {
+      firstInput.style.display = "inline";
+      lastInput.style.display = "inline";
+      submitName.style.display = "inline";
+    }
+  });
+}
+
+function twoBinding() {
+  document.getElementById("edit2").addEventListener("click", function () {
+    let phoneInput = document.getElementById("phoneInput");
+    let submitTel = document.getElementById("submitTel");
+    if (phoneInput.style.display = "none") {
+      phoneInput.style.display = "inline";
+      submitTel.style.display = "inline";
+    }
+  });
+}
+
+function threeBinding() {
+  document.getElementById("edit3").addEventListener("click", function () {
+    let phoneInput = document.getElementById("mailInput");
+    let submitTel = document.getElementById("submitMail");
+    if (mailInput.style.display = "none") {
+      mailInput.style.display = "inline";
+      submitMail.style.display = "inline";
+    }
+  });
 }
 
 
@@ -118,10 +181,8 @@ async function signOut() {
       setTimeout(function () {
         window.location.assign("index.html");
       }, 1000);
-    } else {
-    }
-  } else {
-  }
+    } else {}
+  } else {}
 }
 
 function nullFix() {
