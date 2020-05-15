@@ -74,8 +74,8 @@ async function forgotPassword() {
   if (answer.message != undefined) {
     document.getElementById('forgotError').innerHTML = answer.message;
   } else {
-    document.getElementById("recoverDiv").style.display = "none";
-    document.getElementById("passwordDiv").style.display = "block";
+    document.getElementById("recoverDiv").style.display = "block";
+    document.getElementById("passwordDiv").style.display = "none";
   }
 }
 let confirmButton = document.getElementById("sendCode");
@@ -84,11 +84,12 @@ confirmButton.addEventListener("click", forgotPassword);
 
 async function forgotPasswordSubmit() {
   document.getElementById("passwordDiv").style.display = "none";
-  let user = await aws.forgotPasswordSubmit(
+  let answer = await aws.forgotPasswordSubmit(
     document.getElementById('recoverEmail').value,
     document.getElementById('recoverCode').value,
     document.getElementById('recoverPass').value,
   )
+  location.reload();
 }
 let recoverButton = document.getElementById("recoverButton");
 recoverButton.addEventListener("click", forgotPasswordSubmit);
