@@ -75,7 +75,6 @@ async function run(){
 }
 
 $("#contact").on("click", async function(){
-  alert("Phone number: " + phonen);
   let volunteer = await user;
 
   post.volunteerID = volunteer.attributes.sub;

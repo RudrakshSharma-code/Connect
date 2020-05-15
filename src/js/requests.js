@@ -73,9 +73,9 @@ async function setMap(posts) {
 }
 
 async function start() {
-  var posts = await listPosts({volunteerPhone: {notContains: "+"}}); // fix me
+  var posts = await listPosts({ volunteerPhone: { notContains: "+" } }); // fix me
   console.log("POSTS: ", posts);
-  
+
   setMap(posts);
 }
 
@@ -124,8 +124,15 @@ async function sliderFilter(max) {
   let keys = "" + $("#searchBar").val().trim().toLowerCase();
   let posts =
     keys == ""
-      ? await listPosts({ itemsCount: { le: max }, volunteerPhone: {notContains: "+"} }) // fix me
-      : await listPosts({ items: { contains: keys }, itemsCount: { le: max }, volunteerPhone: {notContains: "+"} }); // fix me
+      ? await listPosts({
+          itemsCount: { le: max },
+          volunteerPhone: { notContains: "+" },
+        }) // fix me
+      : await listPosts({
+          items: { contains: keys },
+          itemsCount: { le: max },
+          volunteerPhone: { notContains: "+" },
+        }); // fix me
   updateMap(posts);
 }
 
@@ -142,8 +149,15 @@ async function searchFilter(item) {
   let max = setSlider();
   let posts =
     item == "" || item == null
-      ? await listPosts({ itemsCount: { le: max }, volunteerPhone: {notContains: "+"} }) // fix me
-      : await listPosts({ items: { contains: item }, itemsCount: { le: max }, volunteerPhone: {notContains: "+"} }); // fix me
+      ? await listPosts({
+          itemsCount: { le: max },
+          volunteerPhone: { notContains: "+" },
+        }) // fix me
+      : await listPosts({
+          items: { contains: item },
+          itemsCount: { le: max },
+          volunteerPhone: { notContains: "+" },
+        }); // fix me
   updateMap(posts);
 }
 
@@ -167,7 +181,7 @@ async function signOut() {
 
 function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
-};
+}
 
 //CALLS
 
@@ -178,7 +192,6 @@ $(document).ready(function () {
   nullFix();
 });
 
-
 ////////////////////////////////////////////////////////
 // FIX ME //////////////////////////////////////////////
 ////////////////////////////////////////////////////////
@@ -188,6 +201,6 @@ function filter() {
   let keyword = document.getElementById("searchBar").value;
 
   if (keyword === "zombie") {
-    window.location.replace('/zombie.html');
+    window.location.replace("/zombie.html");
   }
 }

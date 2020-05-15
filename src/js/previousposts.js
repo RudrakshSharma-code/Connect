@@ -1,7 +1,7 @@
 import { currentAuthenticatedUser, getUser, listPosts } from "./aws";
 import { selectInput } from "aws-amplify";
 
-// let user = getUser();
+let user1 = getUser();
 
 var user;
 var username;

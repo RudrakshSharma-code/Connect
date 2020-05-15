@@ -2,7 +2,7 @@
     border: none;
     background-color: #DAF4FF;
     font-weight: 500;
-    width: 100%;
+    width: 600px;
     text-align: center;
     margin: 20px auto;
 }
@@ -60,12 +60,15 @@
     cursor: pointer; 
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 992px) {
     #edit1, #edit2, #edit3, #edit4 {
         float: right;
         position: absolute;
         right: 10rem;
         margin-left: 10rem;
+    }
+    #posts{
+        width: 100%;
     }
 }
 
