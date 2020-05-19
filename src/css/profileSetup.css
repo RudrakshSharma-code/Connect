@@ -1,167 +1,167 @@
 body {
-  background-color: #f6fcff;
-  font-family: "Red Hat Display", sans-serif;
-  height: 100vh;
-  margin: 0 auto;
-  clear: both;
+    background-color: #f6fcff;
+    font-family: "Red Hat Display", sans-serif;
+    height: 100vh;
+    margin: 0 auto;
+    clear: both;
 }
 
 header {
-  height: 50px;
-}
-
-#main{
-  margin: 0 auto;
-  clear: both;
-  padding: 0 5vw;
-}
-
-#main > *{
-  width: 90vw;
-  margin: o auto;
-}
-
-
-header * {
-  text-decoration: none;
-  color: black;
-  padding: 10px;
-}
-
-header a {
-  margin: auto 0;
-}
-
-#logout {
-  float: right;
+    height: 50px;
 }
 
 #main {
-  display: flex;
-  flex-direction: column;
+    margin: 0 auto;
+    clear: both;
+    padding: 0 5vw;
+}
+
+#main>* {
+    width: 90vw;
+    margin: o auto;
+}
+
+header * {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+header a {
+    margin: auto 0;
+}
+
+#logout {
+    float: right;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
 }
 
 h3 {
-  font-weight: bold;
-  font-size: 25px;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 #name {
-  text-align: center;
+    text-align: center;
 }
 
 #search {
-  width: 90vw;
-  margin: 0 auto;
+    width: 90vw;
+    margin: 0 auto;
 }
 
-#search > div {
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+#search>div {
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
 }
 
 .fa-search {
-  color: gray;
+    color: gray;
 }
 
 #avatar {
-  width: 120px;
-  height: 120px;
-  background: #819096;
-  border-radius: 120px;
-  margin: 20px auto;
+    width: 120px;
+    height: 120px;
+    background: #819096;
+    border-radius: 120px;
+    margin: 20px auto;
 }
 
 #location {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 #location h3 {
-  margin: 30px 5vw;
+    margin: 30px 5vw;
 }
 
 #map {
-  margin: 10px auto
+    margin: 10px auto
 }
 
 #mapid {
-  width: 90vw;
-  border-radius: 10px;
-  margin: 0 auto;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-  height: 30vh;
+    width: 90vw;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    height: 30vh;
 }
 
 #confirm {
-  margin: 40px auto;
-  width: 70vw;
-  font-family: "Roboto", sans-serif;
+    margin: 40px auto;
+    width: 70vw;
+    font-family: "Roboto", sans-serif;
 }
 
 #confirm button {
-  background-color: #5ab9ea;
-  box-shadow: 0px 2.76726px 2.21381px rgba(90, 185, 234, 0.0196802),
-    0px 6.6501px 5.32008px rgba(90, 185, 234, 0.0282725),
-    0px 12.5216px 10.0172px rgba(90, 185, 234, 0.035),
-    0px 22.3363px 17.869px rgba(90, 185, 234, 0.0417275),
-    0px 41.7776px 33.4221px rgba(90, 185, 234, 0.0503198),
-    0px 100px 80px rgba(90, 185, 234, 0.07);
-  border-radius: 100px;
-  padding: 10px;
+    background-color: #5ab9ea;
+    box-shadow: 0px 2.76726px 2.21381px rgba(90, 185, 234, 0.0196802),
+        0px 6.6501px 5.32008px rgba(90, 185, 234, 0.0282725),
+        0px 12.5216px 10.0172px rgba(90, 185, 234, 0.035),
+        0px 22.3363px 17.869px rgba(90, 185, 234, 0.0417275),
+        0px 41.7776px 33.4221px rgba(90, 185, 234, 0.0503198),
+        0px 100px 80px rgba(90, 185, 234, 0.07);
+    border-radius: 100px;
+    padding: 10px;
 }
 
-@media only screen and (min-width: 600px) { 
+@media only screen and (min-width: 600px) {
 
-  #mapid{
-    height: 40vh;
-  }
+    #mapid {
+        height: 40vh;
+    }
 }
 
 @media only screen and (min-width: 992px) {
-  #main{
-    text-align: center;
-  }
-  #location{
-    width: 900px;
-    height: auto;
-    display: table;
-    margin: 0 auto;
-    padding: 0;
-    text-align: center;
-    overflow:auto;
-  }
+    #main {
+        text-align: center;
+    }
 
-  #search {
-    overflow:auto;
-    width: 600px;
-    text-align: center;
-  }
+    #location {
+        width: 900px;
+        height: auto;
+        display: table;
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+        overflow: auto;
+    }
 
-  #map, #mapid{
-    overflow:auto;
-      width: 600px;
-      text-align: center;
-  }
+    #search {
+        overflow: auto;
+        width: 600px;
+        text-align: center;
+    }
 
-   #location > *{
-    overflow:auto;
-     padding: 0;
-    width: 600px;
-    text-align: center;
-  }
+    #map, #mapid {
+        overflow: auto;
+        width: 600px;
+        text-align: center;
+    }
 
-  #location h3{
-    width: 600px;
-    margin: 30px auto;
-    text-align: left;
-  }
+    #location>* {
+        overflow: auto;
+        padding: 0;
+        width: 600px;
+        text-align: center;
+    }
 
-  #posts{
-    width: 600px;
-  }
+    #location h3 {
+        width: 600px;
+        margin: 30px auto;
+        text-align: left;
+    }
+
+    #posts {
+        width: 600px;
+    }
 }
 
-#map{
-  width: 100%;
+#map {
+    width: 100%;
 }

@@ -1,30 +1,30 @@
-
-body{
-  height: 100vh;
+body {
+    height: 100vh;
 }
 
-form{
+form {
     width: 90vw;
     margin: 0 auto;
 }
 
 #logout {
-  float: right;
+    float: right;
 }
 
-.header a{
-  padding: 0;
+.header a {
+    padding: 0;
 }
 
-#goprof{
-  float: right;
+#goprof {
+    float: right;
 }
 
-form input{
-  line-height: 50px;
+form input {
+    line-height: 50px;
 }
 
-form input, .item{
+form input,
+.item {
     width: 90vw;
     background: #DAF4FF;
     mix-blend-mode: normal;
@@ -33,110 +33,107 @@ form input, .item{
     border: none;
 }
 
-::placeholder{
+::placeholder {
     padding: 0 10px;
 }
 
-#creation{
+#creation {
     text-align: center;
 }
 
-#removeRow{
+#removeRow {
     /* margin: 40px auto; 
-  width: 50px;  */
-  color: #e1e8f4;
-  font-family: "Roboto", sans-serif;
-  background-color: #8860d0;
-  box-shadow: 0px 2.76726px 2.21381px rgba(90, 185, 234, 0.0196802),
-    0px 6.6501px 5.32008px rgba(90, 185, 234, 0.0282725),
-    0px 12.5216px 10.0172px rgba(90, 185, 234, 0.035),
-    0px 22.3363px 17.869px rgba(90, 185, 234, 0.0417275),
-    0px 41.7776px 33.4221px rgba(90, 185, 234, 0.0503198),
-    0px 100px 80px rgba(90, 185, 234, 0.07);
-  border-radius: 8px;
-  /* padding: 10px; */
-  border: none;
+    width: 50px;  */
+    color: #e1e8f4;
+    font-family: "Roboto", sans-serif;
+    background-color: #8860d0;
+    box-shadow: 0px 2.76726px 2.21381px rgba(90, 185, 234, 0.0196802),
+        0px 6.6501px 5.32008px rgba(90, 185, 234, 0.0282725),
+        0px 12.5216px 10.0172px rgba(90, 185, 234, 0.035),
+        0px 22.3363px 17.869px rgba(90, 185, 234, 0.0417275),
+        0px 41.7776px 33.4221px rgba(90, 185, 234, 0.0503198),
+        0px 100px 80px rgba(90, 185, 234, 0.07);
+    border-radius: 8px;
+    /* padding: 10px; */
+    border: none;
 }
 
-
-#addRow{
+#addRow {
     background-color: gray;
     border: none;
-  box-shadow: 0px 2.76726px 2.21381px rgba(90, 185, 234, 0.0196802),
-    0px 6.6501px 5.32008px rgba(90, 185, 234, 0.0282725),
-    0px 12.5216px 10.0172px rgba(90, 185, 234, 0.035),
-    0px 22.3363px 17.869px rgba(90, 185, 234, 0.0417275),
-    0px 41.7776px 33.4221px rgba(90, 185, 234, 0.0503198),
-    0px 100px 80px rgba(90, 185, 234, 0.07);
-  padding: 10px;
+    box-shadow: 0px 2.76726px 2.21381px rgba(90, 185, 234, 0.0196802),
+        0px 6.6501px 5.32008px rgba(90, 185, 234, 0.0282725),
+        0px 12.5216px 10.0172px rgba(90, 185, 234, 0.035),
+        0px 22.3363px 17.869px rgba(90, 185, 234, 0.0417275),
+        0px 41.7776px 33.4221px rgba(90, 185, 234, 0.0503198),
+        0px 100px 80px rgba(90, 185, 234, 0.07);
+    padding: 10px;
 }
 
-button{
+button {
     width: 100%;
     text-align: center;
 }
 
-#nameCont{
+#nameCont {
     display: flex;
     margin: 5vh auto;
     width: 90vw;
 }
 
-
-h2#name{
+h2#name {
     margin: auto 10px;
     display: block;
 }
 
 #avatar {
-    overflow:hidden;
+    overflow: hidden;
     float: left;
     width: 50px;
     height: 50px;
     background: #819096;
     border-radius: 50px;
     display: block;
-  }
-
-h2{
-font-family: Red Hat Display;
-font-style: normal;
-font-weight: bold;
-font-size: 25px;
-line-height: 33px;
-/* identical to box height */
-
-display: flex;
-align-items: center;
-
-color: #120E21;
-
 }
 
-h3{
+h2 {
     font-family: Red Hat Display;
-font-style: normal;
-font-weight: bold;
-font-size: 25px;
-line-height: 33px;
-/* identical to box height */
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 33px;
 
-display: flex;
-align-items: center;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #120E21;
+}
 
-color: #120E21;
-margin-top: 20px;
+h3 {
+    font-family: Red Hat Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 33px;
 
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #120E21;
+    margin-top: 20px;
 }
 
 @media only screen and (min-width: 1000px) {
-  #main, form, form input, .item, #nameCont, #confirm{
-    width: 600px;
-  }
+    #main,
+    form,
+    form input,
+    .item,
+    #nameCont,
+    #confirm {
+        width: 600px;
+    }
 
-  #main{
-    margin: 0 auto;
-  }
-  
+    #main {
+        margin: 0 auto;
+    }
 }
-

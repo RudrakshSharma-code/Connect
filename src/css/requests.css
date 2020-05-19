@@ -1,111 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;900&display=swap');
 
 #requests {
-  margin: 0 auto;
-}
-#requests > div {
-  border: 1px solid black;
-  margin: 20px;
-  padding: 10px;
-}
-
-
-
-
-
-
-h1 {
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 900;
-  font-size: 39.0625px;
-  line-height: 52px; /* identical to box height */
-  color: #120e21;
-}
-
-body{
     margin: 0 auto;
 }
 
-
-#requests > div{
+#requests>div {
     border: 1px solid black;
     margin: 20px;
     padding: 10px;
-    
+}
+
+h1 {
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 39.0625px;
+    line-height: 52px;
+    color: #120e21;
+}
+
+body {
+    margin: 0 auto;
+}
+
+#requests > div {
+    border: 1px solid black;
+    margin: 20px;
+    padding: 10px;
 }
 
 #slider {
     margin: 5% 7%;
 }
 
-#map, #mapid{
-  height: 40vh;
+#map, #mapid {
+    height: 40vh;
 }
 
-#homeH1{
-  margin: 0 auto;
-  width: 100%;
+#homeH1 {
+    margin: 0 auto;
+    width: 100%;
 }
 
- #search, #confirm, #slider{
-  margin: 0 auto;
-  width: 100%px;
+#search, #confirm, #slider {
+    margin: 0 auto;
+    width: 100%px;
 }
 
-#main{
-  width: 90vw;
-  margin: 0 auto;
+#main {
+    width: 90vw;
+    margin: 0 auto;
 }
-
 
 header {
-  height: 50px;
+    height: 50px;
 }
 
 header * {
-  text-decoration: none;
-  color: black;
-  padding: 10px;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
 }
 
 header a {
-  margin: auto 0;
-}
-.header a{
-  padding: 0;
+    margin: auto 0;
 }
 
-header #goprof{
-  float: center;
+.header a {
+    padding: 0;
+}
+
+header #goprof {
+    float: center;
 }
 
 #logout {
-  float: right;
+    float: right;
 }
 
 @media only screen and (min-width: 600px) {
-body{
-  width: 100%;
-  margin: 0;
-  padding: 0;
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #map, #mapid {
+        height: 50vh;
+        width: 500px;
+    }
+
+    #main, #search, #confirm, #slider {
+        margin: 0 auto;
+        width: 500px
+    }
+
+    #slider {
+        margin: 10px auto 30px;
+    }
+
+    #confirm {
+        margin: 50px auto;
+    }
 }
-  #map, #mapid{
-    height: 50vh;
-    width: 500px;
-  }
-  #main, #search, #confirm, #slider{
-    margin: 0 auto;
-    width: 500px
-  }
-  #slider{
-    margin: 10px auto 30px;
-  }
-  #confirm{
-    margin: 50px auto;
-  }
-
-
-  
-}
-

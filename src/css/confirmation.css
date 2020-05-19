@@ -1,127 +1,125 @@
 body {
-  text-align: center;
-  background-color: #5ab9ea;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  margin: 0px;
+    text-align: center;
+    background-color: #5ab9ea;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
 }
 
 body * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 header {
-  height: 50px;
+    height: 50px;
 }
 
 header * {
-  text-decoration: none;
-  color: white;
-  padding: 10px;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
 }
 
 header a {
-  margin: auto 0;
-}
-.header a{
-  padding: 0;
+    margin: auto 0;
 }
 
-#goprof{
-  float: right;
+.header a {
+    padding: 0;
 }
 
-
+#goprof {
+    float: right;
+}
 
 #confirm button {
-  background-color: white;
+    background-color: white;
 }
 
 #fig {
-  flex-grow: 2;
-  text-align: center;
+    flex-grow: 2;
+    text-align: center;
 }
 
 img {
-  padding: 0;
-  margin: 0;
-  width: 90%;
-  height: auto;
-  text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 90%;
+    height: auto;
+    text-align: center;
 }
 
 #confirm {
-  width: 90vw;
+    width: 90vw;
 }
 
 #logout {
-  float: right;
-  color: white;
+    float: right;
+    color: white;
 }
 
 #bravo {
-  text-align: center;
-  flex-grow: 2;
+    text-align: center;
+    flex-grow: 2;
 }
 
 h1 {
-  padding: 5vh 0 0 0;
+    padding: 5vh 0 0 0;
 }
 
 #confirm {
-  flex-grow: 2;
-  text-align: center;
-  color: #5ab9ea;
+    flex-grow: 2;
+    text-align: center;
+    color: #5ab9ea;
 }
 
 #confirm button {
-  width: 80vw;
-  height: 50px;
-  color: #5ab9ea;
-  box-shadow: 0px 2.76726px 2.21381px rgba(250, 249, 254, 0.0196802),
-    0px 6.6501px 5.32008px rgba(250, 249, 254, 0.0282725),
-    0px 12.5216px 10.0172px rgba(250, 249, 254, 0.035),
-    0px 22.3363px 17.869px rgba(250, 249, 254, 0.0417275),
-    0px 41.7776px 33.4221px rgba(250, 249, 254, 0.0503198),
-    0px 100px 80px rgba(250, 249, 254, 0.07);
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
+    width: 80vw;
+    height: 50px;
+    color: #5ab9ea;
+    box-shadow: 0px 2.76726px 2.21381px rgba(250, 249, 254, 0.0196802),
+        0px 6.6501px 5.32008px rgba(250, 249, 254, 0.0282725),
+        0px 12.5216px 10.0172px rgba(250, 249, 254, 0.035),
+        0px 22.3363px 17.869px rgba(250, 249, 254, 0.0417275),
+        0px 41.7776px 33.4221px rgba(250, 249, 254, 0.0503198),
+        0px 100px 80px rgba(250, 249, 254, 0.07);
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
 }
 
 #para {
-  flex-grow: 1;
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 160%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #faf9fe;
-  padding: 5px;
-  width: fit-content;
-  margin: 0 auto;
+    flex-grow: 1;
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #faf9fe;
+    padding: 5px;
+    width: fit-content;
+    margin: 0 auto;
 }
 
-
 @media only screen and (min-width: 992px) {
-  #fig{
-    width: 500px;
-    margin: 0 auto;
-  }
-  #confirm button{
-    width: 400px;
-    text-align: center;
-  }
+    #fig {
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    #confirm button {
+        width: 400px;
+        text-align: center;
+    }
 }
 
 .material-icons {
-  color: white;
+    color: white;
 }

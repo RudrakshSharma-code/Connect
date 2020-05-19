@@ -1,160 +1,147 @@
 @font-face {
-  font-family: Roboto;
-  src: url(Roboto/Roboto-Light.ttf);
+    font-family: Roboto;
+    src: url(Roboto/Roboto-Light.ttf);
 }
 
-body{
-  padding-bottom: 50px;
+body {
+    padding-bottom: 50px;
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
 }
-
-/* .carousel {
-  height: 40vh;
-  background-color: blue;
-  width: auto;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
-} */
 
 .profilepics {
-  display: block;
-  width: 100%;
-  height: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
-
 
 .members {
-  position: relative;
-  width: 90vw;
-  margin: 30px auto;
+    position: relative;
+    width: 90vw;
+    margin: 30px auto;
 }
 
-.overlay{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #5AB9EA;;
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #5AB9EA;
 }
 
 .members:hover .overlay {
-  opacity: 1;
+    opacity: 1;
 }
 
 .text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-.text p{
-  color: white;
+.text p {
+    color: white;
 }
 
 #main {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 900;
-  font-size: 39.0625px;
-  line-height: 52px;
-  /* identical to box height */
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 39.0625px;
+    line-height: 52px;
 
-  color: #120e21;
+    /* identical to box height */
+    color: #120e21;
 }
 
 h2 {
-  text-align: center;
-  margin: 20px;
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 25px;
-  line-height: 33px;
-  /* identical to box height */
+    text-align: center;
+    margin: 20px;
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 33px;
 
-  display: flex;
-  align-items: center;
-
-  color: #120e21;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #120e21;
 }
 
 p {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 23px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-
-  color: #120e21;
-  
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #120e21;
 }
 
 .carousel p {
-  color: white;
-  text-shadow: 0px 2.76726px 2.21381px rgba(18, 14, 33, 0.0196802),
-    0px 6.6501px 5.32008px rgba(18, 14, 33, 0.0282725),
-    0px 12.5216px 10.0172px rgba(18, 14, 33, 0.035),
-    0px 22.3363px 17.869px rgba(18, 14, 33, 0.0417275),
-    0px 41.7776px 33.4221px rgba(18, 14, 33, 0.0503198),
-    0px 100px 80px rgba(18, 14, 33, 0.07);
+    color: white;
+    text-shadow: 0px 2.76726px 2.21381px rgba(18, 14, 33, 0.0196802),
+        0px 6.6501px 5.32008px rgba(18, 14, 33, 0.0282725),
+        0px 12.5216px 10.0172px rgba(18, 14, 33, 0.035),
+        0px 22.3363px 17.869px rgba(18, 14, 33, 0.0417275),
+        0px 41.7776px 33.4221px rgba(18, 14, 33, 0.0503198),
+        0px 100px 80px rgba(18, 14, 33, 0.07);
     display: block;
 }
 
 body {
-  width: 90vw;
-  margin: 0 auto;
+    width: 90vw;
+    margin: 0 auto;
 }
 
-@media only screen and (min-width: 600px) { 
-  .members{
-    width: 40vw;
-  }
-  
-  #meet{
-    display: grid;
-    grid-template: auto 1fr 1fr / 1fr 1fr;
-  }
+@media only screen and (min-width: 600px) {
+    .members {
+        width: 40vw;
+    }
 
-  #meet > h2{
-    grid-column: 1 / span 2;
-  }
-  
-} 
+    #meet {
+        display: grid;
+        grid-template: auto 1fr 1fr / 1fr 1fr;
+    }
+
+    #meet>h2 {
+        grid-column: 1 / span 2;
+    }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .members{
-    width: 20vw;
-  }
-  #meet{
-    display: grid;
-    grid-template: auto 1fr / repeat(4, 1fr);
-  }
-  #meet > h2{
-    grid-column: 1 / span 4;
-  }
-  
+    .members {
+        width: 20vw;
+    }
+
+    #meet {
+        display: grid;
+        grid-template: auto 1fr / repeat(4, 1fr);
+    }
+
+    #meet>h2 {
+        grid-column: 1 / span 4;
+    }
 }

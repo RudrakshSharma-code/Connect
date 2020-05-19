@@ -5,28 +5,27 @@ body {
     /* margin: 0 auto; */
 }
 
-
 header {
     height: 50px;
-  }
-  
-  header * {
+}
+
+header * {
     text-decoration: none;
     color: black;
     padding: 10px;
-  }
-  
-  header a {
+}
+
+header a {
     margin: auto 0;
-  }
-  .header a{
+}
+
+.header a {
     padding: 0;
-  }
-  
-  
-  #goprof{
+}
+
+#goprof {
     float: right;
-  }
+}
 
 h1 {
     margin-top: .5em;
@@ -57,7 +56,7 @@ h1 {
 
 #logout {
     float: right;
-  }
+}
 
 #main {
     background-color: white;
@@ -67,7 +66,9 @@ h1 {
     padding: 0;
     padding-bottom: 3em;
     border-radius: 8px;
-    box-shadow: 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.00562291), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.00807786), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.01), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0119221), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0143771), 0px 100px 80px rgba(0, 0, 0, 0.02);
+    box-shadow: 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.00562291),
+        0px 6.6501px 5.32008px rgba(0, 0, 0, 0.00807786),
+        0px 12.5216px 10.0172px rgba(0, 0, 0, 0.01), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0119221), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0143771), 0px 100px 80px rgba(0, 0, 0, 0.02);
 }
 
 #posted {
@@ -86,7 +87,9 @@ img {
     margin: 1em;
 }
 
-h3, h5, #description {
+h3,
+h5,
+#description {
     margin: 1em .5em 0.5em;
 }
 
@@ -109,18 +112,18 @@ h3, h5, #description {
     width: 200px;
 }
 
-p{
+p {
     margin: 1em;
 }
 
-#deletediv{
+#deletediv {
     text-align: center;
 }
 
-#delete{
-        border: none;
-        background-color: #DAF4FF;
-        font-weight: 500;
-        width: 90%;
-        margin: 0 auto;
+#delete {
+    border: none;
+    background-color: #DAF4FF;
+    font-weight: 500;
+    width: 90%;
+    margin: 0 auto;
 }

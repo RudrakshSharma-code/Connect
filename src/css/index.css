@@ -1,83 +1,68 @@
-/*@font-face {
-    font-family: RHDR;
-    src: url(RedHatDisplay/RedHatDisplay-Regular.ttf);
-  }
-  
-  @font-face {
-    font-family: RHDM;
-    src: url(RedHatDisplay/RedHatDisplay-bold.ttf)
-  }
-  
-  @font-face {
-    font-family: Roboto;
-    src: url(Roboto/Roboto-Light.ttf);
-  } */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;900&display=swap');
 
-  @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;900&display=swap');
-
-  body {
-    background-color: #F6FCFF;
+body {
+  background-color: #F6FCFF;
 }
-  
-  h1, h2, h3, p {
-    text-align: center;
-  }
-  
-  h1 {
-    margin-top: 1em;
-    font-size: 64px;
-    font-family: 'Red Hat Display', sans-serif;
-  }
-  
-  h2 {
-    margin-top: 2em;
-    font-size: 30px;
-    font-family: 'Red Hat Display', sans-serif;
-  }
-  
-  p, button {
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  h3, p {
-    margin: 1.5em 10%;
-    font-size: 16px;
-  }
-  
-  button {
-    background-color: #5AB9EA;
-  }
-  
-  .form-group {
-    margin: 0em 30%;
-  }
-  
-  #login {
-    background: white;
-    border: 2px solid #5AB9EA;
-    color: #5AB9EA;
-    border-radius: 60px;
-    margin-bottom: 2em;
-  }
-  
-  #signup {
-    background: #5AB9EA;
-    border: 2px solid #5AB9EA;
-    color: white;
-    border-radius: 60px;
-  }
-  
-  #info {
-    background-color: #5AB9EA;
-    margin: 0;
-    width: 100%;
-  }
-  
-  #mbtn {
-    color: white;
-    background: #5AB9EA;
-  }
 
-  button{
-    -webkit-appearance: none !important;
-  }
+h1, h2, h3, p {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 1em;
+  font-size: 64px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+h2 {
+  margin-top: 2em;
+  font-size: 30px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+p, button {
+  font-family: 'Roboto', sans-serif;
+}
+
+h3, p {
+  margin: 1.5em 10%;
+  font-size: 16px;
+}
+
+button {
+  background-color: #5AB9EA;
+}
+
+.form-group {
+  margin: 0em 30%;
+}
+
+#login {
+  background: white;
+  border: 2px solid #5AB9EA;
+  color: #5AB9EA;
+  border-radius: 60px;
+  margin-bottom: 2em;
+}
+
+#signup {
+  background: #5AB9EA;
+  border: 2px solid #5AB9EA;
+  color: white;
+  border-radius: 60px;
+}
+
+#info {
+  background-color: #5AB9EA;
+  margin: 0;
+  width: 100%;
+}
+
+#mbtn {
+  color: white;
+  background: #5AB9EA;
+}
+
+button {
+  -webkit-appearance: none !important;
+}
