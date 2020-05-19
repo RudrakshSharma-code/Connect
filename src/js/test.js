@@ -1,35 +1,11 @@
-import * as aws from "./aws.js";
-const user = aws.getUser();
+describe("pow", function() {
 
-let signUpButton = document.getElementById("signUpButton");
-signUpButton.addEventListener("click", signUp);
-
-function signUp() {
-    aws.signUp(
-        document.getElementById("signUpEmail").value,
-        document.getElementById("signUpPassword").value,
-        "+18882223344",
-        "given_name",
-        "family_name"
-    );
-}
-
-function confirmEmail() {
-    aws.confirmSignUp(
-        document.getElementById("confirmEmail").value,
-        document.getElementById("confirmCode").value
-    )
-}
-
-let confirmButton = document.getElementById("confirmButton");
-confirmButton.addEventListener("click", confirmEmail);
-
-function signIn() {
-    aws.signIn(
-        document.getElementById("signInEmail").value,
-        document.getElementById("signInPassword").value,
-    )
-
-}
-let signInButton = document.getElementById("signInButton");
-signInButton.addEventListener("click", signIn);
+    it("2 raised to power 3 is 8", function() {
+      assert.equal(pow(2, 3), 8);
+    });
+  
+    it("3 raised to power 4 is 81", function() {
+      assert.equal(pow(3, 4), 81);
+    });
+  
+  });
