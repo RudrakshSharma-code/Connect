@@ -113,16 +113,14 @@ async function signOut() {
   } else {};
 }
 
-$('#contact').on('click', function() {
+$('#contact').on('click', function () {
   location.replace("info.html?id=" + post.id);
 })
 
-window.onload = function nullFix() {
-$(document).ready(function(){
+$(document).ready(function () {
   nullFix();
-})}
+})
 
 function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
 }
-

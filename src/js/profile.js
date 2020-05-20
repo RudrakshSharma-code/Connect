@@ -116,19 +116,6 @@ function editPhone() {
   })
 }
 
-function editEmail() {
-  document.getElementById("submitMail").addEventListener("click", async function () {
-    const user = await aws.currentAuthenticatedUser();
-    const answer = await aws.updateUserEmail(
-      user,
-      document.getElementById("mailInput").value);
-    $("#email").text(user.attributes.email);
-    document.getElementById("submitMail").click();
-    document.getElementById("mailInput").style.display = "none";
-    document.getElementById("submitMail").style.display = "none";
-  })
-}
-
 //reveal inputs and buttons
 function oneBinding() {
   document.getElementById("edit1").addEventListener("click", function () {
