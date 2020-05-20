@@ -17,6 +17,7 @@ async function signIn() {
     currentAuthenticatedUser();
     hidePass();
     redirect();
+    document.getElementById('error').style.display = "none";
   } else {
     document.getElementById('error').innerHTML = user.message;
   }
@@ -66,7 +67,7 @@ async function redirect() {
   }
 }
 
-//forgot password function
+//forgotten password reset functions
 async function forgotPassword() {
   let answer = await aws.forgotPassword(
     document.getElementById('forgotEmail').value,

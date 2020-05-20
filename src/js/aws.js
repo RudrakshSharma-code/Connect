@@ -41,7 +41,7 @@ export async function createPost(post) {
     "input": post,
     "condition": null
   }));
-  return answer.data.createPost; 
+  return answer.data.createPost;
 }
 
 export async function updatePost(post) {
@@ -142,13 +142,13 @@ export function stopListener(listener) {
 //     itemsCount: 2,
 //     latitude: "49.2510",
 //     longitude: "-123.0010",
-  
+
 //     userID: "userID",
 //     userFirstName: "userFirstName",
 //     userLastName: "userLastName",
 //     userEmail: "userEmail",
 //     userPhone: "userPhone",
-  
+
 //     volunteerID: null,
 //     volunteerFirstName: null,
 //     volunteerLastName: null,
@@ -197,7 +197,7 @@ export async function signUp(email, password, phone_number, given_name, family_n
         'custom:longitude': "2.3522"
       }
     });
-    
+
     return user;
   } catch (error) {
     return error;
@@ -271,7 +271,9 @@ export async function forgotPasswordSubmit(username, code, new_password) {
 
 export async function currentAuthenticatedUser() {
   try {
-    const user = await Auth.currentAuthenticatedUser({bypassCache: true});
+    const user = await Auth.currentAuthenticatedUser({
+      bypassCache: true
+    });
     return user;
   } catch (error) {
     return error;
@@ -289,26 +291,22 @@ export async function currentSession() {
 
 export async function updateUserAttributes(user, given_name, family_name) {
   try {
-    const answer = await Auth.updateUserAttributes(user, {'given_name': given_name, 'family_name': family_name});
+    const answer = await Auth.updateUserAttributes(user, {
+      'given_name': given_name,
+      'family_name': family_name
+    });
     return answer;
   } catch (error) {
     return error;
   }
-  
+
 }
 
 export async function updateUserPhone(user, phone_number) {
   try {
-    const answer = await Auth.updateUserAttributes(user, {'phone_number': phone_number});
-    return answer;
-  } catch (error) {
-    return error;
-  }
-}
-
-export async function updateUserEmail(user, email) {
-  try {
-    const answer = await Auth.updateUserAttributes(user, {"username": email});
+    const answer = await Auth.updateUserAttributes(user, {
+      'phone_number': phone_number
+    });
     return answer;
   } catch (error) {
     return error;
@@ -317,7 +315,10 @@ export async function updateUserEmail(user, email) {
 
 export async function updateUserCoordinates(user, latitude, longitude) {
   try {
-    const answer = await Auth.updateUserAttributes(user, {'custom:latitude': latitude, 'custom:longitude': longitude});
+    const answer = await Auth.updateUserAttributes(user, {
+      'custom:latitude': latitude,
+      'custom:longitude': longitude
+    });
     return answer;
   } catch (error) {
     return error;
@@ -342,7 +343,7 @@ export async function getUser() {
   if (user === "not authenticated" && !allowed.includes(path)) {
     window.location.replace('/login.html');
   }
-  
+
   // window.onload = () => { document.body.style.display = "block"; }
   return user;
 }

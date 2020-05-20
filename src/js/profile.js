@@ -1,10 +1,6 @@
 import * as aws from "./aws.js";
 const user = aws.getUser();
 
-let firstInput = document.getElementById("firstInput");
-let lastInput = document.getElementById("lastInput");
-let submitName = document.getElementById("submitName");
-
 //map set-up
 async function works(x, y) {
   const user = await aws.currentAuthenticatedUser();
@@ -46,7 +42,6 @@ $(document).ready(function () {
   editEmail();
   oneBinding();
   twoBinding();
-  // threeBinding();
   fourBinding();
 })
 
@@ -159,18 +154,7 @@ function twoBinding() {
   });
 }
 
-function threeBinding() {
-  document.getElementById("edit3").addEventListener("click", function () {
-    let mailInput = document.getElementById("mailInput");
-    let submitMail = document.getElementById("submitMail");
-    if (mailInput.style.display = "none") {
-      mailInput.style.display = "inline";
-      submitMail.style.display = "inline";
-    }
-  });
-}
-
-function fourBinding(){
+function fourBinding() {
   document.getElementById("edit4").addEventListener("click", function () {
     window.location.replace("profileSetup.html");
   })

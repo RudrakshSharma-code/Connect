@@ -11,11 +11,11 @@ $(document).ready(function () {
 })
 
 async function currentAuthenticatedUser() {
-let user = await aws.currentAuthenticatedUser({
-    bypassCache: true
-  })
-  .then(user => document.getElementById("homeH1").innerHTML = "What would you like to do " + user.attributes.given_name + "?")
-  .catch(err => console.log(err));
+  let user = await aws.currentAuthenticatedUser({
+      bypassCache: true
+    })
+    .then(user => document.getElementById("homeH1").innerHTML = "What would you like to do " + user.attributes.given_name + "?")
+    .catch(err => console.log(err));
 }
 
 async function signOut() {
