@@ -271,7 +271,7 @@ export async function forgotPasswordSubmit(username, code, new_password) {
 
 export async function currentAuthenticatedUser() {
   try {
-    const user = await Auth.currentAuthenticatedUser({bypassCache: false});
+    const user = await Auth.currentAuthenticatedUser({bypassCache: true});
     return user;
   } catch (error) {
     return error;
