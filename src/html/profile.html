@@ -35,6 +35,12 @@
   <script src="https://unpkg.com/esri-leaflet"></script>
   <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
 
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0">
+  </script>
+
   <script src="profile.js"></script>
 
 </head>
@@ -57,15 +63,15 @@
       <div id="name">
         <span id="edit1" class="material-icons">edit</span>
         <h3 id="firstLast">First Last</h3>
-        <input id="firstInput" placeholder="First Name" type="text"></input>
-        <input id="lastInput" placeholder="Last Name" type="text"></input>
+        <input id="firstInput" class="input" placeholder="First Name" type="text"></input>
+        <input id="lastInput" class="input" placeholder="Last Name" type="text"></input>
         <button id="submitName" class="save">Save</button>
       </div>
       <div id="info">
         <div id="phone">
           <h3>Phone Number</h3>
           <span id="edit2" class="material-icons">edit</span>
-          <input id="phoneInput" type="tel" placeholder="0000000000" maxlength="10"
+          <input id="phoneInput" class="input" type="tel" placeholder="Phone number" maxlength="10"
             pattern="[0-9]{3}[0-9]{3}[0-9]{4}"></input>
           <button id="submitTel" class="save">Save</button>
           <h5 id="number">123-456-7890</h5>
@@ -73,7 +79,7 @@
         <div id="mail">
           <h3>Email</h3>
           <!-- <span id="edit3" class="material-icons">edit</span> -->
-          <input id="mailInput" placeholder="Email" type="email"></input>
+          <input id="mailInput" class="input" placeholder="Email" type="email"></input>
           <button id="submitMail" class="save">Save</button>
           <h5 id="email">anonymous@nothing.com</h5>
         </div>
@@ -95,9 +101,23 @@
     </div>
     <div id="posts">
     </div>
+    <div id="social">
+      <a id="twit" class="twitter-share-button"
+        href="https://twitter.com/intent/tweet?text=Check out this new app looking to help the vulnerable during COVID-19: https://master.de11vnho0yus5.amplifyapp.com/"
+        date-test="" data-size="large" data-lang="en" data-show-count="false">Tweet</a>
+      <div id="face" class="fb-share-button" data-href="https://master.de11vnho0yus5.amplifyapp.com/"
+        data-layout="button" data-size="large"><a target="_blank"
+          href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmaster.de11vnho0yus5.amplifyapp.com%2F&amp;src=sdkpreparse"
+          class="fb-xfbml-parse-ignore">Share</a></div>
+      <script src="https://platform.linkedin.com/in.js" type="text/javascript" data-size="large">
+        lang: en_US
+      </script>
+      <div id="linkedin">
+        <script type="IN/Share" data-url="https://master.de11vnho0yus5.amplifyapp.com/" data-size="large"></script>
+      </div>
+    </div>
   </main>
   </div>
-
 </body>
 
 </html>

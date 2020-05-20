@@ -128,11 +128,26 @@ body {
   margin: 0 auto;
 }
 
+#face {
+  position:absolute;
+  padding-left: 10px;
+}
+
+#linkedin {
+  position: absolute;
+  padding-left: 95px;
+  padding-right: 10px;
+}
+
+#social {
+  display: inline-block;
+}
+
 @media only screen and (min-width: 600px) { 
   .members{
     width: 40vw;
   }
-  
+
   #meet{
     display: grid;
     grid-template: auto 1fr 1fr / 1fr 1fr;
