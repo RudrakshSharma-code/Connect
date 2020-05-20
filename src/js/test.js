@@ -1,22 +1,22 @@
 import * as aws from "./aws.js";
 
-let answer;
-let post = {
-    title: "title",
-    items: ["toilet paper", "vodka"],
-    itemsCount: 2,
-    latitude: "49.2510",
-    longitude: "-123.0010",
-    time: "today",
-
-    userID: "userID",
-    userFirstName: "userFirstName",
-    userLastName: "userLastName",
-    userEmail: "userEmail",
-    userPhone: "userPhone",
-}
-
 describe("Database Tests", function() {
+    let answer;
+
+    let post = {
+        title: "title",
+        items: ["toilet paper", "vodka"],
+        itemsCount: 2,
+        latitude: "49.2510",
+        longitude: "-123.0010",
+        time: "today",
+    
+        userID: "userID",
+        userFirstName: "userFirstName",
+        userLastName: "userLastName",
+        userEmail: "userEmail",
+        userPhone: "userPhone",
+    }
 
     it("post gets added to db", async function() {
         answer = await aws.createPost(post);
@@ -39,12 +39,23 @@ describe("Database Tests", function() {
 
 
 describe("Authentication Tests", function() {
+    this.timeout(5000);
 
-    it("post gets removed from db", async function() {
-        // let user = await aws.currentAuthenticatedUser();
-        // console.log(user);
-        // assert.equal();
+    let user = {
+        "username": "pehem40105@aprimail.com",
+        "password": "pehem40105@aprimail.com",
+        "attributes": {
+          "given_name": "test",
+          "family_name": "test",
+          "phone_number": "+11111111111",
+          'custom:latitude': "49.2777428",
+          'custom:longitude': "-123.0937344"
+        }
+    };
+
+    it("user can sign in", async function() {
+        let u = await aws.signIn(user.username, user.password);
+        assert.equal(u.attributes.email, user.username);
     });
-
 
 });

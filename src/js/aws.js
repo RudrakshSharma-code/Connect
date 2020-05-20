@@ -343,6 +343,6 @@ export async function getUser() {
     window.location.replace('/login.html');
   }
   
-  window.onload = () => { document.body.style.display = "block"; }
+  // window.onload = () => { document.body.style.display = "block"; }
   return user;
 }
