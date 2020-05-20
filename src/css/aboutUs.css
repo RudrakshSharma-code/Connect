@@ -115,6 +115,21 @@ body {
     margin: 0 auto;
 }
 
+#face {
+    position: absolute;
+    padding-left: 10px;
+}
+
+#linkedin {
+    position: absolute;
+    padding-left: 95px;
+    padding-right: 10px;
+}
+
+#social {
+    display: inline-block;
+}
+
 @media only screen and (min-width: 600px) {
     .members {
         width: 40vw;
@@ -128,6 +143,7 @@ body {
     #meet>h2 {
         grid-column: 1 / span 2;
     }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
