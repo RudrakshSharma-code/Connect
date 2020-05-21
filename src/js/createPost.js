@@ -2,8 +2,6 @@ import * as aws from "./aws.js";
 
 const user = aws.getUser();
 
-
-2
 var today = new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
@@ -29,6 +27,25 @@ var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   // volunteerPhone: String
 // }
 
+// add row
+$("#addRow").click(function () {
+  var html = "";
+  html += '<div id="inputFormRow">';
+  html += '<div class="input-group mb-3">';
+  html +=
+    '<input type="text" name="item" class="item form-control m-input" placeholder="Enter an item or request..." autocomplete="off">';
+  html += '<div class="input-group-append">';
+  html += '<button id="removeRow" type="button" >Remove</button>';
+  html += "</div>";
+  html += "</div>";
+
+  $("#newRow").append(html);
+});
+
+// remove row
+$(document).on("click", "#removeRow", function () {
+  $(this).closest("#inputFormRow").remove();
+});
 
 async function setVars() {
   let pitems;
