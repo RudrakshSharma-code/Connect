@@ -2,6 +2,9 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
+* [Prerequisites](#prerequisites)
+* [Installation](#installation)
+* [Attribution](#attribution)
 
 ## General Info
 A web app that connects neighbourhood volunteers to their neighbourhood.
@@ -18,7 +21,9 @@ Technologies that were used for this project:
 Content of the project folder:
 
 ```
-
+/src/ - source files
+/package.json - npm dependencies
+/webpack.config.js - module bundler
 ```
 
 ## Prerequisites
