@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,21 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <link
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet"
-    />
-    
-    <link
-      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="all.css" />
     <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="confirmation.css" />
+
+    <script src="confirmation.js"></script>
 </head>
+
 <body>
     <header class="header">
         <a id="logout" href="#">
@@ -34,13 +31,13 @@
         <a id="goprof" href="profile.html">
             <span class="material-icons">
                 account_circle
-                </span>
+            </span>
         </a>
     </header>
     <div id="bravo">
         <h1>Bravo!</h1>
     </div>
-    
+
     <p id="para">You have posted a request. A volunteer will contact you as soon as they can!</p>
     <figure id="fig">
         <img src="heart.png">
@@ -49,30 +46,6 @@
         <button onclick="window.location.href = 'home.html';">Go back to home page.</button>
     </div>
 
-    <script>
-        async function signOut() {
-            const user = await aws.currentAuthenticatedUser();
-            if (user.attributes) {
-                let check = confirm("Are you sure you want to log out?");
-                if (check == true) {
-                    const user = await aws.currentAuthenticatedUser();
-                    user.signOut();
-                    setTimeout(function () {
-                        window.location.assign("index.html");
-                    }, 1000);
-                } else {};
-            } else {};
-        }
-
-        
-        $(document).ready(function(){
-        nullFix();
-        })
-        
-        function nullFix() {
-            document.getElementById("logout").addEventListener("click", signOut);
-        }
-    </script>
-    
 </body>
+
 </html>

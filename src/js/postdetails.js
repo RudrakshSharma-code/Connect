@@ -8,7 +8,7 @@ var title;
 var desc;
 var phonen;
 var volName;
-var volPhone; 
+var volPhone;
 var date;
 
 function getUrlVars() {
@@ -23,11 +23,11 @@ function getUrlVars() {
   return vars;
 }
 
-function setDesc(items){
+function setDesc(items) {
   desc = "<ul>";
   console.log(items);
   let i;
-  for (i = 0; i < items.length; i++){
+  for (i = 0; i < items.length; i++) {
     var item = items[i];
     desc += "<li>" + item + "</li>";
   }
@@ -35,26 +35,26 @@ function setDesc(items){
   return desc;
 }
 
-function setVars(){
+function setVars() {
   console.log("post: ", post)
   name = '' + post.userFirstName + " " + post.userLastName;
-   title = post.title;
+  title = post.title;
   desc = setDesc(post.items);
   console.log(desc);
   phonen = post.phone;
-  if(post.volunteerID != null){
+  if (post.volunteerID != null) {
     volName = "Name: " + post.volunteerFirstName + post.volunteerLastName;
     volPhone = "Phone" + post.volunteerPhone;
-  } else{
+  } else {
     volName = "No volunteer yet";
   }
   date = post.time;
   console.log(volName, volPhone)
-  
+
 }
 
-function editHtml(){
-  $(document).ready(function(){
+function editHtml() {
+  $(document).ready(function () {
     $('#name').text(name);
     $('#title').text(title);
     $('#description').html(desc);
@@ -64,17 +64,17 @@ function editHtml(){
   })
 }
 
-async function run(){
+async function run() {
   id = getUrlVars().id;
   post = await aws.getPost(id);
   console.log(post.items)
-  console.log(typeof(post.items))
+  console.log(typeof (post.items))
   console.log(post.items.length)
   setVars();
   editHtml();
 }
 
-$("#contact").on("click", async function(){
+$("#contact").on("click", async function () {
   let volunteer = await user;
 
   post.volunteerID = volunteer.attributes.sub;
@@ -85,11 +85,11 @@ $("#contact").on("click", async function(){
 
   aws.updatePost(post);
   console.log("here");
-  
+
 })
 
-$("#delete").on("click", async function(){
-  await aws.deletePost(post.id).then(function(){
+$("#delete").on("click", async function () {
+  await aws.deletePost(post.id).then(function () {
     alert("Post deleted");
     window.location.replace("previousposts.html");
   })
