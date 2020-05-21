@@ -39,7 +39,6 @@ $(document).ready(function () {
   coding();
   editName();
   editPhone();
-  editEmail();
   oneBinding();
   twoBinding();
   fourBinding();

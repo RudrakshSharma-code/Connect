@@ -23,7 +23,7 @@ body {
     margin: 0 auto;
 }
 
-#requests > div {
+#requests>div {
     border: 1px solid black;
     margin: 20px;
     padding: 10px;
@@ -33,7 +33,8 @@ body {
     margin: 5% 7%;
 }
 
-#map, #mapid {
+#map,
+#mapid {
     height: 40vh;
 }
 
@@ -42,7 +43,9 @@ body {
     width: 100%;
 }
 
-#search, #confirm, #slider {
+#search,
+#confirm,
+#slider {
     margin: 0 auto;
     width: 100%px;
 }
@@ -85,12 +88,16 @@ header #goprof {
         padding: 0;
     }
 
-    #map, #mapid {
+    #map,
+    #mapid {
         height: 50vh;
         width: 500px;
     }
 
-    #main, #search, #confirm, #slider {
+    #main,
+    #search,
+    #confirm,
+    #slider {
         margin: 0 auto;
         width: 500px
     }

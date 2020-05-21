@@ -3,28 +3,28 @@ import * as aws from "./aws.js";
 const user = aws.getUser();
 
 var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
 // type Post @model {
-  // id: ID!
-  // title: String!
-  // items: [String!]!
-  // itemsCount: Int!
-  // latitude: String!
-  // longitude: String!
-  // time: String!
+// id: ID!
+// title: String!
+// items: [String!]!
+// itemsCount: Int!
+// latitude: String!
+// longitude: String!
+// time: String!
 
-  // userID: String!
-  // userFirstName: String!
-  // userLastName: String!
-  // userEmail: String!
-  // userPhone: String!
+// userID: String!
+// userFirstName: String!
+// userLastName: String!
+// userEmail: String!
+// userPhone: String!
 
-  // volunteerID: String
-  // volunteerFirstName: String
-  // volunteerLastName: String
-  // volunteerEmail: String
-  // volunteerPhone: String
+// volunteerID: String
+// volunteerFirstName: String
+// volunteerLastName: String
+// volunteerEmail: String
+// volunteerPhone: String
 // }
 
 // add row
@@ -52,13 +52,13 @@ async function setVars() {
   let pitemscount;
 
   let user = await aws.currentAuthenticatedUser({
-    bypassCache: true,
-  })
+      bypassCache: true,
+    })
     .then((user) => console.log((user = user.attributes.sub)))
     .catch((err) => console.log("error: ", err));
   return user;
 
-  
+
 
 }
 
@@ -78,7 +78,7 @@ async function post() {
   $("input[name='item']").each(function () {
     pitems.push($(this).val().trim().toLowerCase());
   });
-    let pitemscount = pitems.length;
+  let pitemscount = pitems.length;
   let ulatitude = user.attributes["custom:latitude"];
   let ulongitude = user.attributes["custom:longitude"];
   let post = {
@@ -88,7 +88,7 @@ async function post() {
     latitude: ulatitude,
     longitude: ulongitude,
     time: date,
-  
+
     userID: uid,
     userFirstName: first,
     userLastName: last,
@@ -99,7 +99,7 @@ async function post() {
   location.replace("confirmation.html");
 }
 
-async function setHtml(){
+async function setHtml() {
   let user = await aws.currentAuthenticatedUser({
     bypassCache: true,
   });
@@ -127,11 +127,10 @@ async function signOut() {
   } else {};
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
   nullFix();
 })
 
 function nullFix() {
   document.getElementById("logout").addEventListener("click", signOut);
 }
-

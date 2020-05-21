@@ -22,12 +22,17 @@
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
-import {API, graphqlOperation} from '@aws-amplify/api'
+import {
+  API,
+  graphqlOperation
+} from '@aws-amplify/api'
 import PubSub from '@aws-amplify/pubsub';
 import * as mutations from '../graphql/mutations'
 import * as queries from '../graphql/queries';
 import * as subscriptions from '../graphql/subscriptions'
-import Amplify, {Auth} from 'aws-amplify';
+import Amplify, {
+  Auth
+} from 'aws-amplify';
 import awsconfig from '../aws-exports';
 API.configure(awsconfig);
 PubSub.configure(awsconfig);
