@@ -1,38 +1,29 @@
-## Connect
-* [General info](#general-info)
-* [Technologies](#technologies)
-* [Contents](#content)
-* [Prerequisites](#prerequisites)
-* [Installation](#installation)
-* [Attribution](#attribution)
+## BBY Team 10
+* Jeremy - https://github.com/Jeremyschmidt7
+* Rudy - https://github.com/Roode-e
+* Slava - https://github.com/slavazhil
+* Vitoria - https://github.com/vitoriapostaimartins
 
-## General Info
-A web app that connects neighbourhood volunteers to their neighbourhood.
-
-## Technologies
-Technologies that were used for this project:
-* AWS Amplify
-* HTML, CSS
-* JavaScript
-* Bootstrap
-* Leaflet
-
-## Content
-Content of the project folder:
-
+## Overview
 ```
-/src/ - source files
+/src/html/ - html files
+/src/css/ - css files
+/src/js/ - js files
+/src/graphql/ - graphql files
+/src/imgs/ - images
 /package.json - npm dependencies
-/webpack.config.js - module bundler
+/webpack.config.js - config for module bundler
 ```
 
-## Prerequisites
+## Instructions
+### Prerequisites
 * Node.js v10.x or later
 * npm v5.x or later
 * git v2.14.1 or later
 * AWS account
+* Text editor
 
-## Installation
+### Installation
 ```
 git clone https://github.com/slavazhil/COMP-2800-Team-BBY-10-Connect.git
 cd COMP-2800-Team-BBY-10-Connect
@@ -46,5 +37,15 @@ npm install
 npm start
 ```
 
+### API's
+No need to install any additional API's other than the prerequisites.
+
+### Configurations
+All the passwords and keys are included in the repo and there is no need to add anything.
+
 ## Attribution
 https://github.com/slavazhil/zombie
+
+## Test Plan
+The test files are included inside the /src/html/ and /src/js/ folders.
+https://docs.google.com/spreadsheets/d/1dF5-IMlr3fz_XJqfu6gtKXGCE3D_0n7BqsKxJXZkHl4/edit?usp=drive_web&ouid=117485104523544458509
