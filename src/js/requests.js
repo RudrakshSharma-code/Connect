@@ -1,4 +1,8 @@
-import { listPosts, getUser, currentAuthenticatedUser } from "./aws";
+import {
+  listPosts,
+  getUser,
+  currentAuthenticatedUser
+} from "./aws";
 
 let user = getUser();
 
@@ -10,16 +14,13 @@ var markers = [];
 function buildMap(x, y) {
   mymap.setView([x, y], 13);
   L.tileLayer(
-    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
-    {
-      attribution:
-        'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       maxZoom: 18,
       id: "mapbox/streets-v11",
       tileSize: 512,
       zoomOffset: -1,
-      accessToken:
-        "pk.eyJ1Ijoidml0b3JpYXBvc3RhaW1hcnRpbnMiLCJhIjoiY2s5a2llYXM5MDZxaDNvbWt0YWd4NXE5NyJ9.4gJv-_McQLbJg3Gn4vUl7g",
+      accessToken: "pk.eyJ1Ijoidml0b3JpYXBvc3RhaW1hcnRpbnMiLCJhIjoiY2s5a2llYXM5MDZxaDNvbWt0YWd4NXE5NyJ9.4gJv-_McQLbJg3Gn4vUl7g",
     }
   ).addTo(mymap);
 }
@@ -73,7 +74,11 @@ async function setMap(posts) {
 }
 
 async function start() {
-  var posts = await listPosts({ volunteerPhone: { notContains: "+" } }); // fix me
+  var posts = await listPosts({
+    volunteerPhone: {
+      notContains: "+"
+    }
+  }); // fix me
   console.log("POSTS: ", posts);
 
   setMap(posts);
@@ -123,16 +128,27 @@ function setSlider() {
 async function sliderFilter(max) {
   let keys = "" + $("#searchBar").val().trim().toLowerCase();
   let posts =
-    keys == ""
-      ? await listPosts({
-          itemsCount: { le: max },
-          volunteerPhone: { notContains: "+" },
-        }) // fix me
-      : await listPosts({
-          items: { contains: keys },
-          itemsCount: { le: max },
-          volunteerPhone: { notContains: "+" },
-        }); // fix me
+    keys == "" ?
+    await listPosts({
+      itemsCount: {
+        le: max
+      },
+      volunteerPhone: {
+        notContains: "+"
+      },
+    }) // fix me
+    :
+    await listPosts({
+      items: {
+        contains: keys
+      },
+      itemsCount: {
+        le: max
+      },
+      volunteerPhone: {
+        notContains: "+"
+      },
+    }); // fix me
   updateMap(posts);
 }
 
@@ -148,16 +164,27 @@ function setSearch() {
 async function searchFilter(item) {
   let max = setSlider();
   let posts =
-    item == "" || item == null
-      ? await listPosts({
-          itemsCount: { le: max },
-          volunteerPhone: { notContains: "+" },
-        }) // fix me
-      : await listPosts({
-          items: { contains: item },
-          itemsCount: { le: max },
-          volunteerPhone: { notContains: "+" },
-        }); // fix me
+    item == "" || item == null ?
+    await listPosts({
+      itemsCount: {
+        le: max
+      },
+      volunteerPhone: {
+        notContains: "+"
+      },
+    }) // fix me
+    :
+    await listPosts({
+      items: {
+        contains: item
+      },
+      itemsCount: {
+        le: max
+      },
+      volunteerPhone: {
+        notContains: "+"
+      },
+    }); // fix me
   updateMap(posts);
 }
 
@@ -173,10 +200,8 @@ async function signOut() {
       setTimeout(function () {
         window.location.assign("index.html");
       }, 1000);
-    } else {
-    }
-  } else {
-  }
+    } else {}
+  } else {}
 }
 
 function nullFix() {
@@ -192,9 +217,7 @@ $(document).ready(function () {
   nullFix();
 });
 
-////////////////////////////////////////////////////////
-// FIX ME //////////////////////////////////////////////
-////////////////////////////////////////////////////////
+
 document.getElementById("button-addon3").addEventListener("click", filter);
 
 function filter() {

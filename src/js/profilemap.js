@@ -15,18 +15,6 @@ function works(x, y) {
   ).addTo(mymap);
 
   var marker = L.marker([x, y]).addTo(mymap);
-  // marker
-  //   // .bindPopup("<b>First Last</b><br>Groceries needed   ")
-  //   // .bindPopup("Youre here!")
-  //   .openPopup();
-
-  // function onPopupClick() {
-  //     var data = marker._popup._content;
-  //     alert("You clicked the map at " + $(data).text());
-  // }
-  // marker.on('click', onPopupClick);
-
-  // marker.on('click', onPopupClick);
 }
 
 

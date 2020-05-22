@@ -1,95 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Post</title>
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Post</title>
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-      crossorigin="anonymous"
-    />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
 
-    <link rel="stylesheet" type="text/css" href="all.css" />
-    <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16" />
-    <link rel="stylesheet" type="text/css" href="createPost.css" />
-  </head>
-  <body>
-    <header class="header">
-      <a href="home.html">
-        <span class="material-icons">arrow_back</span>
-      </a>
-      
-      <a id="logout" href="#">
-        <span class="material-icons">exit_to_app</span>
-      </a>
-      <a id="goprof" href="profile.html">
-        <span class="material-icons">
-            account_circle
-            </span>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="all.css" />
+  <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16" />
+  <link rel="stylesheet" type="text/css" href="createPost.css" />
+</head>
+
+<body>
+  <header class="header">
+    <a href="home.html">
+      <span class="material-icons">arrow_back</span>
     </a>
-    </header>
-    <main id="main">
-      <div id="nameCont">
-        <div id="avatar"></div>
-        <h2 id="name">First Last</h2>
-      </div>
-      <div id="creation">
-        <form id="post">
-          <h3>Title</h3>
-          <input id="title" placeholder="Enter a title..." />
-          <div>
-            <h3>Items</h3>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <div id="inputFormRow">
-                <div class="input-group mb-3">
-                  <input
-                    type="text"
-                    name="item"
-                    class="item form-control m-input"
-                    placeholder="Enter an item or request..."
-                    autocomplete="off"
-                  />
-                  <div class="input-group-append">
-                    <button id="removeRow" type="button">Remove</button>
-                  </div>
+
+    <a id="logout" href="#">
+      <span class="material-icons">exit_to_app</span>
+    </a>
+    <a id="goprof" href="profile.html">
+      <span class="material-icons">
+        account_circle
+      </span>
+    </a>
+  </header>
+  <main id="main">
+    <div id="nameCont">
+      <div id="avatar"></div>
+      <h2 id="name">First Last</h2>
+    </div>
+    <div id="creation">
+      <form id="post">
+        <h3>Title</h3>
+        <input id="title" placeholder="Enter a title..." />
+        <div>
+          <h3>Items</h3>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div id="inputFormRow">
+              <div class="input-group mb-3">
+                <input type="text" name="item" class="item form-control m-input"
+                  placeholder="Enter an item or request..." autocomplete="off" />
+                <div class="input-group-append">
+                  <button id="removeRow" type="button">Remove</button>
                 </div>
               </div>
+            </div>
 
-              <div id="newRow"></div>
-              <button id="addRow" type="button" class="btn btn-info">
-                Add Row
-              </button>
+            <div id="newRow"></div>
+            <button id="addRow" type="button" class="btn btn-info">
+              Add Row
+            </button>
 
-              <div id="confirm">
-                <button id="submit" type="button" value="Submit">Submit</button>
-              </div>
+            <div id="confirm">
+              <button id="submit" type="button" value="Submit">Submit</button>
             </div>
           </div>
-        </form>
-      </div>
-    </main>
-    <script src="createPost.js"></script>
-  </body>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="createPost.js"></script>
+</body>
+
 </html>
