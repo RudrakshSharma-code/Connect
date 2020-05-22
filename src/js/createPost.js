@@ -5,28 +5,6 @@ const user = aws.getUser();
 var today = new Date();
 var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
-// type Post @model {
-// id: ID!
-// title: String!
-// items: [String!]!
-// itemsCount: Int!
-// latitude: String!
-// longitude: String!
-// time: String!
-
-// userID: String!
-// userFirstName: String!
-// userLastName: String!
-// userEmail: String!
-// userPhone: String!
-
-// volunteerID: String
-// volunteerFirstName: String
-// volunteerLastName: String
-// volunteerEmail: String
-// volunteerPhone: String
-// }
-
 // add row
 $("#addRow").click(function () {
   var html = "";
